@@ -71,7 +71,7 @@ bringen. Danach ist das iOS Device vollständig funktionsfähig.
 \begin{description}
 \item[Ein Beispiel für einen \glqq Semi Tethered Jailbreak\grqq{} ist]~\par
 	\begin{itemize}
-        \item \textbf{SemiTether package}
+        \item \textbf{SemiTether (Cydia package)}
     \end{itemize}
 \end{description} 
 
@@ -120,8 +120,8 @@ Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 
         \caption{iOS Software Updates\cite{Apple[7]}}
         	\label{fig:iOS Software Updates}
 \end{figure}
-% ------ Hard newpage -------
 
+% ------ Hardcoded newpage -------
 \newpage
 Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iOS Version zu „jailbreaken“. Die „Bugs“, die ein Jailbreak ausnützt, sind meistens in mehreren iOS Versionen vorhanden. Nicht alle „Bugs“ werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices.
 
@@ -136,6 +136,17 @@ Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iO
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
+Damit ein Jailbreak auf einem iOS Device durchgeführt werden kann müssen Schritt für Schritt die iOS Sicherheitsschritte umgangen werden. Ab der iOS Version 8.1.3 sind für einen \glqq untethered Jailbreak\grqq{} fünf Schritte notwendig.
+
+\begin{description}
+\item[Dies sind die fünf iOS Sicherheitsmechanismen, die ein erfolgreicher Jailbreak umgehen muss]~\par
+	\begin{enumerate}
+	    \item Die Sandboxfunktionalität (siehe Kapitel: \ref{sec:Sandbox}) 
+	     \item Das Signieren jedes Codes 
+	    \item Erhalten der \glqq root\grqq{} Rechte
+	    \item Das Patchen des Kernels
+	  \end{enumerate}
+\end{description} 
 
 \cite{TaiG[1]}
 \cite{TaiG[2]}
@@ -144,6 +155,7 @@ Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iO
 % ------------- Jailbreak Step 1 --------------------
 \subsection{Breaking out of the sandbox}
 \label{sec:JBStep1}
+Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden, welcher es erlaubt \glqq die Sandbox\grqq{} (siehe Kapitel: \ref{sec:Sandbox}) zu umgehen. 
 
 % ------------- Jailbreak Step 2 --------------------
 \subsection{Obtaining arbitrary (unsigned) code execution}
