@@ -136,13 +136,13 @@ Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iO
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
-Damit ein Jailbreak auf einem iOS Device durchgeführt werden kann müssen Schritt für Schritt die iOS Sicherheitsschritte umgangen werden. Ab der iOS Version 8.1.3 sind für einen \glqq untethered Jailbreak\grqq{} fünf Schritte notwendig.
+Damit ein Jailbreak auf einem iOS Device durchgeführt werden kann müssen Schritt für Schritt die iOS Sicherheitsschritte umgangen werden. Ab der iOS Version 8.1.3 sind für einen \glqq untethered Jailbreak\grqq{} vier Schritte notwendig.
 
 \begin{description}
-\item[Dies sind die fünf iOS Sicherheitsmechanismen, die ein erfolgreicher Jailbreak umgehen muss]~\par
+\item[Dies sind die vier iOS Sicherheitsmechanismen, die ein erfolgreicher Jailbreak umgehen muss]~\par
 	\begin{enumerate}
 	    \item Die Sandboxfunktionalität (siehe Kapitel: \ref{sec:Sandbox}) 
-	     \item Das Signieren jedes Codes 
+	     \item Umgehen der zufälligen 
 	    \item Erhalten der \glqq root\grqq{} Rechte
 	    \item Das Patchen des Kernels
 	  \end{enumerate}
@@ -168,3 +168,15 @@ Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden
 % ------------- Jailbreak Step 4 --------------------
 \subsection{Patching the Kernel}
 \label{sec:JBStep4}
+
+%AFC -> /private/var/mobile/Media Verzeichnis un dem jeder Prozess lesen und schreiben darf Einstiegspunkt
+%/private/var/mobile/ ist homeverzeichnis für nicht root user
+%/private/var/run/mobile_image_mounter -> ../../../var/mobile/Media/Books/Purchases/mload 
+
+
+AFC \"Apple File Conduit\" ist ein Service welches es ermöglicht Files und Verzeichnisse mit dem Device über USB auszutauschen bzw erstellen. AFC wird von iTunes verwendet. 
+DDI ist ein Teil der SDK und enthält Tools und Framework. Weiters wurde das  DDI von Apple signiert und ist somit vor Veränderungen geschützt. 
+
+%Ersetzen des Development Disk Image (DDI) damit die  folgende Dateien ersetzt werden können. "/usr/lib/libmis.dylib" und "/usr/lib/xpcd_cache.dylib"
+
+

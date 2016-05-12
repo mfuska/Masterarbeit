@@ -34,14 +34,15 @@
 %------------------------------ Secure Recovery Boot Chain
 \section{Secure Recovery Boot Chain}
 \label{sec:SecureRecoveryBootChain}
-\subsection{Secure Boot Loader}
-\label{sec:SecureBootLoader1}
-\subsection{Low Level Boot Loader}
-\label{sec:LowLevelBootLoader1}
-\subsection{iBoot}
-\label{sec:iBoot1}
-\subsection{Recovery Mode}
-\label{sec:RecoveryMode}
+
+    \subsection{Secure Boot Loader}
+    \label{sec:SecureBootLoader1}
+    \subsection{Low Level Boot Loader}
+    \label{sec:LowLevelBootLoader1}
+    \subsection{iBoot}
+    \label{sec:iBoot1}
+    \subsection{Recovery Mode}
+    \label{sec:RecoveryMode}
 
 %------------------------------------------------------------------------------
 %------------------------------ Encryption and Data Protection
@@ -50,11 +51,12 @@
 
 \subsection{File Data Protection}
 \label{sec:FileDataProtection}
-\subsubsection{Device UID}
-\label{sec:DeviceUID}
-\subsubsection{User Passcode}
 
-\label{sec:UserPasscode}
+%\subsection{Device UID}
+%\label{sec:DeviceUID}
+
+%\subsubsection{User Passcode}
+%\label{sec:UserPasscode}
 
 \subsection{Schutzklassen}
 \label{sec:Schutzklassen}
@@ -67,25 +69,221 @@
 \section{Code Signing}
 \label{sec:CodeSigning}
 
+\subsection{Provisioning Profile}
+\label{sec:ProvisioningProfile}
+Apple designte den Provisioning Mechanismus um vertrauenswürdigen Third Parties zu erlauben, Apps auf iOS Devices zu intstallieren. Dies ermöglicht, Entwicklern ihre Apps zu testen, ohne diese über den AppStore zu verteilen. Das \glqq Provisioning Profile\grqq{} ist ein XML strukturiertes \glqq Property List File (plist)\grqq, welches von Apple signiert wird. Der Aufbau des Files passiert auf einer \glqq Key Value Pair\grqq{} Struktur. 
+(vgl. \cite{PropertyFile[1]},\cite{ProvisioningProfile[1]}) \par
+
+Mit dem Commando 
+
+\lstset{
+    language=bash,
+    }
+\begin{lstlisting}[caption={Openssl-Befehl: Struktur Provisioning Profile }]
+    openssl smime -in Attributor.mobileprovision -inform der -verify 
+\end{lstlisting}
+
+\lstinputlisting[language=XML, caption={Provisioning Profile}]{../ProvisioningProfiile/Attributor.txt} 
+
+\begin{enumerate}
+% --------APPIDNAME --------------
+    \item AppIDName Item
+\begin{lstlisting}[caption={AppIDName Item}]
+<key>AppIDName</key>
+<string>Xcode iOS App ID com fuskam Attributor</string>
+\end{lstlisting}
+Der \glqq AppIDName\grqq{} beinhaltet
+\begin{itemize}
+    \item einen String: Xcode iOS App ID und
+    \item die BundleID.
+\end{itemize}
+Die \glqq BundleID\grqq{} ist der \glqq reverse-domain Name\grqq{} der iOS Applikation inklusive des Applikationsnamens.
+
+%-----------------APPLICATIONIDENTIFIERPREFIX ------------------
+    \item ApplicationIdentifierPrefix Item
+\begin{lstlisting}[caption={ApplicationIdentifierPrefix Item}]
+<key>ApplicationIdentifierPrefix</key>
+<array>
+    <string>N3FG84DPLD</string>
+</array>
+\end{lstlisting}
+Der \glqq ApplicationIdentifierPrefix\grqq{} ist ein zehnstelliger String der vom Apple Provisioning Portal erzeugt wird.  
+Wird auch als Bundle Seed ID bezeichnet.
+
+%------CREATION DATE --------------
+    \item CreationDate Item
+\begin{lstlisting}[caption={CreationDate Item}]        
+<key>CreationDate</key>
+<date>2016-01-08T16:00:03Z</date>
+\end{lstlisting}
+Das \glqq CreationDate\grqq{} Feld beschreibt das Datum und die Uhrzeit wann das Provisioning Profile erzeugt wurde.
+
+% ----------- PLATFORM --------------------
+    \item Platform Item
+\begin{lstlisting}[caption={Platform Item}]        
+<key>Platform</key>
+<array>
+    <string>iOS</string>
+</array>
+\end{lstlisting}
+Das \glqq Platform\grqq{} Tag inkludiert ein Array Element von Operation Systemen. Dieses Array beinhaltet alle Operation Systeme auf denen die App laufen kann.
+
+%------ DEVELOPERCERTIFICATES -----------------------
+    \item DeveloperCertificates Item
+\begin{lstlisting}[caption={DeveloperCertificates Item}]        
+<key>DeveloperCertificates</key>
+<array                
+    <data>..... </data>
+</array>
+\end{lstlisting}
+Das \glqq DeveloperCertificates\grqq{} Tag beinhaltet ein Array Element von Developer Zertifikaten (X.509). Das Developer Zertifikat ist base64 codiert. 
+
+Mit dem folgenden Kommando können alle Attribute des Zertifikats angezeigt werden.
+\lstset{
+    language=bash,
+    }
+\begin{lstlisting}[caption={openssl command to encode the developer certificate}]
+openssl x509 -text -in Attributor.pem 
+\end{lstlisting}
+
+\lstinputlisting[language=XML, caption={Developer Certificate}]{../ProvisioningProfiile/Attributor_cert-short.txt} 
+
+Das Developer Certificate wurde von Apple ausgestellt und die Developer Daten wurden von Apple signiert.
+Unter anderem wurden folgende Daten
+\begin{itemize}
+    \item Developer Name
+    \item Developer EMail-Adresse
+    \item TeamID
+    \item Public Key des Developers
+    \item Application Identifier Prefix
+    \item und die Signatur von Apple
+\end{itemize}
+von Apple signiert.
+
+%-------------ENTITLEMENTS -----------------------
+    \item Entitlements Item
+\begin{lstlisting}[caption={Entitlements Item}]
+<key>Entitlements</key>
+<dict>
+    <key>keychain-access-groups</key>
+    <array>
+        <string>N3FG84DPLD.*</string>           
+    </array>
+    <key>get-task-allow</key>
+    <true/>
+    <key>application-identifier</key>
+    <string>N3FG84DPLD.com.fuskam.Attributor</string>
+    <key>com.apple.developer.team-identifier</key>
+    <string>N3FG84DPLD</string>
+</dict>
+\end{lstlisting}
+The Entitlements item is a dictionary that can contain many key values pertaining to iCloud, Game Center, Push Notifications and attachment of a debugger to the app. Going into all the possibilities is outside the scope of this post. However, if you ever get the error, “The executable was signed with invalid entitlements,” you can copy this dictionary and paste it into your app’s Entitlements.plist file to make sure that the app’s and the Provisioning Profile’s entitlements are an exact match.
+
+%-------- EXPIRATION DATE ----------------------
+    \item ExpirationDate Item
+\begin{lstlisting}[caption={ExpirationDate Item}]
+<key>ExpirationDate</key>
+<date>2016-04-07T16:00:03Z</date>
+\end{lstlisting}
+The ExpirationDate item is the date the Provisioning Profile expires.
+
+% ------- NAME ------------------
+    \item Name Item
+\begin{lstlisting}[caption={Name Item}]
+<key>Name</key>
+<string>iOS Team Provisioning Profile: com.fuskam.Attributor</string>
+\end{lstlisting}
+The Item Name is the name of the Application. That was declared in XCode.
+
+% ----- PROVISIONEDDEVICE ----------------
+    \item ProvisionedDevices Item
+\begin{lstlisting}[caption={ProvisionedDevices Item}]
+<key>ProvisionedDevices</key>
+<array>
+    <string>1ecc48a12311fdff7e44dbc21716e43f829152a6</string>
+</array>
+\end{lstlisting}
+The ProvisionedDevices item is an array of all the device UDIDs on which the app associated with this Provisioning Profile can be installed.  I consider this to be the meat of the file. 90\% of the time when I am opening a Provisioning Profile, it is to determine if a UDID is included in this array.
+
+%------ LOCALPROVISION -----------
+  \item LocalProvision Item
+\begin{lstlisting}[caption={LocalProvision Item}]
+<key>LocalProvision</key>
+<true/>
+\end{lstlisting}
+
+%------ TEAMIDENTIFIER -------------------
+    \item TeamIdentifier Item
+\begin{lstlisting}[caption={TeamIdentifier Item}]
+<key>TeamIdentifier</key>
+<array>
+    <string>N3FG84DPLD</string>
+</array>
+\end{lstlisting}
+This is the identifier for the team to which this Provisioning Profile belongs.
+
+%--------- TEAMNAME ------------
+    \item TeamName Item
+\begin{lstlisting}[caption={TeamName Item}]
+<key>TeamName</key>
+<string>Michael Fuska</string>
+\end{lstlisting}
+ The TeamName is the Team to which this Provisioning Profile belongs.
+
+%-------------- TIMETOLIVE ----------------------
+   \item TimeToLive Item
+\begin{lstlisting}[caption={TimeToLive Item}]
+<key>TimeToLive</key>
+<integer>90</integer>
+\end{lstlisting}
+“TimeToLive” is the number of days that this Provisioning Profile is valid. Apple sets this to 365
+ 
+ %--------- UUID ---------------
+    \item UUID Item
+\begin{lstlisting}[caption={UUID Item}]
+<key>UUID</key>
+<string>e08659ca-89c5-4d27-8bad-abcf9d253c91</string>
+\end{lstlisting}
+UUID (Universally Unique IDentifier) Is on a per-app basis. identifies an app on a device. As long as the user doesn’t completely delete the app, then this identifier will persist between app launches, and at least let you identify the same user using a particular app on a device. Unfortunately, if the user completely deletes and then reinstalls the app then the ID will change.
+
+%---------- VERSION -----------------
+    \item Version Item
+\begin{lstlisting}[caption={Version Item}]
+<key>Version</key>
+<integer>1</integer> 
+\end{lstlisting}
+Das Item Version beschreibt das Datenformat der Datei. Apple verwendet zur Zeit die Version 1.    
+\end{enumerate}
+
+
+Neben den Konfigurationsparameter der App enthält das \glqq Provisioning Profile\grqq{} ein \glqq Developer Zertifikat\grqq.
+ 
+
+ 
+ Die Datei ist XML formatiert -plist-Datei die von Apple signiert wird. iOS-Gerät konfiguriert die Ausführung von Code durch den eingebetteten Entwickler Zertifikat signiert zu ermöglichen. Eine plist-Datei ist eine Standard-Apple-XML-Dateiformat zum Speichern von Eigenschaftslisten (verschachtelte Schlüssel-Wert-Paare).
+
 \subsection{Collecting Signing}
 \label{sec:CollectingSigning}
+
+
 
 \subsection{Verifying Signing}
 \label{sec:VerifyingSigning}
 
+
 \subsection{Dynamic Code Signing}
 \label{sec:DynamicCodeSigning}
-\subsubsection{Jit}
-\label{sec:Jit}
+%\subsubsection{Jit}
+%\label{sec:Jit}
 
 \subsection{Mandatory Code Signing}
 \label{sec:MandatoryCodeSigning}
-\subsubsection{Developer Certificate}
-\label{sec:DeveloperCertificate}\subsubsection{Provisioning Profile}
-\label{sec:ProvisioningProfile}\subsubsection{Signed App}
-\label{sec:SignedApp}
-\subsubsection{Entitlement}
-\label{sec:Entitlement}
+%\subsubsection{Developer Certificate}
+%\label{sec:DeveloperCertificate}%\subsubsection{Provisioning Profile}
+%\label{sec:ProvisioningProfile}%\subsubsection{Signed App}
+%\label{sec:SignedApp}
+%\subsubsection{Entitlement}
+%\label{sec:Entitlement}
 
 %------------------------------------------------------------------------------
 %------------------------------  Memory Protection
@@ -95,8 +293,8 @@
 \label{sec:DEP}
 \subsection{Mandatory Access Control Framework}
 \label{sec:MACF}
-\subsubsection{Apple Mobile File Integrity}
-\label{sec:AMAFI}
+%\subsubsection{Apple Mobile File Integrity}
+%\label{sec:AMAFI}
 
 %------------------------------------------------------------------------------
 %------------------------------  Stack Guard ----------------------------------
@@ -112,7 +310,7 @@
 \section{Sandbox}
 \label{sec:Sandbox}
 \cite{sandbox[1]}
-\cite{sandbox[2]};
+\cite{sandbox[2]}
 
 
 \subsection{Runtime Process Security}
