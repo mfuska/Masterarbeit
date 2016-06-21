@@ -17,32 +17,199 @@
 \label{sec:reduziertesOS}
 
 %------------------------------------------------------------------------------
+%------------------------------  Memory Protection
+\section{Memory Protection Mechanism}
+\label{sec:MemoryProtection}
+Unter iOS sind drei wichtige Memory Sicherheitsmechanismen implementiert worden
+\begin{enumerate}
+    \item \textbf{Secure Boot Chain}
+    \item \textbf{Address Space Layout Randomization (ASLR)}
+    \item \textbf{Mandatory Access Control (MAC)}
+\end{enumerate}
+
 %------------------------------ Secure boot chain
-\section{Secure boot chain}
+\subsection{Secure Boot Chain}
 \label{sec:SecBootChain}
 
-\subsection{Secure Boot Loader}
-\label{sec:SecBootLoader}
+Die \textbf{Secure Boot Chain} gehört zu den Kernfunktionalität der Sicherheitsmassnahmen. Jede Phase von Boot Prozess ist mit einen eigenen Key zu verschlüsseln und nur die vorhergehende Phase hat den Schlüssel um die Signatur zu prüfen und zu entschlüsseln. Der  \textbf{Boot Read Only Memory (ROM)} ist der \textbf{Root of Trust} vom Secure Boot Chain. \cite{Apple[4], Apple[5], Apple[6]}
+ 
+Die Secure Boote Chain beinhaltet folgende Module/Phasen
+\begin{enumerate}
+   \item \textbf{der Low Level Bootloader (LLB)},
+   \item \textbf{der Kernel},
+   \item \textbf{die Kernel Extension} und
+   \item \textbf{die Baseband Firmware}.
+\end{enumerate}
 
-\subsection{Low Level Boot Loader}
-\label{sec:LowLevelBootLoader}
+Die Secure Boot Chain stellt sicher, dass keine Veränderung der Hardware und/oder des iOS Kernel, während des Boot Prozess durchgeführt werden kann. Nach erfolgreicher Verifikation der Kernel Signatur wurde der Kernel entschlüsselt und das iOS Betriebsystem wird gestartet. In nächsten Schritt wird die Signatur jedes Prozesses sowohl vom Betriebssysteme als auch User Applikationen verifiziert. Nur wenn die Signatur gültig ist wird der Code und die Libraries in den Memory geladen. Dies stellt sicher, dass nur Software auch einem iOS Gerät läuft, welche mit einem gültigen Zertifikat signiert wurde. \cite{Apple[4], Apple[5], Apple[6]}
 
-\subsection{iBoot}
-\label{sec:iBoot}
+%\subsection{Secure Boot Loader}
+%\label{sec:SecBootLoader}
+
+%\subsection{Low Level Boot Loader}
+%\label{sec:LowLevelBootLoader}
+
+%\subsection{iBoot}
+%\label{sec:iBoot}
 
 %------------------------------------------------------------------------------
 %------------------------------ Secure Recovery Boot Chain
-\section{Secure Recovery Boot Chain}
-\label{sec:SecureRecoveryBootChain}
+%\section{Secure Recovery Boot Chain}
+%\label{sec:SecureRecoveryBootChain}
 
-    \subsection{Secure Boot Loader}
-    \label{sec:SecureBootLoader1}
-    \subsection{Low Level Boot Loader}
-    \label{sec:LowLevelBootLoader1}
-    \subsection{iBoot}
-    \label{sec:iBoot1}
-    \subsection{Recovery Mode}
-    \label{sec:RecoveryMode}
+%\subsection{Recovery Mode}
+%\label{sec:RecoveryMode}
+
+%------------------------------------------------------------------------- 
+\subsection{Address Space Layout Randomization (ASLR)}
+\label{sec:ASLR}
+
+ASLR hat die Aufgabe Programmen zufällige Speicheradressen zu zuweisen. Dadurch ist die Speicherverwaltung nicht mehr deterministisch. Diese Art der Speicherverwaltung macht es Malware schwerer Softwarefehler wie zum Beispiel Bufferoverflows auszunützen.
+Unter iOS gibt es die Möglichkeit beim Kompilieren der App zu konfigurieren, ob die App \glqq Position Independent Code (PIC) \grqq{} unter iOS laufen soll oder nicht. Daraus ergibt sich folgende Aufstellung
+
+
+Address Space Layout Randomization (ASLR) is an important protection that makes the remote exploitation of memory corruption vulnerabilities significantly more difficult. In particular, when it is fully applied, it usually requires that attackers find and exploit one or more memory disclosure vulnerabilities in order to enable the exploitation of a memory corruption vulnerability. On many operating systems, however, the implementation of ASLR may be incomplete and attackers can make often make use of executable or writable memory regions at fixed or predictable locations.ASLR was introduced in iOS 4.3 and there are two levels of completeness of ASLR in iOS 4.3, depending on whether the application was compiled with support for Position Independent Executables (PIE). If the application was compiled without PIE support, it will run with limited ASLR. Specifically, the main executable binary (including its code and data sections) and the dynamic linker (dyld) will be loaded at fixed locations. The main thread’s stack will also always begin at the same location in memory. This is presumably to maintain compatibility with existing iOS applications. If the application is compiled with PIE support, then the application will be able to make full use of ASLR and all memory regions will be randomized. In iOS 4.3, all built-in applications are compatible with full ASLR. The table below summarizes which segments of memory will be found at randomized locations depending on whether the application was compiled with or without PIE support.
+
+\textbf{The ASLR} has the task to assign random memory addresses to the programs. With ASLR the base pointer (EBP), the libraries as well as the heap, the text, the data, and the BSS segment are randomized. The memory management is no longer deterministic. That makes it harder for malware to exploit software errors such as buffer overflows. \cite{Apple[4], ASLR[1]} \par
+ With the iOS version 4.3 Apple introduced ASLR. The compiling option \textbf{Position Independent Executable (PIE)} enables ASLR under iOS. 
+If this parameter is not set, the 
+\begin{itemize}
+    \item code segment, 
+    \item the data segment, 
+    \item stack segment,
+    \item and libraries
+\end{itemize}
+have the same position in the virtual memory all the time. See Table \ref{tab:PIE executable segment}, \ref{tab:PIE data segment}, \ref{tab:PIE stack segment}, \ref{tab:PIE heap segment}, \ref{tab:PIE libraries} and \ref{tab:PIE linker }. 
+
+ \begin{table}[hc]
+    \begin{tabular}{| l | l |} \hline
+        PIE is set & code segment \\ \hline
+        no & fixed\\ \hline
+        yes & randomized per execution \\ \hline
+    \end{tabular}
+    \caption{PIE executable segment \cite{iOSSec[5]}}
+   \label{tab:PIE executable segment}
+
+    \begin{tabular}{|p{2cm}|p{5cm}|} \hline
+        PIE is set & data segment\\ \hline
+        no & fixed\\ \hline
+        yes & randomized per execution \\ \hline
+    \end{tabular}
+    \caption{PIE data segment \cite{iOSSec[5]}}
+   \label{tab:PIE data segment}
+
+    \begin{tabular}{|p{2cm}|p{5cm}|} \hline
+        PIE is set & stack segment\\ \hline
+        no & fixed \\ \hline
+        yes & randomized per execution \\ \hline
+    \end{tabular}
+     \caption{PIE stack segment \cite{iOSSec[5]}}
+   \label{tab:PIE stack segment}
+
+    \begin{tabular}{|p{2cm}|p{5cm}|} \hline
+        PIE is set & heap segment\\ \hline
+        no & randomized per execution\\ \hline
+        yes & randomized per execution \\ \hline
+    \end{tabular}
+    \caption{PIE heap segment \cite{iOSSec[5]}}
+   \label{tab:PIE heap segment}
+
+    \begin{tabular}{|p{2cm}|p{5cm}|} \hline
+        PIE is set & libraries \\ \hline
+        no & randomized per device boot\\ \hline
+        yes & randomized per device boot \\ \hline
+    \end{tabular}
+    \caption{PIE libraries \cite{iOSSec[5]}}
+   \label{tab:PIE libraries}
+
+    \begin{tabular}{|p{2cm}|p{5cm}|} \hline
+        PIE is set & linker  \\ \hline
+        no & fixed\\ \hline
+        yes & randomized per execution \\ \hline
+    \end{tabular}
+    \caption{PIE linker \cite{iOSSec[5]} }
+   \label{tab:PIE linker }
+\end{table}
+
+%------------------------------------------------------------------------- 
+\subsection{Mandatory Access Control}
+Unlike \textbf{Data Execution Prevention (DEP)} the \textbf{Mandatory Access Control (MAC)} checks not only the binaries, but also any executable code and libraries which should be loaded into the memory. \par
+With the iOS Version 2.0 Apple introduced this feature. Until now there is no way to bypass the MAC mechanism on iOS. Only code and libraries which should be executed by the processor will be checked by the MAC process. All data are loaded into memory pages of the virtual memory. \cite{iOSSec[5], Hacking[1]}
+
+There are two types of virtual memory pages, they are differentiated by the possible memory access
+\begin{enumerate}
+    \item read / write access
+    \item read / executable access
+\end{enumerate}
+
+The MAC has two advantages over other memory protection systems. \par 
+Primarily malware can only be running on an iOS device, if the malware has been signed previously by a valid certificate. This can happen just in case, if the malware remains undetected by the Apple code review. There exist some examples where this has been achieved. The developers hided the malware in code branches which are never used in a normal program flow. \cite{iOSSec[5], Hacking[1]} \par
+ 
+The second advantage is that exploits can only be done by using \textbf{Return Oriented Programming(ROP)}. This is far more complex and difficult than exploits by shellcode. \cite{Architecture[1], Architecture[2], Architecture[3], ROP[1], ROP[2], iOSSec[5], Hacking[1]}
+
+The \textbf{Mandatory Access Control Framework(MACF)} includes the MAC under iOS. Under iOS there are configured two mandatory access control policies
+\begin{enumerate}
+   \item Sandbox
+   \item AMFI
+\end{enumerate}
+\cite{iOSSec[5], Hacking[1]}
+
+
+\paragraph{Sandbox:} Each app runs in its own sandbox. It is precisely defined with which interfaces, device resources and/or other apps can communicate with this app. This ensures that internal data can not pass to the outside and also that apps do not have access to any information about the device. \cite{Apple[6], Sandbox[1], Sandbox[2],Sandbox[3], Sandbox[4], Sandbox[5]}
+
+%------------------------------------------------------------------------- 
+\paragraph{Apple Mobile File Integrity (AMFI):} 
+\label{para: amfi}
+AMFI is a kernel extension which implements the code signing security mechanism. The \textbf{amfi kernel extension} checks the signature of each executed binary and library. All signature-relevant functions are listed below 
+\begin{itemize}
+    \item \label{item:AMFIfunc} \textbf{mpo\_vnode\_check\_signature:} 
+    That function gets an CDHash (See definition: \ref{ss: signed iOS app}) as parameter and checks the static and dynamic trust caches.
+    If it is not found, the signature of the app is validated by the amfid RPC interface. \cite{iOSSec[5], Hacking[1]} 
+    
+    \item \textbf{mpo\_vnode\_check\_exec:}
+    That function sets the code signing CS\_HARD and CS\_KILL flags. Those flags are checked from the kernel before executing a code. \cite{iOSSec[5],  Hacking[1]}
+    \item \textbf{mpo\_proc\_check\_get\_task:}
+    That function checks the entitlements get-task-allow and task\_for\_pid-allow. If both are set, the process obtain port access.  \cite{iOSSec[5],  Hacking[1]}
+    
+    \item \textbf{mpo\_proc\_check\_run\_cs\_invalid:}
+    \glqq \textit{Allow execution if the process has the get-task-allow, run-invalid-allow, and run-unsigned-code entitlements and an RPC call to amfid returns indicating that unrestricted debugging should be allowed.}\grqq{} (\cite{iOSSec[5]} page 5), \cite{Hacking[1]}
+    
+    \item \textbf{mpo\_proc\_check\_map\_anon:}
+    Only in case if the process has the dynamic-code signing entitlement, it can allocate anonymous memory.
+%    The process can allocate anonymous memory if and only if the process has the dynamic-code signing entitlement. \cite{iOSSec[5],  Hacking[1]}
+
+\end{itemize}
+
+\paragraph{In summary:} The amfi kernel extension has three possibilities for the CDHash verification of an app 
+\begin{enumerate}
+    \item The \textbf{static trusted cache} stores permanently the CDHashes of all apps which were by default installed by apple 
+    \item The \textbf{dynamic trusted cache} stores all CDHashes for apps which have already successfully passed once the code signing process. The CDHashes are stored until the device is restarted. 
+    \item The amfi kernel extension verifies the CDHash with the amfid RPC interface.
+\end{enumerate}   
+
+The AMFI kernel extension sets the csflags in the process proc structure. Thus, the kernel knows whether the process is successfully validated or not. The Table \ref{tab:CSFLAGS} describes the possible values of the csflags that can be set by the amfi kernel extension. \cite{iOSSec[5], Hacking[1]}
+
+\begin{table}
+\begin{tabular}{|p{1,7cm}|p{1,1cm}|p{4,3cm}|} \hline
+  Flag Name & Value & Description\\ \hline
+CS\_VALID & 0x00001 & \textit{\glqq Process is dynamically valid.\grqq{} }\\ \hlineCS\_HARD & 0x00100 & \textit{\glqq Process shouldn’t load invalid pages.\grqq{} }\\ \hlineCS\_KILL & 0x00200 & \textit{\glqq Process should be killed if it becomes dynamically invalid.\grqq{} }\\ \hlineCS\_EXEC\_ SET\_HARD & 0x01000 & \textit{\glqq Process should set CS\_HARD on any exec’d child.\grqq{} }\\ \hlineCS\_EXEC\_ SET\_KILL & 0x02000 & \textit{\glqq Process should set CS\_KILL on any exec’d child.\grqq{} }\\ \hlineCS\_KILLED & 0x10000 & \textit{\glqq The process was killed by the kernel for being dynamically invalid.\grqq{} }\\ \hline
+\end{tabular} 
+\caption{Value csflags (\cite{iOSSec[5]} page 11)}
+\label{tab:CSFLAGS}
+\end{table}
+ 
+ \textit{\glqq In order to implement some more expensive operations outside of the kernel, the AMFI kernel extension communicates with a userspace daemon, amfid, over Mach RPC. The amfid RPC interface is simply two routines, as shown in the Table \ref{tab:AMFID}.\grqq{} (\cite{iOSSec[5]} page 13) } \cite{Mach[1]}
+
+\begin{table}
+\begin{tabular}{|p{2,9cm}|p{5cm}|} \hline
+  Subroutine & Description\\ \hline
+verify\_code\_directory &  \textit{\glqq Verifies the given code directory hash and signature for the executable at the given path. This checks whether the signature is valid and that it should be trusted based on the built-in Apple certificates and installed provisioning profiles (if any).\grqq{} }\\ \hline
+permit\_unrestricted\_ debugging &  \textit{\glqq Enumerates the installed provisioning profiles and checks for a special Apple-internal provisioning profile with the UDID of the current device that enables unrestricted debugging on it.\grqq{}}  \\ \hline\end{tabular} 
+\caption{AMFI Daemon Mach RPC Interface (\cite{iOSSec[5]} page 13)}
+\label{tab:AMFID}
+\end{table}
+
+
 
 %------------------------------------------------------------------------------
 %------------------------------ Encryption and Data Protection
@@ -69,11 +236,55 @@
 \section{Code Signing}
 \label{sec:CodeSigning}
 
+Mit der iOS Version 2.0 führte Apple, das Signieren von ausführbaren Code ein. 
+Jede App wird mit einem Zertifikat signiert. 
+Entweder signiert Apple die App und verteilt diese über den iTunes Store, oder \glqq third Parties\grqq{} werden von Apple autorisiert und können dadurch ihre Apps selbst signieren und verteilen. 
+In Kernel des iOS wir die Signatur der Apps überprüft und nur wenn dieses gültig ist, wir sie vom Kernel in den Memory geladen und ausgeführt. 
+Ist eine Signatur nicht gültig, wird das Binary am Device nicht ausgeführt und der Code wird vom Kernel nicht in den Memory geladen. 
+
+
+An ad-hoc signature does not contain an actual certificate and is typically only seen on Apple-supplied command-line executables for iOS. These ad-hoc signatures are validated by searching for its code directory hash (CDHash) in the trust cache. The kernel contains a static set of known CDHashes for all iOS built-in executables and applications that we refer to as the static trust cache. The kernel also maintains a linked list of the CDHashes for all applications and executables that have the passed full certificate validation before their first execution. We call this data structure the dynamic trust cache. The dynamic trust cache contains all the unique executables or applications that have been executed since boot. There does not appear to be any garbage collection or pruning of this linked list. 
+
+
+\subsection{Mandatory Code Signing}
+\label{sec:MandatoryCodeSigning}
+
+Im Unterschied zu \textbf{Data Execution Prevention (DEP)} überprüft \textbf{Mandatory Access Control (MAC) } nicht nur die Binaries sondern auch Libraries und jeden ausführbaren Code, der in den Memory geladen werden soll. Es gibt unter iOS keine Möglichkeit den MAC Mechanismus zu umgehen. \par 
+Nur Daten die vom Prozessor ausgeführt werden sollten, werden vom MAC Prozess überprüft. Diese werden in \glqq memory pages\grqq{} geladen, die nur ausgeführt werden dürfen. MAF bringt zwei Vorteile gegenüber anderen Memory Protection Systemen mit sich. Malware kann über auf einem iOS Device ausgeführt werden, wenn diese zuvor von einem gültigen Apple Zertifikat signiert worden ist. Des weiteren muss die Malware bei dem Codereview von Apple unentdeckt bleiben. Es gibt Beispiele in denen dies gelungen ist. Die Entwickler hatten die Malware in Codeverzweigungen \glqq versteckt \grqq{} die im normalen Programmfluss nie verwendet werden. \par 
+Der zweite Vorteil ist, das Exploits nur mithilfe von \textbf{Return Oriented Programming (ROP)} durchgeführt werden können. Dies ist weit aus komplexer und schwieriger, als Exploits mittels Shellcode.
+Das \textbf{Mandatory Access Control Framework (MACF)} ist unter iOS für MAC verantwortlich. Unter iOS sind im MACF zwei \glqq mandatory access control policies \grqq{} konfiguriert
+\begin{enumerate}
+  \item Sandbox
+  \item AMFI
+\end{enumerate}
+Unter iOS läuft jede App in einer eigenen Sandbox. 
+Es wird genau definiert mit welchem Interface, Device Ressourcen und / oder anderen Apps, diese App kommunizieren kann. Dadurch ist sichergestellt, das interne Data nicht nach aussen gelangen können und auch, dass Apps nicht auf jegliche Daten des Device Zugriff haben.
+
+
+%\subsection{Collecting Signing}
+%\label{sec:CollectingSigning}
+
+
+
+%\subsection{Verifying Signing}
+%\label{sec:VerifyingSigning}
+
+
+%\subsection{Dynamic Code Signing}
+%\label{sec:DynamicCodeSigning}
+
+%\subsection{Jit}
+%\label{sec:Jit}
+%------------------------------------------------------------------------------
+%------------------------------ Provisioning Profile ----------------------------------
+
 \subsection{Provisioning Profile}
 \label{sec:ProvisioningProfile}
-Apple designte den Provisioning Mechanismus um vertrauenswürdigen Third Parties zu erlauben, Apps auf iOS Devices zu intstallieren. Dies ermöglicht, Entwicklern ihre Apps zu testen, ohne diese über den AppStore zu verteilen. Das \glqq Provisioning Profile\grqq{} ist ein XML strukturiertes \glqq Property List File (plist)\grqq, welches von Apple signiert wird. Der Aufbau des Files passiert auf einer \glqq Key Value Pair\grqq{} Struktur. 
-(vgl. \cite{PropertyFile[1]},\cite{ProvisioningProfile[1]}) \par
+Apple designte den Provisioning Mechanismus um vertrauenswürdigen Third Parties zu erlauben, Apps auf iOS Devices zu installieren. Dies ermöglicht es, Entwicklern ihre Apps zu testen, ohne diese über den AppStore zu verteilen. Das \glqq Provisioning Profile\grqq{} ist ein XML strukturiertes \glqq Property List File (plist)\grqq, welches von Apple signiert wird. (vgl. \cite{PropertyFile[1]},\cite{ProvisioningProfile[1]}) \par
 
+Unter iOS erhält das Provisioning Profile File die Dateiendung \glqq mobileprovision\grqq. Apple ermöglicht mit dieser Funktionalität, autorisierten third Parties (Firmen, Universitäten und Entwicklern) ihre Apps in einem geschlossen Userkreis zu verteilen und zu installieren. \par
+
+Der Aufbau des Files passiert auf einer \glqq Key Value Pair\grqq{} Struktur. 
 Mit dem Commando 
 
 \lstset{
@@ -149,7 +360,7 @@ openssl x509 -text -in Attributor.pem
 \lstinputlisting[language=XML, caption={Developer Certificate}]{../ProvisioningProfiile/Attributor_cert-short.txt} 
 
 Das Developer Certificate wurde von Apple ausgestellt und die Developer Daten wurden von Apple signiert.
-Unter anderem wurden folgende Daten
+Unter anderem werden folgende Daten von Apple signiert
 \begin{itemize}
     \item Developer Name
     \item Developer EMail-Adresse
@@ -158,7 +369,6 @@ Unter anderem wurden folgende Daten
     \item Application Identifier Prefix
     \item und die Signatur von Apple
 \end{itemize}
-von Apple signiert.
 
 %-------------ENTITLEMENTS -----------------------
     \item Entitlements Item
@@ -177,7 +387,32 @@ von Apple signiert.
     <string>N3FG84DPLD</string>
 </dict>
 \end{lstlisting}
+
 The Entitlements item is a dictionary that can contain many key values pertaining to iCloud, Game Center, Push Notifications and attachment of a debugger to the app. Going into all the possibilities is outside the scope of this post. However, if you ever get the error, “The executable was signed with invalid entitlements,” you can copy this dictionary and paste it into your app’s Entitlements.plist file to make sure that the app’s and the Provisioning Profile’s entitlements are an exact match.
+
+\begin{lstlisting}[caption={codesign command zeigte alle entitlements einer App}]
+codesign -d --entitlements - Attributor.app
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Listet von En}]
+Executable= Attributor.app/Attributor
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>application-identifier</key>
+	<string>N3FG84DPLD.com.fuskam.Attributor</string>
+	<key>com.apple.developer.team-identifier</key>
+	<string>N3FG84DPLD</string>
+	<key>get-task-allow</key>
+	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>N3FG84DPLD.com.fuskam.Attributor</string>
+	</array>
+</dict>
+</plist>
+\end{lstlisting}
 
 %-------- EXPIRATION DATE ----------------------
     \item ExpirationDate Item
@@ -185,7 +420,7 @@ The Entitlements item is a dictionary that can contain many key values pertainin
 <key>ExpirationDate</key>
 <date>2016-04-07T16:00:03Z</date>
 \end{lstlisting}
-The ExpirationDate item is the date the Provisioning Profile expires.
+Das \glqq ExpirationDate\grqq{} legt den Gültigkeitszeitraum des Provisioning Profile fest.
 
 % ------- NAME ------------------
     \item Name Item
@@ -193,7 +428,7 @@ The ExpirationDate item is the date the Provisioning Profile expires.
 <key>Name</key>
 <string>iOS Team Provisioning Profile: com.fuskam.Attributor</string>
 \end{lstlisting}
-The Item Name is the name of the Application. That was declared in XCode.
+Das XML Element \glqq Name\grqq{} beinhaltet den Namen der Applikation. Dieser Name wird in XCode beim compilieren festgelegt.
 
 % ----- PROVISIONEDDEVICE ----------------
     \item ProvisionedDevices Item
@@ -203,6 +438,8 @@ The Item Name is the name of the Application. That was declared in XCode.
     <string>1ecc48a12311fdff7e44dbc21716e43f829152a6</string>
 </array>
 \end{lstlisting}
+
+Das XML Element \glqq ProvisionedDevices\grqq{} ermöglicht es dem Entwickler 
 The ProvisionedDevices item is an array of all the device UDIDs on which the app associated with this Provisioning Profile can be installed.  I consider this to be the meat of the file. 90\% of the time when I am opening a Provisioning Profile, it is to determine if a UDID is included in this array.
 
 %------ LOCALPROVISION -----------
@@ -256,28 +493,9 @@ Das Item Version beschreibt das Datenformat der Datei. Apple verwendet zur Zeit 
 \end{enumerate}
 
 
-Neben den Konfigurationsparameter der App enthält das \glqq Provisioning Profile\grqq{} ein \glqq Developer Zertifikat\grqq.
- 
-
- 
- Die Datei ist XML formatiert -plist-Datei die von Apple signiert wird. iOS-Gerät konfiguriert die Ausführung von Code durch den eingebetteten Entwickler Zertifikat signiert zu ermöglichen. Eine plist-Datei ist eine Standard-Apple-XML-Dateiformat zum Speichern von Eigenschaftslisten (verschachtelte Schlüssel-Wert-Paare).
-
-\subsection{Collecting Signing}
-\label{sec:CollectingSigning}
 
 
 
-\subsection{Verifying Signing}
-\label{sec:VerifyingSigning}
-
-
-\subsection{Dynamic Code Signing}
-\label{sec:DynamicCodeSigning}
-%\subsubsection{Jit}
-%\label{sec:Jit}
-
-\subsection{Mandatory Code Signing}
-\label{sec:MandatoryCodeSigning}
 %\subsubsection{Developer Certificate}
 %\label{sec:DeveloperCertificate}%\subsubsection{Provisioning Profile}
 %\label{sec:ProvisioningProfile}%\subsubsection{Signed App}
@@ -285,16 +503,9 @@ Neben den Konfigurationsparameter der App enthält das \glqq Provisioning Profil
 %\subsubsection{Entitlement}
 %\label{sec:Entitlement}
 
-%------------------------------------------------------------------------------
-%------------------------------  Memory Protection
-\section{Memory Protection}
-\label{sec:MemoryProtection}
-\subsection{Data Execution and Prevention (DEP)}
-\label{sec:DEP}
-\subsection{Mandatory Access Control Framework}
-\label{sec:MACF}
-%\subsubsection{Apple Mobile File Integrity}
-%\label{sec:AMAFI}
+
+\subsection{Runtime Process Security}
+\label{sec:RuntimeProcessSecurity}
 
 %------------------------------------------------------------------------------
 %------------------------------  Stack Guard ----------------------------------
@@ -305,19 +516,10 @@ Neben den Konfigurationsparameter der App enthält das \glqq Provisioning Profil
 \subsection{Heap}
 \label{sec:Heap}
 
-%------------------------------------------------------------------------------
-%------------------------------  Sandboxing ----------------------------------
-\section{Sandbox}
-\label{sec:Sandbox}
-\cite{sandbox[1]}
-\cite{sandbox[2]}
 
 
-\subsection{Runtime Process Security}
-\label{sec:RuntimeProcessSecurity}
 
-\subsection{Address Space Layout Randomization}
-\label{sec:ASLR}
+
 
 %------------------------------------------------------------------------------
 %------------------------------  NetworkSecurity
