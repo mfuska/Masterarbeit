@@ -18,17 +18,10 @@
 \section{Allgemein}
 \label{sec:JBAllgemein}
 
-Ein Jailbreak ermöglicht es dem User, die von Apple
-vorgesehen Sicherheitsvorkehrung zu umgehen 
-Der User erhält durch einen Jailbreak \glqq Zugriff\grqq{} auf das
-Betriebsystem und die \glqq Root Zugriffsrechte \grqq{} des Betriebssystem.
-Dadurch hat der User die Möglichkeit Applikationen zu installieren,
-die nicht von Apple signiert worden sind. 
-Mit einem Jailbreak steht dem User, zwei weitere \glqq Application Stores
-\grqq{} zur Verfügung.
+Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren die nicht von Apple signiert und verteilt worden sind. Um dies zu ermöglichen umgeht ein Jailbreak die Sicherheitsmechanismen von Apple. Weiters erhält der User den Zugriff auf den \textit{\glqq Root-Users\grqq{}} des Devices. Der \textit{\glqq Root-Users\grqq{}} ermöglicht vollen Zugriff auf das Betriebssystem (iOS) und somit auf alle Daten des Devices. Durch die Installation eines Jailbreaks stehen zwei weitere \textit{\glqq App Stores\grqq{}} zur Verfügung
 
 \begin{description}
-\item[Von Apple nicht autorisierte \glqq Applikation Stores\grqq]~\par
+\item[Alle von Apple nicht autorisierten Apps Stores]~
 	\begin{enumerate}
 	   	\item \textbf{Cydia} \cite{Cydia[1]}
 		\item \textbf{TaiG}
@@ -38,22 +31,19 @@ Mit einem Jailbreak steht dem User, zwei weitere \glqq Application Stores
 % ------------- Arten JB --------------------
 \section{Arten von Jailbreaks}
 \label{sec:JBArten}
-Abhängig von der Art wie sich das iOS Device nach einem Jailbreak verhält, wenn
-es rebooted wird, unterscheidet man die Arten von Jailbreaks. 
+Abhängig davon wie sich ein iOS Device nach einem Reboot des Devices verhält, unterscheidet man drei Arten von Jailbreaks. 
 
 % ------------- Tethered Jailbreak--------------------
 \subsection{Tethered Jailbreak}
 \label{sec:JBTethered}
-Bei einem \glqq tethered Jailbreak\grqq{} startet das iOS Device nicht nach
-einem Reboot. Das iOS Device befindet sich nach einem Reboot im DFU Mode.
-Damit das iOS Device wieder gebootet werden kann, muss dieses an einen PC
-angeschlossen werden und mithilfe des Jailbreaktools neugestartet werden.
+Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich das Device ohne weiterer Tool neu zu starten. Nach einem Neustart des iOS, startet das Betriebssystem in dem sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
+Nur mit Hilfe von iTunes kann auf dem Device wieder das originale iOS installiert werden. Mit dem zuvor verwendeten Jailbreak Tool kann das Device wieder gestartet werden und es wird wieder in den selben Zustand versetzt, wie vor dem Reboot.  
 
 \begin{description}
-\item[Zwei Beispiele für \glqq Tethered Jailbreaks\grqq{} sind]~\par
+    \item[Nachfolgend zwei häufig verwendet Tethered-Jailbreak Tools]~\par
 	\begin{itemize}
-        \item \textbf{redsn0w}
-        \item \textbf{Blackra1n}
+            \item \textbf{redsn0w}
+            \item \textbf{Blackra1n}
     \end{itemize}
 \end{description} 
 
@@ -61,15 +51,10 @@ angeschlossen werden und mithilfe des Jailbreaktools neugestartet werden.
 \subsection{Semi Tethered Jailbreak}
 \label{sec:JBSemiTethered}
 
-Bei einem \glqq Semi Tethered Jailbreak\grqq{} ist es möglich das iOS Device
-zu rebooten. Das System startet nicht in den DFU Mode, sondern es ist
-mit Einschränkung funktionsfähig. Safari, Mail, Cydia und alle Apps die über
-Cydia installiert wurden funktionieren nicht. Das ausführen einer schon
-installierten App ermöglicht es dem User, das iOS in einen normalen Zustand zu
-bringen. Danach ist das iOS Device vollständig funktionsfähig.
+Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device neugestartet werden. Das System startet nicht in den DFU Mode, sondern in einen eingeschränkt funktionsfähigen Modus. Safari, Mail, Cydia und alle Apps die via eines nicht von Apple autorisierten App Store installiert wurden, können nach einem Neustart nicht verwendet werden. Bei der Installation des Jailbreaks wird auch eine App am Device installiert, diese muss nach einem Neustart ausgeführt werden um das Device wieder in den selben Zustand zu versetzen, wie vor dem Reboot. Danach ist das iOS Device vollständig wieder funktionsfähig.
 
 \begin{description}
-\item[Ein Beispiel für einen \glqq Semi Tethered Jailbreak\grqq{} ist]~\par
+    \item[Ein Beispiel für einen Semi-Tethered Jailbreak ist]~\par
 	\begin{itemize}
         \item \textbf{SemiTether (Cydia package)}
     \end{itemize}
@@ -78,11 +63,9 @@ bringen. Danach ist das iOS Device vollständig funktionsfähig.
 % ------------- UnTethered Jailbreak--------------------
 \subsection{Untethered Jailbreak}
 \label{sec:JBUntethered}
-
-Bei einem \glqq untethered Jailbreak\grqq{} startet das iOS Device nach einem
-Reboot ohne weitere Hilfsmittel.  
+Mit einem \textbf{Untethered Jailbreak} ist das iOS Device nach einem Neustart des Systems voll funktionsfähig.
 \begin{description}
-\item[Einige Beispiele für \glqq untethered Jailbreaks\grqq{} sind]~\par
+\item[Einige Beispiele für Untethered Jailbreaks sind]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
         \item \textbf{Absinthe}
@@ -108,22 +91,20 @@ Im Durchschnitt veröffentlicht Apple sieben iOS Updates pro Jahr.
 \item[Die Software-Updates dienen dazu]~\par
 	\begin{enumerate}
 	    \item Die Sicherheitslücken des Betriebssystems zu schließen
-	    \item Neue Sicherheitsmechanismen für das Betriebssystem einzuführen
+	    \item Neue Sicherheitsmechanismen einzuführen
 	    \item Neue Sicherheitsarchitekturen für Applikationen bereitzustellen
 	\end{enumerate}
 \end{description}  
-Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 74 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 65 Minor-Updates. 
+Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 79 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 70  Minor-Updates. Siehe Figure \ref{fig:iOS Software Updates}.
 
 \begin{figure}[!ht]
         \centering
-                \includegraphics[scale=0.7]{Bilder/iOSUpdates}
+                \includegraphics[scale=0.7]{Bilder/iOSUpdates1}
         \caption{iOS Software Updates\cite{Apple[7]}}
         	\label{fig:iOS Software Updates}
 \end{figure}
 
-% ------ Hardcoded newpage -------
-\newpage
-Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iOS Version zu „jailbreaken“. Die „Bugs“, die ein Jailbreak ausnützt, sind meistens in mehreren iOS Versionen vorhanden. Nicht alle „Bugs“ werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices.
+Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die Bugs, die ein Jailbreak ausnützt sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Bugs werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreak veröffentlicht. Siehe Figure \ref{fig:iOS Jailbreak}.
 
 \begin{figure}[!ht]
         \centering
@@ -136,46 +117,49 @@ Die „Jailbreak-Community“ benötigt im Durchschnitt 36 Tage, um eine neue iO
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
-Damit ein Jailbreak auf einem iOS Device durchgeführt werden kann müssen Schritt für Schritt die iOS Sicherheitsschritte umgangen werden. Ab der iOS Version 8.1.3 sind für einen \glqq untethered Jailbreak\grqq{} vier Schritte notwendig.
+Um einen Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss Schritt für Schritt jeder einzelne Sicherheitsmechanismus des iOS ausgehebelt werden. Ab der iOS Version 8.1.3 müssen folgende Sicherheitsvorkehrungen umgangen werden um einen untethered Jailbreak durchzuführen.
 
-\begin{description}
-\item[Dies sind die vier iOS Sicherheitsmechanismen, die ein erfolgreicher Jailbreak umgehen muss]~\par
-	\begin{enumerate}
-	    \item Die Sandboxfunktionalität (siehe Kapitel: \ref{sec:Sandbox}) 
-	     \item Umgehen der zufälligen 
-	    \item Erhalten der \glqq root\grqq{} Rechte
-	    \item Das Patchen des Kernels
-	  \end{enumerate}
-\end{description} 
+\begin{enumerate}
+	    \item Secure Boot Chain (siehe Kapitel: \ref{sec:SecBootChain})
+	    \item ALSR (siehe Kapitel: \ref{sec:ASLR})
+	    \item MAC (siehe Kapitel: \ref{sec:MAC})
+	   \item Sandbox (siehe Kapitel: \ref{sec:Sandbox}) 
+\end{enumerate}
 
-\cite{TaiG[1]}
-\cite{TaiG[2]}
-\cite{TaiG[3]}
+Damit die Sicherheitsmechanismen überhaupt umgangen werden können, müssen Bugs im iOS gefunden werden. 
+\begin{enumerate}
+  \item \textbf{Einen oder mehrere Softwarefehler, die das Umgehen der iOS Sicherheitsmechanismen ermöglichen.}
+  \item \textbf{Einen oder mehrere Softwarefehler, die es dem Jailbreak ermöglichen Root-Rechte zu erhalten.}
+  \item \textbf{Einen oder mehrere Softwarefehler, die das Patchen des Kernels ermöglichen.}
+\end{enumerate}
+(vgl. \cite{TaiG[1], TaiG[2], TaiG[3]})
+
+Nur für einen Untethered Jailbreak ist das Patchen des Kernels notwendig.
 
 % ------------- Jailbreak Step 1 --------------------
-\subsection{Breaking out of the sandbox}
-\label{sec:JBStep1}
-Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden, welcher es erlaubt \glqq die Sandbox\grqq{} (siehe Kapitel: \ref{sec:Sandbox}) zu umgehen. 
+%\subsection{Breaking out of the sandbox}
+%\label{sec:JBStep1}
+%Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden, welcher es erlaubt \glqq die Sandbox\grqq{} (siehe Kapitel: \ref{sec:Sandbox}) zu umgehen. 
 
 % ------------- Jailbreak Step 2 --------------------
-\subsection{Obtaining arbitrary (unsigned) code execution}
-\label{sec:JBStep2}
+%\subsection{Obtaining arbitrary (unsigned) code execution}
+%\label{sec:JBStep2}
 
 % ------------- Jailbreak Step 3 --------------------
-\subsection{Obtaining root}
-\label{sec:JBStep3}
+%\subsection{Obtaining root}
+%\label{sec:JBStep3}
 
 % ------------- Jailbreak Step 4 --------------------
-\subsection{Patching the Kernel}
-\label{sec:JBStep4}
+%\subsection{Patching the Kernel}
+%\label{sec:JBStep4}
 
 %AFC -> /private/var/mobile/Media Verzeichnis un dem jeder Prozess lesen und schreiben darf Einstiegspunkt
 %/private/var/mobile/ ist homeverzeichnis für nicht root user
 %/private/var/run/mobile_image_mounter -> ../../../var/mobile/Media/Books/Purchases/mload 
 
 
-AFC \"Apple File Conduit\" ist ein Service welches es ermöglicht Files und Verzeichnisse mit dem Device über USB auszutauschen bzw erstellen. AFC wird von iTunes verwendet. 
-DDI ist ein Teil der SDK und enthält Tools und Framework. Weiters wurde das  DDI von Apple signiert und ist somit vor Veränderungen geschützt. 
+%AFC \glqq Apple File Conduit \grqq{} ist ein Service welches es ermöglicht Files und Verzeichnisse mit dem Device über USB auszutauschen bzw erstellen. AFC wird von iTunes verwendet. 
+%DDI ist ein Teil der SDK und enthält Tools und Framework. Weiters wurde das  DDI von Apple signiert und ist somit vor Veränderungen geschützt. 
 
 %Ersetzen des Development Disk Image (DDI) damit die  folgende Dateien ersetzt werden können. "/usr/lib/libmis.dylib" und "/usr/lib/xpcd_cache.dylib"
 

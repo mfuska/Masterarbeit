@@ -9,30 +9,24 @@
 %  Changed :  
 % 
 %----------------------------------------------------------------
-\chapter{Mobiles Betriebssystem von Apple: iOS}
+\chapter{Mobile Apple Betriebssystem iOS}
 \label{ch:iOS}
 %------------------------------------------------------------------------------
 %---------------------------------- iOS Grundlagen
 \section{iOS Grundlagen}
 \label{sec:iOSGrundlage}
 
-Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des
-Mac OS X. Darwin ist ein frei erhältliches Linux basiertes Betriebssystem.
-Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. 
-Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für
-das Mac OS X und dem mobilen Betriebssystem iOS.
+Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Mac OS X. Darwin ist ein frei erhältliches Linux basiertes Betriebssystem.Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für das Mac OS X und dem mobilen Betriebssystem iOS.
 \begin{figure}[htbp]
         \centering
                 \includegraphics[height=5cm]{Bilder/Chapter3_SystemArchitektur}
-        \caption{iOS Software Layer\cite{Apple[6]}}
+        \caption{iOS Software Layer (\cite{Apple[6]}, S. XXXXXXXXX)}
         	\label{fig:iOS Software Layer}
 \end{figure}
-Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der
-grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
+Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
   
 \begin{description}
-\item[Folgende \glqq Anforderungen\grqq{} werden an das iOS Software Layer
-Modell gestellt]~\par
+\item[Folgende \glqq Anforderungen\grqq{} werden an das iOS Software Layer Modell gestellt]~\par
 	\begin{itemize}
 		\item Sicherstellungen der \textbf{Datenintegrität}
 		\item Gewährleistung der \textbf{Informationsvertraulichkeit}
@@ -43,21 +37,16 @@ Modell gestellt]~\par
 
 %------------------------------------------------------------------------------
 %---------------------------------- iOS Software Layer
-
 \section{iOS Software Layer}
 \label{sec:iOSSWLayer}
 
 %---------------------------------- Core OS
-
 \subsection{Core OS Layer}
 \label{sec:CoreLayer}
 
-Der Core OS Layer beinhaltet alle \glqq low-level\grqq{} Features und auf
-diesen bauen alle anderen Frameworks auf. iOS Applikationsentwickler kommen mit
-diesem Layer nur dann in Berührung, wenn sie sich mit der Sicherheit und mit
-Hardware-Kommunikation beschäftigen. Dieser Layer stellt folgende
+Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq low-level Features\grqq{}} und auf diesen bauen alle anderen \textit{\glqq Frameworks\grqq{}} auf. iOS Applikationsentwickler kommen mit diesem Layer nur dann in Berührung, wenn sie sich mit der Sicherheit und mit Hardware-Kommunikation beschäftigen. 
 \begin{description}
-	\item[\glqq Frameworks\grqq{}]zu Verfügung~\par
+	\item[Core OS Layer Frameworks]~\par
 	\begin{itemize}
 		\item Accelerate Framework
 		\item Core Bluetooth Framework
@@ -74,23 +63,23 @@ Hardware-Kommunikation beschäftigen. Dieser Layer stellt folgende
 %---------------------------------- Core Service
 \subsection{Core Service Layer}
 \label{sec:CoreServiceLayer}		
-Der \glqq Core Service Layer\grqq{} beinhaltet die fundamentalen System
-Service. Dieser Layer wird unterteilt in \glqq high-level\grqq{} Feature und
-Core Services Frameworks.
+Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Dieser Layer wird unterteilt in \textit{\glqq high-level Feature\grqq{}} und Core Services Frameworks.
+
 \begin{description}
-	\item[\glqq high-level\grqq{} Feature]~\par
+	\item[\textbf{High-level Feature dieses Layers}]~\par
 	\begin{itemize}
-		\item Peer-to-Peer Services
-		\item iCloud Storage
-		\item Block Objects
-		\item Data Protection
-		\item File-Sharing Support
-		\item Grand Central Dispatch
-		\item In-App Purchase
-		\item SQLite
-		\item XML Support 
+		\item \textbf{Peer-to-Peer Services}
+		\item \textbf{iCloud Storage}
+		\item \textbf{Block Objects}
+		\item \textbf{Data Protection}
+		\item \textbf{File-Sharing Support}
+		\item \textbf{Grand Central Dispatch}
+		\item \textbf{In-App Purchase}
+		\item \textbf{SQLite}
+		\item \textbf{XML Support} 
 	\end{itemize}
-	\item[\glqq Core Services Framework\grqq{}]~\par
+	
+	\item[\textbf{Core Services Layer Frameworks}]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Accounts Frameworks
@@ -122,26 +111,23 @@ Core Services Frameworks.
 	\end{itemize}
 	\end{multicols}
 \end{description}
+
 (vgl. \cite{Apple[6]}, S.36-48)
 %---------------------------------- Media Layer
 \subsection{Media Layer}
 \label{sec:MediaLayer}		
-In diesem Layer sind alle Technologien zur Darstellung von Grafik, Video und
-Sound enthalten. Dieser Layer ist verantwortlich für das Design und den Sound
-der iOS Applikationen.
-Dieser Layer stellt folgende
-\begin{description}
-	\item[\glqq Technologien\grqq{}]zur Verfügung~\par
-	\begin{itemize}
-		\item Graphics Technologies
-		\item Audio Technologies
-		\item Video Technologies
-		\item AirPlay
-	\end{itemize}
-\end{description}
+In diesem Layer sind alle Technologien zur Darstellung von Grafik, Video und das abspielen von Sound enthalten. Dieser Layer ist verantwortlich für das Design und den Sound der iOS Applikationen. 
 
 \begin{description}
-	\item[Folgende Frameworks beinhaltet dieser Layer]~\par
+	\item[Dieser Layer stellt folgende Technologien zur Verfügung]~\par
+    \begin{itemize}
+		\item \textbf{Graphics Technologies}
+		\item \textbf{Audio Technologies}
+		\item \textbf{Video Technologies}
+		\item \textbf{AirPlay}
+    \end{itemize}
+
+	\item[Media Layer Frameworks]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Assets Library Framework
@@ -172,16 +158,14 @@ Dieser Layer stellt folgende
 \subsection{Cocoa Touch Layer}
 \label{sec:CocoaTouchLayer}
 Enthält die wichtigsten Frameworks um iOS Applikationen zu entwickeln. Dieser
-Layer stellt die Basis Applikation Infrastruktur und folgende
-\begin{description}
-\item[\glqq Key Technologien\grqq{}]zu Verfügung ~\par  
+Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien zur Verfügung
+
 	\begin{itemize}
-		\item Multitasking
-		\item touch-based input
-		\item push notification
-		\item \glqq high-level\grqq{} System Service
+		\item \textbf{Multitasking}
+		\item \textbf{Touch-based Input}
+		\item \textbf{Push Notification}
+		\item \textbf{High-level System Service}	
 	\end{itemize}
-\end{description}
 
 \begin{description}
 \item[Folgende Features sind in diesem Layer enthalten]~\par
@@ -203,10 +187,8 @@ Layer stellt die Basis Applikation Infrastruktur und folgende
 		\item Standard System View Controllers
          \end{itemize}
 	\end{multicols}
-\end{description}
-
-\begin{description}
-	\item[Folgende Frameworks beinhaltet dieser Layer]~\par
+	
+	\item[Cocoa Touch Layer Frameworks]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Address Book UI Framework
@@ -257,13 +239,12 @@ Der Sicherheitsmechanismus der iOS Device unterteilt sich in zwei Ebenen.
       					\end{enumerate}
 			\end{enumerate}
    		\end{description}
-Die iOS Sicherheit passiert auf der Kombination von Software, Hardware und
-Services um ein maximum an Sicherheit zu erreichen. (vgl. \cite{Apple[4]}, S.4)
+Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Service um ein maximum an Sicherheit zu erreichen. (vgl. \cite{Apple[4]}, S.4)
 	\end{minipage}
 	\hfil
 	\begin{minipage}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{Bilder/Chapter3_SecArchitektur}
-		\caption {iOS Security Architektur\cite{Apple[4]}}
+		\caption {iOS Security Architektur (\cite{Apple[4]}, S.4)}
         \label{fig:iOS Security Architektur}
 	\end{minipage}
 \end{figure}
@@ -271,25 +252,17 @@ Services um ein maximum an Sicherheit zu erreichen. (vgl. \cite{Apple[4]}, S.4)
 %---------------------------- System Security
 \subsection{System Security}
 \label{sec:SystemSec}
-Apple hat die System Security so entwickelt, dass Software und Hardware für
-jedes iOS Device sicher sind, über alle Kernkomponenten des iOS Devices.
-Dies beinhaltet den sicheren Boot Prozess (inklusive Boot Chain), die Software
-Updates und die \glqq Secure Enclave\grqq. Alle die Maßnahmen dienen dazu, um
-zu gewährleisten, dass nur \glqq vertrauenswürdige Applikation \grqq{} auf dem
-iOS Device ausgeführt werden können.\\
-Die enge Verbindung zwischen Hardware und Software der iOS Geräte
-gewährleistet, dass alle Komponenten des Systems \glqq vertrauenswürdig\grqq{}
-sind, sowohl die Software als auch die Hardware.
- (vgl. \cite{Apple[4]}, S.5)
+Die \textbf{System Security} von iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu, sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
+
+Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (vgl. \cite{Apple[4]}, S.5)
 \begin{description}
-\item[Apple führt unter dem Kapitel \glqq System Security\grqq{}  folgende
-Features an:]~\par
+\item[Apple führt unter dem Kapitel System Security folgende Features an]~\par
 	%\begin{multicols}{2}
 	\begin{itemize}
 		\item Secure Boot Chain (siehe Kapitel:\ref{sec:SecBootChain})
- 		\item System Software Authorization
- 		\item Secure Enclave
- 		\item Touch ID
+ 		\item System Software Authorization (siehe Kapitel:\ref{sec:SigningProcess})
+ 		\item Secure Enclave (Siehe Kapitel: \ref{sec:HardwareSecProtection})
+ 		\item Touch ID (Siehe Kapitel: \ref{sec:Passcode})
         \end{itemize}
 	%\end{multicols}
 \end{description}
@@ -297,190 +270,195 @@ Features an:]~\par
 
 %--------------------------- Encryption und Daten Sicherheit
 \subsection{Encryption und Daten Sicherheit}
-Das iOS unterstützt standardmäßig eine Verschlüsselung und
-Datenschutzfunktionen für persönliche- und Unternehmensdaten.
-Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst wenn
-ein Teil des Betriebsystem kompromittiert ist, die anderen Bereiche des
-Devices, weiterhin sicher vor unerlaubten Zugriff sind. \\
-Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet ist, dass
-vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS
-Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices
-die Daten sicher sind.
-Alle diese Features sind in der Standardkonfiguration eingeschalten.
-
 \label{sec:DataEnc}
+
+Das iOS unterstützt standardmäßig eine Verschlüsselung und verschiedenste Datenschutzfunktionen für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst, wenn ein Teil des Betriebsystem kompromittiert ist, die anderen Bereiche des Devices, weiterhin sicher vor unerlaubten Zugriff sind. \par
+Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration aktiv gesetzt.
+
+
 \begin{description}
-\item[\parbox{\textwidth} {Apple führt unter dem Kapitel \glqq Encryption und
-Daten Sicherheit\grqq{} folgende Features an:}]~\par
-	\begin{multicols}{2}
+\item[\parbox{\textwidth} {Apple führt unter dem Kapitel Encryption und Daten Sicherheit folgende Features an}]~\par
 	\begin{itemize}
-		\item Hardware Security Features
- 		\item File Data Protection
- 		\item Passcodes
- 		\item Data Protection Classes
-		\item Keychain Data Protection
-		\item Access to Safari saved Password
-		\item Keybags
-		\item Security Certification and programs
-        \end{itemize}
-	\end{multicols}
+		\item \textbf{Hardware Security Features} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
+ 		\item \textbf{File Data Protection} (Siehe Kapitel: \ref{sec:FileDataProtection})
+ 		\item \textbf{Passcodes} (Siehe Kapitel: \ref{sec:Passcode})
+ 		\item \textbf{Data Protection Classes}  (Siehe Kapitel: \ref{sec:HardwareSecProtection})
+		\item \textbf{Keychain Data Protection} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
+	\end{itemize}
 \end{description}
 (vgl. \cite{Apple[4]}, S.10-17)
 
 %------------------------------ Applikation Security
 \subsection{Applikation Security}
 \label{sec:AppSec}
-Applikationen sind das größte Sicherheitsrisiko für ein Betriebssystem. Das
-Verhalten des Betriebssystems kann durch Applikationen negativ beeinflusst
-werden.
-Es kann die Sicherheit und die Verfügbarkeit des iOS Devices beeinträchtigen. 
-Des weiter kann die Integrität des Benutzerdaten durch unsicher Applikationen
-gefährdet werden.
+Die Applikationen beinhalten das größte Sicherheitsrisiko für Betriebssysteme. Das Verhalten des Betriebssystems kann eine Applikationen negativ beeinflusst werden. Es kann die Sicherheit und die Verfügbarkeit des iOS Devices negativ beeinträchtigen. Des weiter kann die Integrität des Benutzerdaten durch unsicher Applikationen gefährdet werden.
 \begin{description}
-\item[\parbox{\textwidth} {Apple führt unter dem Kapitel \glqq Applikation
-Security\grqq{} folgende Features an:}]~\par
-	\begin{multicols}{2}
+\item[\parbox{\textwidth} {Apple führt unter dem Kapitel Applikation Security folgende Features an}]~\par
 	\begin{itemize}
-		\item App Code signing
-		\item Runtime process security
-		\item Extensions
-		\item App Groups
-		\item Data Protection in apps
-		\item Accessories
-		\item HomeKit
-		\item HealthKit
-		\item Apple Watch
+		\item \textbf{App Code signing} (Siehe Kapitel: \ref{sec:SigningProcess}) 
+		\item \textbf{Runtime process security} (Siehe Kapitel: \ref{sec:MemoryProtection})
+		\item \textbf{Extensions}
+		\item \textbf{App Groups} (Siehe Kapitel: \ref{sec:Sandbox})
+		\item \textbf{Data Protection in Apps} (Siehe Kapitel: \ref{sec:SystemSec})
+
         \end{itemize}
-	\end{multicols}
 \end{description}
 (vgl. \cite{Apple[4]}, S.18-26)
 
 %------------------------------ Network Security
 \subsection{Network Security}
 \label{sec:NetworkSec}
-Die Netzwerk Sicherheit ist ein wichtiger Bestandteil des Sicherheitskonzept
-von Apple und ergänzt die integrierten iOS Sicherheitsmechanismen.
-Die integrierten Sicherheitsmechanismen die iOS Devices dienen dazu um die
-Daten auf dem Device zu schützen.
-Das iOS Device muss in der Lage sein, Weltweit auf die Daten zugreifen zu
-können. Dieser Zugriff muss so abgesichert sein, dass die Übertragung der Daten
-sicher ist.
-Es werden vom iOS Standard Netzwerkprotokolle für eine authentifizierte,
-autorisierte und verschlüsselte Kommunikation verwendet.
+Die \textbf{ Netzwerk Sicherheit} ist ein wichtiger Bestandteil des Sicherheitskonzept und ergänzt die integrierten iOS Sicherheitsmechanismen. Die integrierten Sicherheitsmechanismen des mobilen Betriebssystem von Apple dienen dazu, die Daten auf dem Device zu schützen. Die Anforderungen an ein mobiles Device haben sich in den letzten Jahren dahin gehend verändert, dass der Zugriff auf externe Daten geschützt vorgenommen werden kann. Dieser Zugriff muss so abgesichert sein, dass die Datenübertragung sicher ist und die Usability des Produktes nicht eingeschränkt ist. Es werden Netzwerksicherheit Protokolle und Architekturen für eine authentifizierte, autorisierte und verschlüsselte Kommunikation verwendet.
 \begin{description}
-\item[\parbox{\textwidth} {Apple führt unter dem Kapitel \glqq Network
-Security\grqq{} folgende Netzwerksicherheit Protokolle und Architekturen
-an:}]~\par
+\item[\parbox{\textwidth} {Ein iOS Device verfügt über folgende Netzwerksicherheit Protokolle und Architekturen
+an}]~\par
 	\begin{itemize}
-		\item Virtual Private Network (VPN)
- 		\item Transport Layer Security (TLS) (siehe Kapitel:\ref{sec:TLS})
-		\item Single Sign-on
+		\item \textbf{Virtual Private Network (VPN)}
+ 		\item \textbf{Single Sign-on}
+ 		\item \textbf{Internet Protocol Security (IPsec)}
+ 		\item \textbf{Transport Layer Security (TLS)} %(siehe Kapitel:\ref{sec:TLS})
+		\item \textbf{Datagram Transport Layer Security (DTLS)}
         \end{itemize}
 \end{description}
-Des weiter werden die neuersten Standards für WLAN, Bluetooth und
-Mobilfunkverbindungen verwendet. (vgl. \cite{Apple[4]}, S.27-30)
+Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbindungen verwendet. (vgl. \cite{Apple[4]}, S.27-30)
 
 %------------------------------ Apple Pay ----------------------------------
 \subsection{Apple Pay}
 \label{sec:ApplePay}
 
+\textbf{Apple Pay} ist das interne Apple Zahlungssystem für mobile Geräte. Die Kommunikation findet über NFC statt. Neben NFC ist die App \textit{\glqq Wallet\grqq{}} Teil des Apple Pay Produkt.
+
 \begin{description}
-\item[\parbox{\textwidth} {Folgende Komponenten gehören zum \glqq Apple
-Pay\grqq{} Produkt}]~\par
+\item[\parbox{\textwidth} {Folgende Komponenten gehören zu dem Apple Pay Produkt}]~\par
 	\begin{itemize}
-		\item Secure Element \\
-Die Secure Element erfüllen den Industriestandard . Der zertifizierte Chips
-werden ein einer Java Card Plattform ausgeführt.
-		Diese Elemente erfüllen Finanzindustrie Standard. 
- 		\item Near Field Communication (NFC ) Controller \\
-Der NFC Controller und die NFC Kommunikation Protokolle sind für die
-Kommunikation zwischen den Anwendungsprozessoren und Secure Elementen
-zuständig.
- 		\item Wallet \\
-Wallet ist Apples Applikation,  welche für die Verwaltung der Kreditkarten und
-Debitkarten verantwortlich ist. Diese Applikation ist für die Ausführung der
-Finanztransaktionen verwantwortlich.
- 		\item Secure Enclave \\
-Die \glqq Secure Enclave\grqq{} ist für den Authentifizierungsprozess einer
-Finanztransaktion zuständig. Des weiter werden in der  \glqq Secure
-Enclave\grqq{}  die Fingerabdrücke für die Touch-ID gespeichert.
- 		% \item Apple Pay Servers \\		
+		\item \textbf{Secure Element:} \\
+        Alle Secure Element erfüllen den Industriestandard. Der zertifizierte Chip wird ein einer Java Card Plattform ausgeführt. Diese Elemente erfüllen den finanzindustrie Standard. 
+ 		\item \textbf{Near Field Communication (NFC) Controller:} \\
+        Der NFC Controller und die NFC Kommunikation Protokolle sind für die Kommunikation zwischen den Anwendungsprozessoren und Secure Elementen zuständig.
+ 		\item \textbf{Wallet:} \\
+        Die Wallet App ist für die Verwaltung der Kreditkarten und Debitkarten verantwortlich. 
+            \begin{description}
+                \item[\parbox{\textwidth} {Diese App ermöglicht es dem User}]~\par
+                \begin{itemize}
+                    \item die Kartendaten,
+                    \item den Kartenaussteller,
+                    \item die durchgeführten Transaktionen der einzelnen Karten und
+                    \item vieles mehr
+                \end{itemize}
+            \end{description} 
+        \textbf{abzuspeichern und anzuzeigen.}
+        
+ 		\item \textbf{Secure Enclave:}\\
+        Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des weiter werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
         \end{itemize}
 \end{description}
 (vgl. \cite{Apple[4]}, S.31-37)
+
 %------------------------------ Internet services
 \subsection{Internet Services}
 \label{sec:InternetServices}
 
-Apple hat sehr stabile Applikationen für den Benutzer von iOS Geräten
-entwickelt wie zum Beispiel: iMessage, Facetime, iCloud und iCloud Keychain. 
+Apple hat sich die Prämisse gestellt stabile Applikationen mit guter Benutzbarkeit für den Benutzer zu entwickeln. 
+\begin{description}
+    \item[\parbox{\textwidth} {Beispiele für solche internen iOS Apps sind }]~\par
+    \begin{itemize}
+       \item iMessage,
+       \item Facetime,
+       \item iCloud und 
+       \item iCloud Keychain.
+    \end{itemize}
+\end{description} 
 
-Für die Internet Dienste stehen den Entwicklern die selben
-Sicherheitsmechanismen zur Verfügung. Natürlich gelten für Internet Dienste die
-selben Sicherheitsziele, wie für die Apple internen Produkte. 
-Diese Ziele beinhalten den sicheren Umgang mit den persönlichen Daten der
-Benutzer, sowie den Schutz vor nicht autorisierten Zugriff auf die persönlichen
-Daten des Benutzers und anderer Dienstleistungen.
-Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne
-die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (vgl.
-\cite{Apple[4]}, S.38-49)
+Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste die selben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}}, sowie \textit{\glqq den Schutz vor nicht autorisierten Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (vgl. \cite{Apple[4]}, S.38-49)
 
 \begin{description}
-    \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple \glqq
-        Internet Service \grqq{}}]~\par
+    \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple Internet Service}]~
     \begin{itemize}
-        \item Apple ID
-        \item iCloud
-        \item iCloud Keychain
-        \item Continuity \\
-        Darunter versteht Apple, dass Verteilen von verschieden Informationen
-über mehrere iOS Devices.
+        
+        \item \textbf{Apple-ID:}\\
+        Die \textbf{Apple-ID} ist Teil des persönliche Apple-Accounts, der zusammen mit dem \textit{\glqq Password\grqq{}} den Zugriff auf die Apple Service ermöglicht. 
+        
+        \item \textbf{iCloud:} \\
+        Die \textbf{iCloud} ist der Apple Online-Dienst zum speichern und synchronisieren von Daten/Konfigurationen. 
+        
+        \item \textbf{iCloud Keychain:}\\
+        Die \textbf{iCloud Keychain} ist das Apple Online \textit{\glqq Password Management System\grqq{}}. \begin{description}
+                \item[\parbox{\textwidth} {Das Password Management System dient zum Speichern von}]~\par
+                    \begin{itemize}
+                        \item systemübergreifenden Passwörtern,
+                        \item Login Daten,
+                        \item WLAN-Zugangsdaten und 
+                        \item Kreditkartendaten.
+                    \end{itemize}
+                \end{description} 
+ 
+        \item \textbf{Continuity:}\\
+        Darunter versteht Apple, dass Verteilen von Informationen und Services über mehrere iOS Devices. 
+        \begin{description}
+        \item[\parbox{\textwidth} {Beispiele für Continuity sind}]~\par
+            \begin{itemize}
+                \item Die Anrufannahme auf unterschiedlichen iOS Devices
+                \item Die Möglichkeit Nachrichten auf unterschiedlichen iOS Devices zu lesen und zuschreiben.
+                \item Das Verteilen von Dateien auf iOS Devices.
+            \end{itemize}
+        \end{description}  
     \end{itemize}
 \end{description}
 
 %------------------------------ Device Controls
 \subsection{Device Controls}
 \label{sec:DeviceControl}
-Apple unterstützt für iOS Geräte flexible Sicherheitsrichtlinien und
-Konfigurationen, welche leicht umzusetzen und zu verwalten sind. Für
-Unternehmen
-bedeutet dies, dass vertrauliche Unternehmensdaten geschützt werden. Es
-ermöglicht Unternehmen Mitarbeitern zu erlauben ihr eigenes iOS Devices zu
-verwenden (BYOD). 
+
+Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe flexible Sicherheitsrichtlinien und Konfigurationen umzusetzen. Eine weitere Rahmenbedingung ist, dass die Konfiguration der Geräte leicht umsetzbar und verwaltbar ist.\par 
+ Für Unternehmen bringt dies den Vorteil mit sich, dass Sicherheitsrichtlinien und Konfigurationen auf mehrere iOS Geräte verteilt werden können. Dadurch können Firmen sicherstellen, dass alle Geräte die selben Einstellungen besitzen. Des weiter ermöglicht es Mitarbeiter ihre eigenen Geräte im Unternehmen zu verwenden (BYOD). 
 
 \begin{description}
-    \item[\parbox{\textwidth} {Dies sind die Mainfeature von Apples
-\glqq Device Control\grqq{} Service} ]~\par
+    \item[\parbox{\textwidth} {Dies sind die Mainfeature des Apple Device Control Service} ]~\par
     \begin{multicols}{2}
     \begin{itemize}
-        \item Passcode protection
+        \item Passcode Sicherheit
         \item iOS pairing model
-        \item Configuration enforcement
-        \item Mobile device management (MDM)
+        \item Konfigurationsverteilung
+        \item Mobile Device Management(MDM)
         \item Device Enrollment Program
         \item Device restriction
         \item Apple Configurator
         \item Supervised-only restrictions
         \item Remote wipe
-        \item Find My iPhone and Acticaton Lock
+        \item Find My iPhone and 
+        \item Activation Lock
     \end{itemize}
     \end{multicols}
 \end{description}
 (vgl. \cite{Apple[4]}, S.50-55)
 %----------------------------- Privacy Controls
 
-\subsection{Privacy Controls}
+\subsection{Datenschutzkontrolle}
 \label{sec:PrivacyControls}
-iOS verfügt über zahlreiche integrierte Steuerelemente und Optionen, die
-es dem Benutzer ermöglichen zu entscheiden, wie und wann Applikationen
-Informationen und / oder Daten verwenden dürfen. 
+Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuerelemente und Optionen. Diese iOS Einstellungen ermöglichen es dem Benutzer zu entscheiden, wie mit seinen persönlichen Daten umgegangen werden soll. Dies inkludiert welche App Zugriff auf welche Informationen bekommen soll. 
+
 \begin{description}
-    \item[\parbox{\textwidth} {Dies sind die Mainfeature von Apples
-\glqq Privacy Controll\grqq{} Service} ]~\par
+    \item[\parbox{\textwidth} {Folgende Daten werden für die Ortung des Users verwendet (Location Service) }]~\par
     \begin{itemize}
-        \item Location Service
-        \item Access to personal Data
-        \item Privacy policy
+        \item GPS Daten,
+        \item Bluetooth Daten,
+        \item öffentliche WLAN-Hotspots
+        \item Mobilfunkmasten
     \end{itemize}
+    Der User hat die Möglichkeit mit Hilfe von iOS Einstellungen zu definieren, welche App welche Location Daten verwenden kann.
+    \item[\parbox{\textwidth} {Zu den persönlichen User-Daten zählen}]~\par
+    \begin{multicols}{2}
+    \begin{itemize}
+        \item Kontakte
+        \item Kalender
+        \item Erinnerungen
+        \item Fotos
+        \item Aktivitätsdaten
+        \item Accounts sozialer Netzwerke
+        \item Mikrofon
+        \item Kamera
+        \item Bluetooth-Freigabe
+    \end{itemize}
+      \end{multicols}
 \end{description}
-(vgl. \cite{Apple[4]}, S.56)
+(vgl. (\cite{Apple[4]}, S.56), (\cite{Apple[8]}, S.49))
