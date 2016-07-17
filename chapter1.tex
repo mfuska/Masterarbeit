@@ -13,14 +13,14 @@
 \chapter{Einleitung}
 \label{ch:intro}
 
-Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit der Smartphones zunehmend an Bedeutung gewinnen muss.\par Am 29.Juni 2007 wurden das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq Root-Rechte\grqq{}}  für das Betriebssystem zu erhalten. Der \textit{\glqq Root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem, unautorisierte Software auf dem iOS Device installieren.\par 
+Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit und Stabilität der Smartphones zunehmend an Bedeutung gewinnen muss.\par Am 29.Juni 2007 wurden das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq Root-Zugriffsrechte\grqq{}} für das Betriebssystem zu erhalten. Der \textit{\glqq Root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem, unautorisierte Software auf dem iOS Device installieren.\par 
 
 Es gibt für \textit{\glqq gejailbreakte\grqq{}} iOS Devices, neben dem offiziellen App Store (Apple), zwei weitere App Stores
 \begin{itemize}
     \item Cydia
     \item Taig
 \end{itemize}
-Diese beiden App Stores unterliegen nicht der Sicherheitsüberprüfung von Apple. Der User muss sich über die möglichen Konsequenzen Bewusstsein, wenn er eine Applikation aus einem nicht offiziellen App Store installiert. Neben Malware, die direkt in der heruntergeladen und installierten Applikation eingebettet sein kann, ermöglichen Programme wie 
+Diese beiden App Stores unterliegen nicht der Sicherheitsüberprüfung von Apple. Der User muss sich über die möglichen Konsequenzen bewusst sein, wenn er eine Applikation aus einem nicht offiziellen App Store installiert. Neben Malware, die direkt in der heruntergeladen und installierten App eingebettet sein kann, ermöglichen Programme wie 
 \begin{itemize}
     \item SSH Dämon,
     \item Terminalprogramm,
@@ -30,46 +30,50 @@ weitere Angriffsvektoren für \textit{\glqq Hacker\grqq{}}.
 
 Ein Jailbreak nutzt \textit{\glqq Bugs\grqq{}} im iOS aus und umgeht so die Sicherheitsmaßnahmen von Apple. Für Apple bedeutet jeder Jailbreak ein Aufzeigen von Sicherheitsschwächen des Apple Betriebssystems. Durch den öffentlichen Druck und die Möglichkeit, dass diese Sicherheitsmängel für Angriffe ausgenutzt werden könnten, wird Apple immer wieder gezwungen, Zeit und Geld in die Verbesserung der iOS Sicherheit zu investieren. 
 
-Am 21.September 2015 wurde von der Firma \textit{\glqq Zerodium\grqq{}} ein Preisgeld von einer Million U.S Dollar für einen \textit{\glqq zero day bug\grqq{}} für die iOS Version 9.x ausgeschrieben. Ziel dieser Ausschreibung war es, einen Remotezugriff zu erhalten. Folgende Sicherheitsmechanismen des iOS Devices mussten durch den Jailbreak umgangen werden können
-\begin{enumerate}
-    \item ASLR, 
-    \item Sandbox,
-    \item Root Zugriff, 
-    \item Code Signing, 
-    \item und der Secure Bootchain.
-\end{enumerate}
+Am 21.September 2015 wurde von der Firma \textit{\glqq Zerodium\grqq{}} ein Preisgeld von einer Million U.S Dollar für einen \textit{\glqq zero day bug\grqq{}} für die iOS Version 9.x ausgeschrieben. Das Ziel dieser Ausschreibung war es, einen System Remote-Zugriff zu erhalten. 
+\begin{description}
+    \item[\parbox{\textwidth} {Folgende iOS Sicherheitsmechanismen mussten durch diesen Jailbreak umgangen werden}]~\par
+    \begin{enumerate}
+        \item ASLR, 
+        \item Sandbox,
+        \item Root Zugriff, 
+        \item Code Signing, 
+        \item und der Secure Boot Chain.
+    \end{enumerate}
+\end{description} 
+
 Dieser unerlaubte Zugriff auf das Smartphone musste vor dem User verborgen bleiben. Diese Ausschreibung zeigt, dass nur mehr sehr wenige Menschen die Fähigkeiten besitzen, Sicherheitslücken des mobilen Betriebssystems von Apple auszunützen. Am ersten November 2015 endete die Ausschreibung und es wurde bekanntgegeben, dass das Preisgeld einmal ausbezahlt wurde. 
 
-Am 29.September 2015 nahm Apple Stellung  zu den \textit{\glqq backdoor\grqq{}} Gerüchten. Laut Aussage von Apple gibt es ab der iOS Version 8 keine Möglichkeit mehr, an die \textit{\glqq Cleartext Userdaten\grqq{}} zu gelangen. Apple begründet dies in ihrer Aussendung so:
+Am 29.September 2015 nahm Apple Stellung  zu den \textit{\glqq backdoor\grqq{}} Gerüchten in der Presse. Laut Aussage von Apple gibt es ab der iOS Version 8 keine Möglichkeit mehr, an die \textit{\glqq Cleartext Userdaten\grqq{}} eines Devices zu gelangen. Apple begründet dies in ihrer Aussendung so:
 \begin{enumerate}
-    \item Es gibt für Apple keine Möglichkeit, den Passcode des iOS Devices zu umgehen.
-    \item Die Verschlüsselungskeys werden von Apple nicht mehr gespeichert.
+    \item \textbf{Es gibt für Apple keine Möglichkeit, den Passcode des iOS Devices zu umgehen.}
+    \item \textbf{Die Verschlüsselungskeys werden von Apple nicht mehr gespeichert.}
 \end{enumerate}
-Diese Ausgabe wird durch einen weiteren Fall untermauert. Das FBI forderte im Dezember 2016 Apple auf, eine iOS Device zu entsperren. Das FBI benötigte Zugriff zu den Userdaten des Gerätes. Selbst die mit diesem Fall vertrauten Gerichte, konnten Apple nicht gezwingen, das iPhone zu entsperren. Zur Zeit arbeitet der US Kongress an einem neuem Gesetzt, in dem festgelegt werden soll, wie mit solchen Fällen umgegangen wird. Teil dieser Arbeit wird es sein, festzulegen, ob Firmen wie Apple gezwungen werden können, \textit{\glqq Backdoors\grqq{}} in ihrer Software zu implementieren. Dies würde es  staatlichen Organisation erleichtern Zugriff auf die Daten der User erhalten, dies hat den Beigeschmack, dass dieses Backdoor auch von jedem anderen benutzt werden kann, sobald dieses Backdoor entdeckt werden würde.
+Diese Ausgabe wird durch einen weiteren Fall untermauert. Das FBI forderte im Dezember 2016 Apple auf, dem FBI zu helfen und eine iOS Device zu entsperren. Das FBI benötigte einen Zugang zu den Userdaten des Gerätes. Selbst die in diesem Fall vertrauten Gerichte, konnten Apple nicht verpflichten, das iPhone zu entsperren. Zur Zeit arbeitet der US Kongress an einem neuem Gesetzt, in dem festgelegt werden soll, wie mit solchen Fällen umgegangen werden soll. Ein Teil dieser Arbeit wird es sein, festzulegen, ob Firmen wie Apple gezwungen werden können, \textit{\glqq Backdoors\grqq{}} in ihrer Software zu implementieren. Dies würde es staatlichen Organisation erleichtern, Zugriff auf die Daten von Usern erhalten, dies hat den Beigeschmack, dass dieses Backdoor auch von jedem anderen benutzt werden kann, sobald dieser, das Backdoor entdeckt würde.
 
 \section{Motivation }
 \label{sec:IntroMotivation}
-Das iPhone ist nun seit über sechs Jahren mein ständiger Begleiter geworden, sowohl im privaten als auch im beruflichen Umfeld. Die unzureichende Möglichkeit das iPhone meinen Bedürfnissen anzupassen, war ausschlaggebend für mich, mich mit dem Thema iOS Jailbreak auseinander zusetzten. 
-Nach der Installation des Jailbreaks sollten die klassischen Ziele der Informationssicherheit 
+Das iPhone ist nun seit über sechs Jahren mein ständiger Begleiter, sowohl im privaten als auch im beruflichen Umfeld. Die unzureichende Möglichkeit das iPhone meinen Bedürfnissen anzupassen, war ausschlaggebend für mich, mich mit dem Thema iOS Jailbreak auseinander zusetzten. 
+Für mich ist weiters wichtig, dass nach der Installation eines Jailbreaks die klassischen Ziele der Informationssicherheit
 \begin{enumerate}
-    \item \textbf{Integrität,}
-    \item \textbf{Vertraulichkeit und} 
-    \item \textbf{Verfügbarkeit der Daten,}
+    \item die \textbf{Integrität,}
+    \item die \textbf{Vertraulichkeit} 
+    \item und die \textbf{Verfügbarkeit der Daten,}
 \end{enumerate}
-sowie die Stabilität des System erhalten bleiben.
+sowie die \textbf{Stabilität des System} erhalten bleiben.
 
 
 \section{Aufbau dieser Arbeit}
 \label{sec:IntroAufbau}
-In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \ref{ch:intro}} befasst sich mit einer allgemeinen Beschreibung des Themas, unteranderem gibt einen Überblick bzw. Einblick in die weiteren Kapiteln dieser Arbeit.
+In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \ref{ch:intro}} befasst sich mit einer allgemeinen Beschreibung des Themas, unteranderem gibt es einen Überblick bzw. Einblick in die weiteren Kapiteln dieser Arbeit.
 
-\paragraph{Im Kapitel \ref{ch:DF}} werden die grundlegenden Begriffe und Methoden der digitalen Forensik beschreiben. Es werden vor allem Möglichkeiten beschrieben wie Cleartext-Daten eines iOS Device extrahierte werden können.
+\paragraph{Im Kapitel \ref{ch:DF}} werden die grundlegenden Begriffe und Methoden der digitalen Forensik beschreiben. Es werden vor allem die Möglichkeiten angeführt, wie die Cleartext-Daten eines iOS Device extrahierte werden können.
 
-\paragraph{Im Kapitel \ref{ch:JB}} werden die unterschiedlichen Arten von Jailbreaks beschrieben, sowie statistische Aufbereitung zu dem Thema.
+\paragraph{Im Kapitel \ref{ch:JB}} werden die unterschiedlichen Arten von Jailbreaks beschrieben, sowie statistische Aufbereitung zu diesem Thema.
 
-\paragraph{Im Kapitel \ref{ch:iOS}} wird das mobile Betriebssystem von Apple im Detail beschrieben. Es wird auf die Betriebssystemanforderungen, auf die unterschiedlichen Layer des iOSs sowie die iOS Architektur eingegangen. 
+\paragraph{Im Kapitel \ref{ch:iOS}} wird das mobile Betriebssystem von Apple im Detail beschrieben. Es werden die Betriebssystemanforderungen auf den unterschiedlichen Layer des mobilen Betriebssystem von Apple eingegangen. Die iOS Architektur wird in diesem Kapitel im Detail erklärt. 
 
-\paragraph{Im Kapitel \ref{ch:iOSSicherheitsKonzepte}} werden die einzelnen iOS Sicherheitsmechanismen beschrieben die von Apple im Laufe der Jahre implementiert worden sind.
+\paragraph{Im Kapitel \ref{ch:iOSSicherheitsKonzepte}} werden die einzelnen iOS Sicherheitsmechanismen beschrieben die von Apple im Laufe Zeit implementiert worden sind.
 
 \paragraph{Im Kapitel \ref{ch:Conclusion}}
 

@@ -16,7 +16,7 @@
 \section{iOS Grundlagen}
 \label{sec:iOSGrundlage}
 
-Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Mac OS X. Darwin ist ein frei erhältliches Linux basiertes Betriebssystem.Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für das Mac OS X und dem mobilen Betriebssystem iOS.
+Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Mac OS X. Darwin ist ein frei erhältliches Linux basiertes Betriebssystem. Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für das Mac OS X und dem mobilen Betriebssystem iOS.
 \begin{figure}[htbp]
         \centering
                 \includegraphics[height=5cm]{Bilder/Chapter3_SystemArchitektur}
@@ -26,7 +26,7 @@ Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Ma
 Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
   
 \begin{description}
-\item[Folgende \glqq Anforderungen\grqq{} werden an das iOS Software Layer Modell gestellt]~\par
+\item[Folgende Anforderungen werden an das iOS Software Layer Modell gestellt]~\par
 	\begin{itemize}
 		\item Sicherstellungen der \textbf{Datenintegrität}
 		\item Gewährleistung der \textbf{Informationsvertraulichkeit}
@@ -44,9 +44,9 @@ Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der gröss
 \subsection{Core OS Layer}
 \label{sec:CoreLayer}
 
-Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq low-level Features\grqq{}} und auf diesen bauen alle anderen \textit{\glqq Frameworks\grqq{}} auf. iOS Applikationsentwickler kommen mit diesem Layer nur dann in Berührung, wenn sie sich mit der Sicherheit und mit Hardware-Kommunikation beschäftigen. 
+Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq Low Level Features\grqq}. Auf diesen Layer bauen alle anderen \textit{\glqq Frameworks\grqq{}} auf. Der iOS Applikationsentwickler kommt mit diesem Layer nur dann in Berührung, wenn dieser sich mit der Sicherheit und mit der Hardware-Kommunikation beschäftigt. 
 \begin{description}
-	\item[Core OS Layer Frameworks]~\par
+	\item[\parbox{\textwidth} {Das Core OS Layer Framework beinhaltet folgende Frameworks}]~\par
 	\begin{itemize}
 		\item Accelerate Framework
 		\item Core Bluetooth Framework
@@ -59,14 +59,15 @@ Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq low-level Features\grqq
 		\item 64-Bit Support
 	\end{itemize}
 \end{description}
- (vgl. \cite{Apple[6]}, S.49-52)
+ (vgl. \cite{Apple[6]}, S.49-52) 
+ 
 %---------------------------------- Core Service
 \subsection{Core Service Layer}
 \label{sec:CoreServiceLayer}		
-Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Dieser Layer wird unterteilt in \textit{\glqq high-level Feature\grqq{}} und Core Services Frameworks.
+Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Dieser Layer wird unterteilt in \textit{\glqq High Level Feature\grqq{}} und \textit{\glqq Core Service Frameworks\grqq{}}.
 
 \begin{description}
-	\item[\textbf{High-level Feature dieses Layers}]~\par
+    \item[\parbox{\textwidth} {Die High Level Features dieses Layers sind}]~\par
 	\begin{itemize}
 		\item \textbf{Peer-to-Peer Services}
 		\item \textbf{iCloud Storage}
@@ -79,7 +80,7 @@ Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Di
 		\item \textbf{XML Support} 
 	\end{itemize}
 	
-	\item[\textbf{Core Services Layer Frameworks}]~\par
+	\item[\parbox{\textwidth} {Das Core Service Layer Framework beinhaltet folgende Frameworks}]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Accounts Frameworks
@@ -116,7 +117,7 @@ Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Di
 %---------------------------------- Media Layer
 \subsection{Media Layer}
 \label{sec:MediaLayer}		
-In diesem Layer sind alle Technologien zur Darstellung von Grafik, Video und das abspielen von Sound enthalten. Dieser Layer ist verantwortlich für das Design und den Sound der iOS Applikationen. 
+Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik, Video und das abspielen von Tönen. Dieser Layer ist verantwortlich für das Design und den Sound der iOS Apps. 
 
 \begin{description}
 	\item[Dieser Layer stellt folgende Technologien zur Verfügung]~\par
@@ -127,7 +128,7 @@ In diesem Layer sind alle Technologien zur Darstellung von Grafik, Video und das
 		\item \textbf{AirPlay}
     \end{itemize}
 
-	\item[Media Layer Frameworks]~\par
+    \item[\parbox{\textwidth} {Das Media Layer Framework beinhaltet folgende Frameworks}]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Assets Library Framework
@@ -168,7 +169,7 @@ Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien z
 	\end{itemize}
 
 \begin{description}
-\item[Folgende Features sind in diesem Layer enthalten]~\par
+\item[Folgende Features sind in Cocoa Touch Layer enthalten]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item App Extentision
@@ -188,7 +189,7 @@ Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien z
          \end{itemize}
 	\end{multicols}
 	
-	\item[Cocoa Touch Layer Frameworks]~\par
+	 \item[\parbox{\textwidth} {Das Cocoa Touch Layer Framework beinhaltet folgende Frameworks}]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
 		\item Address Book UI Framework
@@ -211,7 +212,7 @@ Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien z
 \section{iOS Device Security Architektur}
 \label{sec:iOSSecArchitektur}
 
-Der Sicherheitsmechanismus der iOS Device unterteilt sich in zwei Ebenen. 
+Der Sicherheitsmechanismus des iOS Device unterteilt sich in zwei Ebenen. 
 \begin{figure}[htb]
   \begin{minipage}{0.6\textwidth} 
   		\begin{description}
@@ -252,7 +253,7 @@ Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Ser
 %---------------------------- System Security
 \subsection{System Security}
 \label{sec:SystemSec}
-Die \textbf{System Security} von iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu, sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
+Die \textbf{System Security} von einem iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu, sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
 
 Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (vgl. \cite{Apple[4]}, S.5)
 \begin{description}
@@ -272,15 +273,14 @@ Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleis
 \subsection{Encryption und Daten Sicherheit}
 \label{sec:DataEnc}
 
-Das iOS unterstützt standardmäßig eine Verschlüsselung und verschiedenste Datenschutzfunktionen für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst, wenn ein Teil des Betriebsystem kompromittiert ist, die anderen Bereiche des Devices, weiterhin sicher vor unerlaubten Zugriff sind. \par
-Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration aktiv gesetzt.
-
+Das iOS Device unterstützt standardmäßig eine Verschlüsselung für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst, wenn ein Teil des Betriebsystem kompromittiert ist, die anderen Bereiche des Devices, weiterhin sicher vor unerlaubten Zugriff sind. \par
+Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration des mobilen Betriebssystems aktiv gesetzt.
 
 \begin{description}
 \item[\parbox{\textwidth} {Apple führt unter dem Kapitel Encryption und Daten Sicherheit folgende Features an}]~\par
 	\begin{itemize}
 		\item \textbf{Hardware Security Features} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
- 		\item \textbf{File Data Protection} (Siehe Kapitel: \ref{sec:FileDataProtection})
+ 		\item \textbf{File Datenschutz} (Siehe Kapitel: \ref{sec:DataProtection})
  		\item \textbf{Passcodes} (Siehe Kapitel: \ref{sec:Passcode})
  		\item \textbf{Data Protection Classes}  (Siehe Kapitel: \ref{sec:HardwareSecProtection})
 		\item \textbf{Keychain Data Protection} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
@@ -291,7 +291,7 @@ Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, das
 %------------------------------ Applikation Security
 \subsection{Applikation Security}
 \label{sec:AppSec}
-Die Applikationen beinhalten das größte Sicherheitsrisiko für Betriebssysteme. Das Verhalten des Betriebssystems kann eine Applikationen negativ beeinflusst werden. Es kann die Sicherheit und die Verfügbarkeit des iOS Devices negativ beeinträchtigen. Des weiter kann die Integrität des Benutzerdaten durch unsicher Applikationen gefährdet werden.
+Für Betriebssystem sind Apps das größte Sicherheitsrisiko. Das Verhalten des Betriebssystems kann durch eine App negativ beeinflusst werden. Es kann die Sicherheit und die Verfügbarkeit des iOS Devices negativ beeinflusst werden. Des weiter kann die Integrität der Benutzerdaten durch eine unsichere App Programmierung gefährdet werden.
 \begin{description}
 \item[\parbox{\textwidth} {Apple führt unter dem Kapitel Applikation Security folgende Features an}]~\par
 	\begin{itemize}

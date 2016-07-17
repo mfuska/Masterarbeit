@@ -18,10 +18,10 @@
 \section{Allgemein}
 \label{sec:JBAllgemein}
 
-Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren die nicht von Apple signiert und verteilt worden sind. Um dies zu ermöglichen umgeht ein Jailbreak die Sicherheitsmechanismen von Apple. Weiters erhält der User den Zugriff auf den \textit{\glqq Root-Users\grqq{}} des Devices. Der \textit{\glqq Root-Users\grqq{}} ermöglicht vollen Zugriff auf das Betriebssystem (iOS) und somit auf alle Daten des Devices. Durch die Installation eines Jailbreaks stehen zwei weitere \textit{\glqq App Stores\grqq{}} zur Verfügung
+Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren die nicht von Apple signiert und verteilt worden sind. Um dies zu ermöglichen muss ein Jailbreak die Sicherheitsmechanismen von Apple umgehen. Weiters erhält der User den Zugriff auf den \textit{\glqq Root-Users\grqq{}} des Devices. Der \textit{\glqq Root-User Loggin\grqq{}} ermöglicht vollen Zugriff auf das Betriebssystem (iOS) und somit auf alle Daten des Devices. Durch die Installation eines Jailbreaks stehen zwei weitere \textit{\glqq App Stores\grqq{}} zur Verfügung
 
 \begin{description}
-\item[Alle von Apple nicht autorisierten Apps Stores]~
+\item[Alle von Apple nicht autorisierten App Stores]~
 	\begin{enumerate}
 	   	\item \textbf{Cydia} \cite{Cydia[1]}
 		\item \textbf{TaiG}
@@ -31,16 +31,16 @@ Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren die nicht vo
 % ------------- Arten JB --------------------
 \section{Arten von Jailbreaks}
 \label{sec:JBArten}
-Abhängig davon wie sich ein iOS Device nach einem Reboot des Devices verhält, unterscheidet man drei Arten von Jailbreaks. 
+Abhängig davon wie sich ein iOS Device nach dem Reboot des Devices verhält, unterscheidet man zwischen drei Arten von Jailbreaks. 
 
 % ------------- Tethered Jailbreak--------------------
 \subsection{Tethered Jailbreak}
 \label{sec:JBTethered}
-Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich das Device ohne weiterer Tool neu zu starten. Nach einem Neustart des iOS, startet das Betriebssystem in dem sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
-Nur mit Hilfe von iTunes kann auf dem Device wieder das originale iOS installiert werden. Mit dem zuvor verwendeten Jailbreak Tool kann das Device wieder gestartet werden und es wird wieder in den selben Zustand versetzt, wie vor dem Reboot.  
-
+Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich das Device ohne weitere Tool neu zu starten. Nach einem Neustart des iOS, startet das Betriebssystem in dem sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
+Mit dem zuvor an PC installierten Jailbreak Tool kann das Device wieder gestartet werden. Es wird in den selben Zustand versetzt, wie vor dem Reboot. Nur mit Hilfe von iTunes kann auf dem Device wieder die originale iOS Software installiert werden. 
 \begin{description}
-    \item[Nachfolgend zwei häufig verwendet Tethered-Jailbreak Tools]~\par
+     \item[\parbox{\textwidth} {Nachfolgend werden zwei häufig verwendet Tethered-Jailbreak Tools angeführt}]~\par
+    \item[]~\par
 	\begin{itemize}
             \item \textbf{redsn0w}
             \item \textbf{Blackra1n}
@@ -51,7 +51,7 @@ Nur mit Hilfe von iTunes kann auf dem Device wieder das originale iOS installier
 \subsection{Semi Tethered Jailbreak}
 \label{sec:JBSemiTethered}
 
-Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device neugestartet werden. Das System startet nicht in den DFU Mode, sondern in einen eingeschränkt funktionsfähigen Modus. Safari, Mail, Cydia und alle Apps die via eines nicht von Apple autorisierten App Store installiert wurden, können nach einem Neustart nicht verwendet werden. Bei der Installation des Jailbreaks wird auch eine App am Device installiert, diese muss nach einem Neustart ausgeführt werden um das Device wieder in den selben Zustand zu versetzen, wie vor dem Reboot. Danach ist das iOS Device vollständig wieder funktionsfähig.
+Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device neugestartet werden. Das System startet nicht in den DFU Mode, sondern in einen eingeschränkt funktionsfähigen Betreibsmodus. Safari, Mail, Cydia und alle Apps die mit iTunes installiert worden sind, können nach einem Neustart weiterhin verwendet werden. Bei der Installation des Jailbreaks wird auch eine App am Device installiert, diese muss nach einem Neustart ausgeführt werden um das Device wieder in den selben Zustand zu versetzen, wie vor dem Reboot. Danach ist das iOS Device wieder vollständig funktionsfähig.
 
 \begin{description}
     \item[Ein Beispiel für einen Semi-Tethered Jailbreak ist]~\par
@@ -63,9 +63,9 @@ Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device
 % ------------- UnTethered Jailbreak--------------------
 \subsection{Untethered Jailbreak}
 \label{sec:JBUntethered}
-Mit einem \textbf{Untethered Jailbreak} ist das iOS Device nach einem Neustart des Systems voll funktionsfähig.
+Wurde auf dem iOS Device ein \textbf{Untethered Jailbreak} installiert, ist das iOS Device nach dem Neustart des Systems wieder voll funktionsfähig.
 \begin{description}
-\item[Einige Beispiele für Untethered Jailbreaks sind]~\par
+\item[\parbox{\textwidth} {Einige Beispiele für Untethered Jailbreaks sind}]~\par
 	\begin{multicols}{2}
 	\begin{itemize}
         \item \textbf{Absinthe}
@@ -85,14 +85,14 @@ Mit einem \textbf{Untethered Jailbreak} ist das iOS Device nach einem Neustart d
 % ------------- Jailbreak History --------------------
 \section{Jailbreak History}
 \label{sec:JBHistory}
+Apple veröffentlicht im Durchschnitt sieben iOS Updates pro Jahr.
 
-Im Durchschnitt veröffentlicht Apple sieben iOS Updates pro Jahr. 
 \begin{description}
-\item[Die Software-Updates dienen dazu]~\par
+\item[\parbox{\textwidth} {Die Software-Updates dienen dazu}]~\par
 	\begin{enumerate}
 	    \item Die Sicherheitslücken des Betriebssystems zu schließen
-	    \item Neue Sicherheitsmechanismen einzuführen
-	    \item Neue Sicherheitsarchitekturen für Applikationen bereitzustellen
+	    \item Neue Sicherheitsmechanismen für das Betriebssystem und Apps einzuführen
+	    \item Neue Sicherheitsarchitekturen für Apps bereitzustellen
 	\end{enumerate}
 \end{description}  
 Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 79 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 70  Minor-Updates. Siehe Figure \ref{fig:iOS Software Updates}.
@@ -104,7 +104,7 @@ Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 
         	\label{fig:iOS Software Updates}
 \end{figure}
 
-Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die Bugs, die ein Jailbreak ausnützt sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Bugs werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreak veröffentlicht. Siehe Figure \ref{fig:iOS Jailbreak}.
+Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die iOS Bugs, die für ein Jailbreak verwendet werden sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Software Fehler werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreak veröffentlicht. Siehe Abbildung \ref{fig:iOS Jailbreak}.
 
 \begin{figure}[!ht]
         \centering
@@ -117,16 +117,16 @@ Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmec
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
-Um einen Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss Schritt für Schritt jeder einzelne Sicherheitsmechanismus des iOS ausgehebelt werden. Ab der iOS Version 8.1.3 müssen folgende Sicherheitsvorkehrungen umgangen werden um einen untethered Jailbreak durchzuführen.
+Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss Schritt für Schritt jeder Sicherheitsmechanismus des iOS ausgehebelt werden. Ab der iOS Version 8.1.3 müssen folgende Sicherheitsvorkehrungen umgangen werden um einen untethered Jailbreak durchzuführen.
 
 \begin{enumerate}
-	    \item Secure Boot Chain (siehe Kapitel: \ref{sec:SecBootChain})
-	    \item ALSR (siehe Kapitel: \ref{sec:ASLR})
-	    \item MAC (siehe Kapitel: \ref{sec:MAC})
-	   \item Sandbox (siehe Kapitel: \ref{sec:Sandbox}) 
+	    \item \textbf{Secure Boot Chain} (siehe Kapitel: \ref{sec:SecBootChain})
+	    \item \textbf{ALSR }(siehe Kapitel: \ref{sec:ASLR})
+	    \item \textbf{MAC} (siehe Kapitel: \ref{sec:MAC})
+	   \item \textbf{Sandbox} (siehe Kapitel: \ref{sec:Sandbox}) 
 \end{enumerate}
 
-Damit die Sicherheitsmechanismen überhaupt umgangen werden können, müssen Bugs im iOS gefunden werden. 
+Damit die Sicherheitsmechanismen überhaupt umgangen werden können, müssen verschiedene Programmierfehler im iOS gefunden werden. 
 \begin{enumerate}
   \item \textbf{Einen oder mehrere Softwarefehler, die das Umgehen der iOS Sicherheitsmechanismen ermöglichen.}
   \item \textbf{Einen oder mehrere Softwarefehler, die es dem Jailbreak ermöglichen Root-Rechte zu erhalten.}
