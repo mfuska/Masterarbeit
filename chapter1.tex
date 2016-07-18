@@ -67,7 +67,7 @@ sowie die \textbf{Stabilität des System} erhalten bleiben.
 \label{sec:IntroAufbau}
 In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \ref{ch:intro}} befasst sich mit einer allgemeinen Beschreibung des Themas, unteranderem gibt es einen Überblick bzw. Einblick in die weiteren Kapiteln dieser Arbeit.
 
-\paragraph{Im Kapitel \ref{ch:DF}} werden die grundlegenden Begriffe und Methoden der digitalen Forensik beschreiben. Es werden vor allem die Möglichkeiten angeführt, wie die Cleartext-Daten eines iOS Device extrahierte werden können.
+%\paragraph{Im Kapitel \ref{ch:DF}} werden die grundlegenden Begriffe und Methoden der digitalen Forensik beschreiben. Es werden vor allem die Möglichkeiten angeführt, wie die Cleartext-Daten eines iOS Device extrahierte werden können.
 
 \paragraph{Im Kapitel \ref{ch:JB}} werden die unterschiedlichen Arten von Jailbreaks beschrieben, sowie statistische Aufbereitung zu diesem Thema.
 
@@ -81,12 +81,67 @@ In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \r
 
 \section{Problem Defintion}
 \label{sec:IntroProblem}
+User verwenden JB, keine Wissen über die Folgen
+Ein JB führt umfangreiche Änderungen in iOS durch diese bleiben vom User verborgen.
+Die Stabilität des Systems ist für den User merkbar -> wenn unzufrieden installation der originalen SW
+%\begin{description}
+%    \item[\parbox{\textwidth} {Aber Schutzziele Daten erhalten? }]~\par
+%    \begin{itemize}
+%       \item Vertraulichkeit (confidentiality): Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden, dies gilt sowohl beim Zugriff auf gespeicherte Daten, wie auch während der Datenübertragung.
+%       \item Integrität (integrity): Daten dürfen nicht unbemerkt vom User verändert werden.
+%       \item  Verfügbarkeit (availability): Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet sein.
+%       \item   Authentizität (authenticity) bezeichnet die Eigenschaften der Echtheit, Überprüfbarkeit und Vertrauenswürdigkeit der Daten.
+%       \item Nichtabstreitbarkeit (non repudiation): Erfordert das Handlungen eindeutig zugeordnet werden können und diese nicht abgestritten werden könnne
+%       \item  Zurechenbarkeit (accountability): Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.
+%       \item Anonymität
+%    \end{itemize}
+%\end{description} 
+
+               
 
 \subsection{Ziel dieser Arbeit}
 \label{sec:IntroZiel}
+Eine Aussage über die Sicherheit und Stabilität des iDevices zu tätigen 
+und welchen Einfluss die JB darauf hatten.
+\begin{description}
+    \item[\parbox{\textwidth} {Daraus ergeben sich folgende Fragestellungen}]~\par
+    \begin{enumerate}
+        \item \textbf{Was sind die Faktoren die für die Sicherheit eines iOS Device ausschlaggebend sind} --> Analysieren würde ich iOS SW, iOS HW, JB -> SW und HW Zeitraum bis zum veröffentlichen 
+                
+        \item \textbf{Welche Auswirkung hat die Veröffentlichung eines JB auf die Sicherheit des Devices} -> Daten behobene JB bugs bis zum nächsten JB  
+        
+        \item \textbf{Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems.}  -> Anzahl Tage bis zum nächsten JB,       
+    \end{enumerate}
+\end{description} 
+ 
+ 
+\subsection{Methodik dieser Arbeit}
+\label{sec:MethArbeit}
 
-\subsection{Anforderungen}
-\label{sec:IntroAnforderungen}
+    \begin{enumerate}
+        \item Sammeln der Daten
+        \begin{itemize}
+            \item iOS
+            \item HW
+            \item JB
+            \item Historische Daten
+            \item Aktuelle Daten
+        \end{itemize}
+        \item Aufbereitung der Daten
+        \item Analyse 
+        \item Conclusio
+    \end{enumerate}
+
+
+\subsection{Rahmenbedingungen}
+\label{sec:Rahmenbedingungen}
+Datenerfassung gelten folgende Rahmenbedingungen:
+\begin{itemize}
+    \item iOS Version inklusive 9.3.2
+    \item iOS Device inklusive 6s
+    \item Technischer Stand per 17.07.2016
+    \item JB bis 17.07.2016
+\end{itemize}
 
 
 

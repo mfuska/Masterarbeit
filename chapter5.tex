@@ -101,7 +101,7 @@ Die Secure Boot Chain stellt sicher, dass keine Veränderung der Hardware und/od
 \subsection{Address Space Layout Randomization (ASLR)}
 \label{sec:ASLR}
 
-Durch die Implementierung von \textbf{Address Space Layout Randomization (ASLR)} wurde die Exploitation von Softwarebugs unter iOS erheblich schwerer. ASLR hat die Aufgabe beim Starten des Betriebssystems und der Programme diesen randomisierte Memory Adressen zuzuweisen. Dadurch ist die Zuweisung der Speicheradressen nicht mehr deterministisch. Wenn ASLR im vollen Funktionsumfang implementiert worden ist, muss ein Hacker mehrere Softwarefehler finden um einen Memory Exploitation ausnützen zu können. Betriebssysteme die ASLR nur teilweise implementiert haben, ermöglichen es Hackern Memory Bereiche zu lokalisieren bzw vorherzusagen die \textit{\glqq writable\grqq{}} oder \textit{\glqq executable\grqq{}} sind und somit können diese Systeme leichter angegriffen werden. (vgl. \cite{Apple[4], ASLR[1]}) \par
+Durch die Implementierung von \textbf{Address Space Layout Randomization (ASLR)} wurde die Exploitation von Softwarebugs unter iOS erheblich schwerer. ASLR hat die Aufgabe beim Starten des Betriebssystems und der Programme diesen randomisierte Memory Adressen zuzuweisen. Dadurch ist die Zuweisung der Speicheradressen nicht mehr deterministisch. Wenn ASLR im vollen Funktionsumfang implementiert worden ist, muss ein Hacker mehrere Softwarefehler finden um einen Memory Exploitation ausnützen zu können. Betriebssysteme die ASLR nur teilweise implementiert haben, ermöglichen es Hackern Memory Bereiche zu lokalisieren bzw vorherzusagen die \textit{\glqq writable\grqq{}} oder \textit{\glqq executable\grqq{}} sind und somit können diese Systeme leichter angegriffen werden. (vgl. \cite{Apple[4], ASLR[1], ASLR[2]}) \par
 
 Das mobile Betriebssystem von Apple unterstützt ASLR seit der iOS Version 4.3. Jede App hat die Möglichkeit diesen Mechanismus mit dem Compiler Flag \textbf{Position Independent Executables (PIE)} zu aktivieren. Wenn die App mit dem PIE Flag kompiliert wurde, dann werdem
 \begin{itemize}
@@ -297,11 +297,11 @@ Diese Permissions verhindern, dass der Inhalt des Speichers nach dem Laden verä
 \label{sec:Jit}
 
 Mit der iOS Version 2.0 wurde \textbf{Dynamisches Code Signing (DCS)} eingeführt, um den Performanz-Ansprüchen der User gerecht zu werden. Es wurden in den unterschiedlichen iOS Versionen immer wieder DCS-Bugs behoben, bis die endgültige DCS-Version in iOS Version 4.3 veröffentlicht wurde. 
-\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Kompiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einen bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performanz-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse die das Entitlement \textbf{dynamic-codesigning} (Siehe Abbildung: \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden. 
+\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Kompiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einen bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performanz-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse die das Entitlement \textbf{dynamic-codesigning} (Siehe Abbildung: \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden. (vgl. \cite{JIT[1]})
 
 Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel setzt nach der Prüfung der Entitlement, der Signatur und der Prüfung, ob dieser Prozess JIT verwenden darf, die entsprechenden Berechtigungen(RWX) im Virtual Memory.
 
-\begin{figure}[!ht]
+\begin{figure}[htp!]
         \centering
                 \includegraphics[scale=0.8]{JIT}
         \caption{Just in Time Entitlement (vgl. \cite{Hacking[1]}) }
@@ -387,7 +387,7 @@ security cms -D -i "filename"
 openssl smime -in filename -inform der -verify
 \end{lstlisting}
 
-\begin{figure}[!ht]
+\begin{figure}[htp!]
         \centering
                 \includegraphics[scale=0.6]{SGML-Format}
         \caption{Provisioning Profile}
