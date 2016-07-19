@@ -13,6 +13,10 @@
 \chapter{Einleitung}
 \label{ch:intro}
 
+
+\section{Einführung}
+\label{sec:Einführung}
+
 Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit und Stabilität der Smartphones zunehmend an Bedeutung gewinnen muss.\par Am 29.Juni 2007 wurden das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq Root-Zugriffsrechte\grqq{}} für das Betriebssystem zu erhalten. Der \textit{\glqq Root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem, unautorisierte Software auf dem iOS Device installieren.\par 
 
 Es gibt für \textit{\glqq gejailbreakte\grqq{}} iOS Devices, neben dem offiziellen App Store (Apple), zwei weitere App Stores
@@ -75,42 +79,43 @@ In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \r
 
 \paragraph{Im Kapitel \ref{ch:iOSSicherheitsKonzepte}} werden die einzelnen iOS Sicherheitsmechanismen beschrieben die von Apple im Laufe Zeit implementiert worden sind.
 
+\paragraph{Im Kapitel \ref{ch:Ergebnisse}}
+
 \paragraph{Im Kapitel \ref{ch:Conclusion}}
 
-
-
-\section{Problem Defintion}
+\subsection{Problem Defintion}
 \label{sec:IntroProblem}
 User verwenden JB, keine Wissen über die Folgen
 Ein JB führt umfangreiche Änderungen in iOS durch diese bleiben vom User verborgen.
 Die Stabilität des Systems ist für den User merkbar -> wenn unzufrieden installation der originalen SW
-%\begin{description}
-%    \item[\parbox{\textwidth} {Aber Schutzziele Daten erhalten? }]~\par
-%    \begin{itemize}
-%       \item Vertraulichkeit (confidentiality): Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden, dies gilt sowohl beim Zugriff auf gespeicherte Daten, wie auch während der Datenübertragung.
-%       \item Integrität (integrity): Daten dürfen nicht unbemerkt vom User verändert werden.
-%       \item  Verfügbarkeit (availability): Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet sein.
-%       \item   Authentizität (authenticity) bezeichnet die Eigenschaften der Echtheit, Überprüfbarkeit und Vertrauenswürdigkeit der Daten.
-%       \item Nichtabstreitbarkeit (non repudiation): Erfordert das Handlungen eindeutig zugeordnet werden können und diese nicht abgestritten werden könnne
-%       \item  Zurechenbarkeit (accountability): Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.
-%       \item Anonymität
-%    \end{itemize}
-%\end{description} 
+\begin{description}
+    \item[\parbox{\textwidth} {Aber Schutzziele Daten erhalten? }]~\par
+    \begin{itemize}
+       \item Vertraulichkeit (confidentiality): Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden, dies gilt sowohl beim Zugriff auf gespeicherte Daten, wie auch während der Datenübertragung.
+       \item Integrität (integrity): Daten dürfen nicht unbemerkt vom User verändert werden.
+      \item  Verfügbarkeit (availability): Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet sein.
+       \item   Authentizität (authenticity) bezeichnet die Eigenschaften der Echtheit, Überprüfbarkeit und Vertrauenswürdigkeit der Daten.
+       \item Nichtabstreitbarkeit (non repudiation): Erfordert das Handlungen eindeutig zugeordnet werden können und diese nicht abgestritten werden könnne
+       \item  Zurechenbarkeit (accountability): Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.
+       \item Anonymität
+    \end{itemize}
+\end{description} 
 
                
 
 \subsection{Ziel dieser Arbeit}
 \label{sec:IntroZiel}
-Eine Aussage über die Sicherheit und Stabilität des iDevices zu tätigen 
+Eine Aussage über die Sicherheit und die Vertrauenswürdigkeit des iDevices zu tätigen 
 und welchen Einfluss die JB darauf hatten.
-\begin{description}
-    \item[\parbox{\textwidth} {Daraus ergeben sich folgende Fragestellungen}]~\par
-    \begin{enumerate}
-        \item \textbf{Was sind die Faktoren die für die Sicherheit eines iOS Device ausschlaggebend sind} --> Analysieren würde ich iOS SW, iOS HW, JB -> SW und HW Zeitraum bis zum veröffentlichen 
-                
-        \item \textbf{Welche Auswirkung hat die Veröffentlichung eines JB auf die Sicherheit des Devices} -> Daten behobene JB bugs bis zum nächsten JB  
-        
-        \item \textbf{Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems.}  -> Anzahl Tage bis zum nächsten JB,       
+    \begin{description}
+        \item[\parbox{\textwidth} {Daraus ergeben sich folgende Fragestellungen}]~\par
+            \begin{enumerate}
+                \item \label{frage:1} \textbf{Welche Faktoren sind für die Sicherheit und die Vertrauenswürdigkeit eines iOS Device ausschlaggebend (Kapitel: \ref{sec:Frage1})? } 
+                    
+            \item \label{frage:2}\textbf{Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems (Kapitel: \ref{sec:Frage2})?} 
+            
+            \item \label{frage:3}\textbf{Welche Auswirkung hat die Veröffentlichung eines JB auf die Sicherheit des Devices(Kapitel: \ref{sec:Frage3})?}    
+     
     \end{enumerate}
 \end{description} 
  
@@ -121,15 +126,17 @@ und welchen Einfluss die JB darauf hatten.
     \begin{enumerate}
         \item Sammeln der Daten
         \begin{itemize}
-            \item iOS
-            \item HW
-            \item JB
+            \item Literaturrecherche
+            \begin{itemize}
+                \item iOS
+                \item HW
+                \item JB
+            \end{itemize}
             \item Historische Daten
-            \item Aktuelle Daten
+            \item Aktuelle Daten 
         \end{itemize}
         \item Aufbereitung der Daten
         \item Analyse 
-        \item Conclusio
     \end{enumerate}
 
 
@@ -137,8 +144,8 @@ und welchen Einfluss die JB darauf hatten.
 \label{sec:Rahmenbedingungen}
 Datenerfassung gelten folgende Rahmenbedingungen:
 \begin{itemize}
-    \item iOS Version inklusive 9.3.2
-    \item iOS Device inklusive 6s
+    \item ab iOS Version 3.0 bis 9.3.2
+    \item iOS HW inklusive 6s
     \item Technischer Stand per 17.07.2016
     \item JB bis 17.07.2016
 \end{itemize}
@@ -148,3 +155,4 @@ Datenerfassung gelten folgende Rahmenbedingungen:
 
 
 
+    
