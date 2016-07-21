@@ -69,9 +69,7 @@ sowie die \textbf{Stabilität des System} erhalten bleiben.
 
 \section{Aufbau dieser Arbeit}
 \label{sec:IntroAufbau}
-In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \ref{ch:intro}} befasst sich mit einer allgemeinen Beschreibung des Themas, unteranderem gibt es einen Überblick bzw. Einblick in die weiteren Kapiteln dieser Arbeit.
-
-%\paragraph{Im Kapitel \ref{ch:DF}} werden die grundlegenden Begriffe und Methoden der digitalen Forensik beschreiben. Es werden vor allem die Möglichkeiten angeführt, wie die Cleartext-Daten eines iOS Device extrahierte werden können.
+In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \ref{ch:intro}} befasst sich mit einer allgemeinen Beschreibung des Themas, unteranderem gibt es einen Überblick bzw. Einblick in die weiteren Kapiteln dieser Arbeit. Des weiter wird die empirische Methode erklärt mit der die erhoben Daten aufbereitet und analysiert werden. 
 
 \paragraph{Im Kapitel \ref{ch:JB}} werden die unterschiedlichen Arten von Jailbreaks beschrieben, sowie statistische Aufbereitung zu diesem Thema.
 
@@ -83,64 +81,43 @@ In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \r
 
 \paragraph{Im Kapitel \ref{ch:Conclusion}}
 
-\subsection{Problem Defintion}
-\label{sec:IntroProblem}
-User verwenden JB, keine Wissen über die Folgen
-Ein JB führt umfangreiche Änderungen in iOS durch diese bleiben vom User verborgen.
-Die Stabilität des Systems ist für den User merkbar -> wenn unzufrieden installation der originalen SW
-\begin{description}
-    \item[\parbox{\textwidth} {Aber Schutzziele Daten erhalten? }]~\par
-    \begin{itemize}
-       \item Vertraulichkeit (confidentiality): Daten dürfen lediglich von autorisierten Benutzern gelesen bzw. modifiziert werden, dies gilt sowohl beim Zugriff auf gespeicherte Daten, wie auch während der Datenübertragung.
-       \item Integrität (integrity): Daten dürfen nicht unbemerkt vom User verändert werden.
-      \item  Verfügbarkeit (availability): Verhinderung von Systemausfällen; der Zugriff auf Daten muss innerhalb eines vereinbarten Zeitrahmens gewährleistet sein.
-       \item   Authentizität (authenticity) bezeichnet die Eigenschaften der Echtheit, Überprüfbarkeit und Vertrauenswürdigkeit der Daten.
-       \item Nichtabstreitbarkeit (non repudiation): Erfordert das Handlungen eindeutig zugeordnet werden können und diese nicht abgestritten werden könnne
-       \item  Zurechenbarkeit (accountability): Eine durchgeführte Handlung kann einem Kommunikationspartner eindeutig zugeordnet werden.
-       \item Anonymität
-    \end{itemize}
-\end{description} 
-
-               
-
-\subsection{Ziel dieser Arbeit}
-\label{sec:IntroZiel}
-Eine Aussage über die Sicherheit und die Vertrauenswürdigkeit des iDevices zu tätigen 
-und welchen Einfluss die JB darauf hatten.
-    \begin{description}
-        \item[\parbox{\textwidth} {Daraus ergeben sich folgende Fragestellungen}]~\par
-            \begin{enumerate}
-                \item \label{frage:1} \textbf{Welche Faktoren sind für die Sicherheit und die Vertrauenswürdigkeit eines iOS Device ausschlaggebend (Kapitel: \ref{sec:Frage1})? } 
-                    
-            \item \label{frage:2}\textbf{Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems (Kapitel: \ref{sec:Frage2})?} 
-            
-            \item \label{frage:3}\textbf{Welche Auswirkung hat die Veröffentlichung eines JB auf die Sicherheit des Devices(Kapitel: \ref{sec:Frage3})?}    
-     
-    \end{enumerate}
-\end{description} 
- 
- 
-\subsection{Methodik dieser Arbeit}
+\section{Methodik dieser Arbeit}
 \label{sec:MethArbeit}
 
+Goal Question Metric (GQM) ist eine systematische Vorgehensweise zur Erstellung spezifischer Qualitätsmodelle im Bereich der Softwareentwicklung. Hierbei ist vor allem ein klar strukturierte Vorgehensweise dieses Systems möglich. Dies hat zur Folge, dass die Ergebnisse dieser Arbeit Nachvollziehbar und leicht Beweisbar sind.
+
+\begin{description}
+    \item[\parbox{\textwidth} {Die GQM-Methode ist in drei Schritte unterteilt und dient zur Bewertung der erhoben Daten}]~\par
     \begin{enumerate}
-        \item Sammeln der Daten
-        \begin{itemize}
-            \item Literaturrecherche
-            \begin{itemize}
-                \item iOS
-                \item HW
-                \item JB
-            \end{itemize}
-            \item Historische Daten
-            \item Aktuelle Daten 
-        \end{itemize}
-        \item Aufbereitung der Daten
-        \item Analyse 
+        \item Die Definition des Ziels(Goals)
+        \item Die Definition der Fragen, deren Beantwortung aussagt, ob das Ziel erreicht wurde (Questions)
+        \item Die Definition der Metriken, die eine messbare Beantwortung der Fragen darstellen(Metrics)
     \end{enumerate}
+\end{description} 
 
+\subsection{GQM - Goal Definition}
+\label{sec:GQMGoal}
 
-\subsection{Rahmenbedingungen}
+\paragraph{G1:} \textit{\glqq Eine Aussage über die Sicherheit und die Vertrauenswürdigkeit der iOS Devices(iPhone, iPad) tätigen zu können. Und in wieweit die veröffentlichten JBs einen Einfluss darauf hatten. \grqq{}}
+\paragraph{G1.1:} \textit{\glqq Gibt es einen Zusammenhang zwischen der Sicherheit und der verwenden Hardware des Device?\grqq{}}
+\paragraph{G1.2:} \textit{\glqq Gibt es einen Zusammenhang zwischen der Sicherheit und der Software des Device?\grqq{}}
+\paragraph{G1.3:} \textit{\glqq Gibt es einen Zusammenhang zwischen der Sicherheit eines iOS Device und den veröffentlichten Jailbreaks(JBs)?\grqq{}}
+
+\subsection{GQM - Fragen Definition}
+\label{sec:GQMFragen}
+
+\begin{enumerate}
+    \item \label{frage:1} \textbf{Frage:} \textit{\glqq Welche Faktoren sind für die Sicherheit und die Vertrauenswürdigkeit eines iOS Device ausschlaggebend (Kapitel: \ref{sec:Frage1})?\grqq{}}
+                    
+    \item \label{frage:2}\textbf{Frage:} \textit{\glqq Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems (Kapitel: \ref{sec:Frage2})?\grqq{}}
+            
+    \item \label{frage:3}\textbf{Frage:} \textit{\glqq Welche Auswirkung hat die Veröffentlichung eines JB auf die Sicherheit des Devices(Kapitel: \ref{sec:Frage3})?\grqq{}}     
+\end{enumerate}
+
+\subsection{GQM - Metrik Definition}
+\label{sec:GQMMetrik}
+
+\section{Rahmenbedingungen}
 \label{sec:Rahmenbedingungen}
 Datenerfassung gelten folgende Rahmenbedingungen:
 \begin{itemize}
