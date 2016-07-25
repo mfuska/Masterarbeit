@@ -116,16 +116,39 @@ In dieser Arbeit wird die Goal Question Metric (GQM) Methode zur Analyse der erh
 \subsection{GQM - Metrik Definition}
 \label{sec:GQMMetrik}
 
-\section{Rahmenbedingungen}
-\label{sec:Rahmenbedingungen}
-Datenerfassung gelten folgende Rahmenbedingungen:
-\begin{itemize}
-    \item ab iOS Version 3.0 bis 9.3.2
-    \item iOS HW inklusive 6s
-    \item Technischer Stand per 17.07.2016
-    \item JB bis 17.07.2016
-    \item Anzahl an Tagen bis zur Veröffentlichung eines JB beziehen sich im auf untether JBs
-\end{itemize}
+Damit die Softwarequalität messbar gemacht werden kann, wurden unterschiedliche Modelle für diesen Prozess entwickelt. Im ISO Standard ISO/IEC 25010:2011 werden die unterschiedlichsten Softwaremerkmale definiert und festgehalten. \cite{IOS25010} Unter anderem werden die Merkmale für die Zuverlässigkeit einer Software in diesem Standard definiert. Ein Software-Sicherheitsmerkmal ist die Anzahl der Softwarebugs die in einer Software gefunden worden sind. In dieser Arbeit werden die geschlossenen Bugs der Apple-Sicherheitsupdates für diese Metrik herangezogen.
+\begin{description}
+    \item[\parbox{\textwidth} {In dieser Arbeit werden zwei Arten von Bugs unterschieden, die in den iOS Sicherheitsupdates geschlossen werden}]~\par
+    \begin{enumerate}
+        \item Softwarebugs die in JB verwendet wurden, um ein JB auf einer früheren iOS Versionen durchzuführen. 
+        \item Softwarebugs die von Apple und anderen Sicherheitsforschern entdeckt und gemeldet wurden.
+    \end{enumerate}
+\end{description} 
+ \par
+Der zweite Ansatz bezieht sich auf die Anzahl der Tage die benötigt wurden, um für eine neue iOS Version ein JB zu veröffentlichen. Hierfür werden nur \textit{\glqq untethered Jailbreak Daten\grqq{}} verwendet, damit ist die Vergleichbarkeit der Daten in dieser Arbeit gewährleistet. \par 
+Es werden in dieser Arbeit zwei Arten von Metriken für die Aufbereitung der Daten verwendet.
+\begin{enumerate}
+    \item \textit{\glqq External metrics\grqq{}}\\
+    Diese Art der Metrik ermöglicht es die laufende Software von extern zu bewerten.
+    \item \textit{\glqq Quality in use metrics\grqq{}} \\
+    Diese Art der Metrik ermöglicht es eine finale Softwareversion zu bewerten. Dies ermöglicht es die finale Softwarequalität zu bewerten.
+\end{enumerate}
+
+
+%\section{Rahmenbedingungen}
+%\label{sec:Rahmenbedingungen}
+%In diesen Kapitel werden die Rahmenbedingungen für diese Arbeit zusammengefasst. Die Daten wurden von  unterschiedlich Quellen 
+%\begin{description}
+%    \item[\parbox{\textwidth} {Es werden nur folgenden}]~\par
+%    \begin{enumerate}
+%        \item  iOS Produkte betrachtet: iPhone 1 bis iPhone SE (Siehe Tabelle: \ref{tab:iOSHW})
+%        \item iOS Version betrachtet: iOS Version 3.0 bis 9.3.2
+%        \item JBs betrachtet. JBs die bis zum 01.07.2016 veröffentlicht wurden.
+%    \end{enumerate}
+%  \end{description} 
+%
+
+
 
 
 
