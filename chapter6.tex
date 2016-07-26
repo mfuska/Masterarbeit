@@ -40,7 +40,28 @@
         \label{tab:iOSHW}
     \end{center}
 \end{table}
-In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und in Abhängigkeit von den Verkaufszeitpunkt des Device, der initial installierten iOS Version und des Prozessor-Typs des iDevice gebracht. Weiters wird in der Tabelle noch angeführt, ob dieses Device einen Koprozessor mit Secure Enclave implementiert hat und wie lange die JB Community benötigte, um ein JB für dieses Device zu veröffentlichen.\par
+
+In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und  in Abhängigkeit vom Verkaufszeitpunkt des Device, der initial installierten iOS Version und des Prozessor-Typs des iDevice gebracht. Weiters wird in der Tabelle angeführt, ob dieses Device einen Koprozessor mit Secure Enclave implementiert hat und wie lange die JB Community benötigte, um ein JB für dieses Device zu veröffentlichen.\par
+
+\subsection{Secure Enclave}
+\label{sec:Frage1SecureEnclave}
+ 
+ Die Secure Enclave des Koprozessor des Apple A7 Prozessors bringen einen massiven Sicherheitsgewinn für die iOS Produkte mit sich. Unter iOS gibt es die Möglichkeit verschiedene Passcode Konfigurationen vorzunehmen. Neben der Anzahl der Stellen, kann auch konfiguriert werden, ob nur Zahlen oder auch alphanumerische Werte für den Passcode verwendet werden können.\par 
+ Ein weiterer iOS Konfigurationsparameter ermöglicht es, das Device so zu konfigurieren, dass nach zehn falschen Passcode Eingabe alle Daten des Gerätes gelöscht werden. Die Anzahl der Fehlversuche wird bei iOS Devices ohne Secure Enclave in den Flash Memory geschrieben. \par
+ Im Fall \textit{\glqq FBI gegen Apple\grqq{}} gibt es verschiedensten Theorien darüber, wie das iPhone 5c des Attentäters entsperrt wurde. 
+ \begin{description}
+    \item[\parbox{\textwidth} {Der Sicherheitsforscher Zdziarski beschreibt in seinen Abhandlungen die unterschiedlichen Möglichkeiten wie folgt:}]~\par
+    \begin{enumerate}
+       \item \textit{\glqq .... based on all of this, is that an external forensics company, with hardware capabilities, is likely copying the NAND storage off the chip and frequently re-copying all or part of the chip’s contents back to the device in order to brute force the pin – and may or may not also be using older gear from iOS 8 techniques to do it. The two weeks the FBI has asked for are not to develop this technique (it’s most likely already been developed, if FBI is willing to vacate a hearing over it), but rather to demonstrate, and possibly sell, the technique to FBI by means of a field test on some demo units.\grqq{}} \cite{Hacking[4]}
+       \item \textit{\glqq If the FBI did in fact use a software exploit, the question then becomes one of how viable it is on other platforms.\grqq{}} \cite{Hacking[4]}
+   \end{enumerate}
+\end{description} 
+
+\subsection{iOS Device}
+\label{sec:Frage1iOSDevice} 
+
+Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusammenhang zwischen der Sicherheit des Systems und der verwendeten iOS Hardware. Da die Tabelle \ref{tab:iOSHW} keine Aussagen darüber zulässt, ob der Zeitraum bis zum Veröffentlichen des JB nur von der HW abhängt oder von der iOS Version die am Device installiert wurde, müssen diese beiden Daten (Tabelle: \ref{tab:iOSHW}, Tabelle: \ref{tab:iOSVersion}) korreliert werden. Die Abbildung \ref{fig:VergleichJBProzessorSW} stellt die Prozessoren des iDevices mit der installierten iOS Version und den benötigten Tagen für einen JB in Verbindung. \par
+
 
 \begin{table}[htp!]
     \begin{center}
@@ -58,10 +79,8 @@ In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und in Abhän
         \label{tab:iOSVersion}
     \end{center}
 \end{table}
-Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum diese iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen.
 
-Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusammenhang zwischen der Sicherheit des Systems und der verwendeten iOS Hardware. Da die Tabelle \ref{tab:iOSHW} keine Aussagen darüber zulässt, ob der Zeitraum bis zum Veröffentlichen des JB nur von der HW abhängt oder von der iOS Version die am Device installiert wurde, müssen diese beiden Daten (Tabelle: \ref{tab:iOSHW}, Tabelle: \ref{tab:iOSVersion}) korreliert werden. Die Abbildung \ref{fig:VergleichJBProzessorSW} stellt die Prozessoren des iDevices mit der installierten iOS Version und den benötigten Tagen für einen JB in Verbindung. \par
-    
+Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum diese iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen    
 \begin{figure}[htbp]
         \centering
                 \includegraphics[scale=0.55]{Bilder/iDeviceJB-SW-HW.png}
@@ -71,6 +90,9 @@ Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusamm
 
 Anhand der Abbildung \ref{fig:VergleichJBProzessorSW} kann gezeigt werden, dass alle Apple Prozessorarchitekturen einschliesslich der Apple A6 einen Sicherheitsgewinn für die iOS Produkte bedeutet haben. Da die JBs für diese iOS Version auf älteren Apple Prozessorarchitekturen innerhalb von wenigen Tagen verfügbar war. Ab der Apple Prozessorarchitektur A7 ist der Unterschied, zwischen dem veröffentlichen des JBs für die HW und die SW, nur mehr marginal. \par
 \textbf{Dies lässt den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte zum heutigen Zeitpunkt nur mehr vom mobilen Betriebssystem von Apple abhängt und nicht von der verwendeten iOS HW.}  
+
+\subsection{iOS Version}
+\label{sec:Frage1iOSVersion} 
 
 \begin{figure}[htbp]
         \centering
