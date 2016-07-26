@@ -20,7 +20,7 @@ Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Ma
 \begin{figure}[htbp]
         \centering
                 \includegraphics[height=5cm]{Bilder/Chapter3_SystemArchitektur}
-        \caption{iOS Software Layer (\cite{Apple[6]}, S. XXXXXXXXX)}
+        \caption{iOS Software Layer (\cite{Apple[5]} S. 9)}
         	\label{fig:iOS Software Layer}
 \end{figure}
 Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
@@ -59,7 +59,7 @@ Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq Low Level Features\grqq
 		\item 64-Bit Support
 	\end{itemize}
 \end{description}
- (Vgl. \cite{Apple[6]}, S.49-52) 
+ (Vgl. \cite{Apple[6]} S.49-52) 
  
 %---------------------------------- Core Service
 \subsection{Core Service Layer}
@@ -115,7 +115,7 @@ Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Di
 	\end{multicols}
 \end{description}
 
-(Vgl. \cite{Apple[6]}, S.36-48)
+(Vgl. \cite{Apple[6]} S.36-48)
 %---------------------------------- Media Layer
 \subsection{Media Layer}
 \label{sec:MediaLayer}		
@@ -156,7 +156,7 @@ Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik
          \end{itemize}
 	\end{multicols}
 \end{description}
-(Vgl. \cite{Apple[6]}, S.23-35)
+(Vgl. \cite{Apple[6]} S.23-35)
 %---------------------------------- Cocoa Touch Layer
 \subsection{Cocoa Touch Layer}
 \label{sec:CocoaTouchLayer}
@@ -196,7 +196,8 @@ Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien z
 	\begin{itemize}
 		\item Address Book UI Framework
 		\item EventKit UI Framework
-		\item GameKit Framework
+		\item GameKit
+		\item  Framework
 		\item iAd Framework
 		\item MapKit Framework
 		\item Message UI Framework
@@ -207,7 +208,7 @@ Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien z
          \end{itemize}
 	\end{multicols}
 \end{description}
-(Vgl. \cite{Apple[6]}, S.12-22)
+(Vgl. \cite{Apple[6]} S.12-22)
 
 %---------------------------------- iOS Device Security Architektur
 \pagebreak
@@ -242,12 +243,12 @@ Der Sicherheitsmechanismus des iOS Device unterteilt sich in zwei Ebenen.
       					\end{enumerate}
 			\end{enumerate}
    		\end{description}
-Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Service um ein maximum an Sicherheit zu erreichen. (Vgl. \cite{Apple[4]}, S.4)
+Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Service um ein maximum an Sicherheit zu erreichen. (Vgl. \cite{Apple[4]} S.4)
 	\end{minipage}
 	\hfil
 	\begin{minipage}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{Bilder/Chapter3_SecArchitektur}
-		\caption {iOS Security Architektur (\cite{Apple[4]}, S.4)}
+		\caption {iOS Security Architektur (\cite{Apple[4]} S.4)}
         \label{fig:iOS Security Architektur}
 	\end{minipage}
 \end{figure}
@@ -257,7 +258,7 @@ Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Ser
 \label{sec:SystemSec}
 Die \textbf{System Security} von einem iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu, sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
 
-Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (Vgl. \cite{Apple[4]}, S.5)
+Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (Vgl. \cite{Apple[4]} S.5)
 
 \vspace*{1cm}
 
@@ -272,7 +273,7 @@ Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleis
         \end{itemize}
 	%\end{multicols}
 \end{description}
-(Vgl. \cite{Apple[4]}, S.5-9)
+(Vgl. \cite{Apple[4]} S.5-9)
 
 %--------------------------- Encryption und Daten Sicherheit
 \subsection{Encryption und Daten Sicherheit}
@@ -291,7 +292,7 @@ Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, das
 		\item \textbf{Keychain Data Protection} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
 	\end{itemize}
 \end{description}
-(Vgl. \cite{Apple[4]}, S.10-17)
+(Vgl. \cite{Apple[4]} S.10-17)
 
 %------------------------------ Applikation Security
 \subsection{Applikation Security}
@@ -308,7 +309,7 @@ Für das Betriebssystem beinhalten die zu installierenden Apps das größte Sich
 
         \end{itemize}
 \end{description}
-(Vgl. \cite{Apple[4]}, S.18-26)
+(Vgl. \cite{Apple[4]} S.18-26)
 
 %------------------------------ Network Security
 \subsection{Network Security}
@@ -325,7 +326,7 @@ an}]~\par
 		\item \textbf{Datagram Transport Layer Security (DTLS)}
         \end{itemize}
 \end{description}
-Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbindungen verwendet. (Vgl. \cite{Apple[4]}, S.27-30)
+Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbindungen verwendet. (Vgl. \cite{Apple[4]} S.27-30)
 
 %------------------------------ Apple Pay ----------------------------------
 \subsection{Apple Pay}
@@ -357,7 +358,7 @@ Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Ver
         Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des weiter werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
         \end{itemize}
 \end{description}
-(Vgl. \cite{Apple[4]}, S.31-37)
+(Vgl. \cite{Apple[4]} S.31-37)
 
 %------------------------------ Internet services
 \subsection{Internet Services}
@@ -374,7 +375,7 @@ Apple hat sich die Prämisse gestellt stabile Applikationen mit guter Benutzbark
     \end{itemize}
 \end{description} 
 
-Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste die selben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}}, sowie \textit{\glqq den Schutz vor nicht autorisierten Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (Vgl. \cite{Apple[4]}, S.38-49)
+Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste die selben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}}, sowie \textit{\glqq den Schutz vor nicht autorisierten Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (Vgl. \cite{Apple[4]} S.38-49)
 
 \begin{description}
     \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple Internet Service}]~
@@ -435,7 +436,7 @@ Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe flexible Siche
     \end{itemize}
     \end{multicols}
 \end{description}
-(Vgl. \cite{Apple[4]}, S.50-55)
+(Vgl. \cite{Apple[4]} S.50-55)
 %----------------------------- Privacy Controls
 
 \subsection{Datenschutzkontrolle}
@@ -466,4 +467,4 @@ Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuer
     \end{itemize}
       \end{multicols}
 \end{description}
-(Vgl. (\cite{Apple[4]}, S.56), (\cite{Apple[8]}, S.49))
+(Vgl. \cite{Apple[4]} S.56, \cite{Apple[8]} S.49)

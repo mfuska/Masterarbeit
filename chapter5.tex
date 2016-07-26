@@ -101,7 +101,7 @@ Die Secure Boot Chain stellt sicher, dass keine Veränderung der Hardware und/od
 \subsection{Address Space Layout Randomization (ASLR)}
 \label{sec:ASLR}
 
-Durch die Implementierung von \textbf{Address Space Layout Randomization (ASLR)} wurde die Exploitation von Softwarebugs unter iOS erheblich schwerer. ASLR hat die Aufgabe beim Starten des Betriebssystems und der Programme diesen randomisierte Memory Adressen zuzuweisen. Dadurch ist die Zuweisung der Speicheradressen nicht mehr deterministisch. Wenn ASLR im vollen Funktionsumfang implementiert worden ist, muss ein Hacker mehrere Softwarefehler finden um einen Memory Exploitation ausnützen zu können. Betriebssysteme die ASLR nur teilweise implementiert haben, ermöglichen es Hackern Memory Bereiche zu lokalisieren bzw vorherzusagen die \textit{\glqq writable\grqq{}} oder \textit{\glqq executable\grqq{}} sind und somit können diese Systeme leichter angegriffen werden. (Vgl. \cite{Apple[4], ASLR[1], ASLR[2], ASLR[3]})	 \par
+Durch die Implementierung von \textbf{Address Space Layout Randomization (ASLR)} wurde die Exploitation von Softwarebugs unter iOS erheblich schwerer. ASLR hat die Aufgabe beim Starten des Betriebssystems und der Programme diesen randomisierte Memory Adressen zuzuweisen. Dadurch ist die Zuweisung der Speicheradressen nicht mehr deterministisch. Wenn ASLR im vollen Funktionsumfang implementiert worden ist, muss ein Hacker mehrere Softwarefehler finden um einen Memory Exploitation ausnützen zu können. Betriebssysteme die ASLR nur teilweise implementiert haben, ermöglichen es Hackern Memory Bereiche zu lokalisieren bzw vorherzusagen die \textit{\glqq writable\grqq{}} oder \textit{\glqq executable\grqq{}} sind und somit können diese Systeme leichter angegriffen werden. (Vgl. \cite{Apple[4], ASLR[1], ASLR[2], ASLR[3], ASLR[4]})	 \par
 
 Das mobile Betriebssystem von Apple unterstützt ASLR seit der iOS Version 4.3. Jede App hat die Möglichkeit diesen Mechanismus mit dem Compiler Flag \textbf{Position Independent Executables (PIE)} zu aktivieren. Wenn die App mit dem PIE Flag kompiliert wurde, dann werdem
 \begin{itemize}
@@ -297,7 +297,7 @@ Diese Permissions verhindern, dass der Inhalt des Speichers nach dem Laden verä
 \label{sec:Jit}
 
 Mit der iOS Version 2.0 wurde \textbf{Dynamisches Code Signing (DCS)} eingeführt, um den Performanz-Ansprüchen der User gerecht zu werden. Es wurden in den unterschiedlichen iOS Versionen immer wieder DCS-Bugs behoben, bis die endgültige DCS-Version in iOS Version 4.3 veröffentlicht wurde. 
-\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Kompiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einen bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performanz-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse die das Entitlement \textbf{dynamic-codesigning} (Siehe Abbildung: \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden. (Vgl. \cite{JIT[1]})
+\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Kompiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einen bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performanz-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse die das Entitlement \textbf{dynamic-codesigning} (Siehe Abbildung: \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden. (Vgl. \cite{JIT[1], ASLR[4]})
 
 Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel setzt nach der Prüfung der Entitlement, der Signatur und der Prüfung, ob dieser Prozess JIT verwenden darf, die entsprechenden Berechtigungen(RWX) im Virtual Memory.
 
@@ -357,19 +357,17 @@ Die Funktion \textit{\glqq MISProvisioningProfileCheckValidity\grqq{}} der Libra
 \begin{description}
     \item[\parbox{\textwidth} {Ein Provisioning Profile ist nur gültig, wenn die folgenden Konditionen eingehalten werden}]~\par
     \begin{itemize}
-        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{}(Vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1]})    
+        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
     
-        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{}(Vgl. cite{iOSSec[5]} S.5, \cite{Hacking[1]})
+        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
     
-        \item  \glqq \textit{The certificate signing chain must be no longer than three links.}\grqq{}(Vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1]})     
+        \item  \glqq \textit{The certificate signing chain must be no longer than three links.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)     
     
-        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1]})    
+        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)   
     
-        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1]})
-    
-        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1]})    
-    
-        \item  \glqq \textit{The profile must not expired.}\grqq{} (Vgl.\cite{iOSSec[5]} S.5, \cite{Hacking[1]})
+        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)     
+        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)    
+        \item  \glqq \textit{The profile must not expired.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
     \end{itemize}
 \end{description} 
 
@@ -479,14 +477,14 @@ Nachfolgende werden die möglichen \textit{\glqq Entitlements-Key\grqq{}} beschr
 
 \paragraph{keychain-access-groups:}
 Dieses Entitlement verwaltet eine Liste (Array) von ApplicationIdentifierPrefix inklusive Namespace und ist eine Datensicherheit-Mechanismus für Apps. \par 
-    \glqq \textit{This entitlement defines an array of strings corresponding to keychains you intend the app to have access to. Each string value in the array are of the format: <prefix>.<bundle\_id>. By default, Xcode creates this entitlement for you a value equal to the application-identifier entitlement. All prefixes in this array of strings must match.}\grqq{} (Vgl. \cite{iOSSec[5]} S.8)
+    \glqq \textit{This entitlement defines an array of strings corresponding to keychains you intend the app to have access to. Each string value in the array are of the format: <prefix>.<bundle\_id>. By default, Xcode creates this entitlement for you a value equal to the application-identifier entitlement. All prefixes in this array of strings must match.}\grqq{} (\cite{iOSSec[5]} S.8)
 
 \paragraph{get-task-allow:} 
-\glqq\textit{This entitlement permits applications signed with the embedded developer certificate to be debugged, indicating that this provisioning profile is intended to permit on-device custom application testing.}\grqq{} (Vgl. \cite{iOSSec[5]} S.8) \par 
-    \glqq \textit{The boolean value of get-task-allow determines whether Xcode's debugger can attach to the app.}\grqq{} (Vgl. \cite{ProvisioningProfile[3]})
+\glqq\textit{This entitlement permits applications signed with the embedded developer certificate to be debugged, indicating that this provisioning profile is intended to permit on-device custom application testing.}\grqq{} (\cite{iOSSec[5]} S.8) \par 
+    \glqq \textit{The boolean value of get-task-allow determines whether Xcode's debugger can attach to the app.}\grqq{} (\cite{ProvisioningProfile[3]})
 
 \paragraph{application-identifier:} Dieses Entitlement beinhaltet einen eindeutigen Prefix für jede App.\par
-    \glqq \textit{The string value of application-identifier is of the format: <prefix>.<bundle\_id> and it corresponds to your app's App ID. Often times the prefix is equal to the Team ID though it isn't always the case. In the provisioning profile, this value includes an asterisk if it is associated to a wildcard App ID. In either case, the application-identifier on an app's signature is always fully qualified to include the app's full bundle ID.} \grqq{} (Vgl. \cite{ProvisioningProfile[3]})
+    \glqq \textit{The string value of application-identifier is of the format: <prefix>.<bundle\_id> and it corresponds to your app's App ID. Often times the prefix is equal to the Team ID though it isn't always the case. In the provisioning profile, this value includes an asterisk if it is associated to a wildcard App ID. In either case, the application-identifier on an app's signature is always fully qualified to include the app's full bundle ID.} \grqq{} (\cite{ProvisioningProfile[3]})
 
 \paragraph{task\_for\_pid-allow:} Dieses Entitlement erlaubt es, andere Prozesse zu kontrollieren. 
 
@@ -534,7 +532,7 @@ Dieses Item beinhaltet eine UDID Liste (Array). Auf den Devices mit diesen UDID 
 </array>
 \end{lstlisting}
 Dieses Item beinhaltet die Team-ID für welches dieses Provisioning Profile gültig ist.(Vgl. \cite{iOSSec[5], Hacking[1]}) \par
-\glqq \textit{Your Team ID, which is your team's unique 10-digit alpha/numeric value. This value is often used as the default App ID prefix. Certain features are only allowed across apps whose team-identifier value match, for example, Handoff, keychain and UIPasteboard sharing.}\grqq{} (Vgl. \cite{ProvisioningProfile[3]})
+\glqq \textit{Your Team ID, which is your team's unique 10-digit alpha/numeric value. This value is often used as the default App ID prefix. Certain features are only allowed across apps whose team-identifier value match, for example, Handoff, keychain and UIPasteboard sharing.}\grqq{} \cite{ProvisioningProfile[3]}
 
 %--------- TEAMNAME ------------
     \item TeamName Item

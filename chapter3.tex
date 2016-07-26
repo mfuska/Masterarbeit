@@ -121,20 +121,21 @@ Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss 
 
 \begin{enumerate}
 	    \item \textbf{Secure Boot Chain} (siehe Kapitel: \ref{sec:SecBootChain})
-	    \item \textbf{ALSR }(siehe Kapitel: \ref{sec:ASLR})
-	    \item \textbf{MAC} (siehe Kapitel: \ref{sec:MAC})
-	   \item \textbf{Sandbox} (siehe Kapitel: \ref{sec:Sandbox}) 
+	    \item \textbf{ALSR }(siehe Kapitel: \ref{sec:ASLR}) 
+	    \item \textbf{Code Signing}(siehe Kapitel: \ref{sec:SigningProcess}) 	   
+	    \item \textbf{Sandbox} (siehe Kapitel: \ref{sec:Sandbox}) 
 \end{enumerate}
 
-Damit die Sicherheitsmechanismen überhaupt umgangen werden können, müssen verschiedene Programmierfehler im iOS gefunden werden. 
-\begin{enumerate}
+\begin{description}
+    \item[\parbox{\textwidth} {Damit die Sicherheitsmechanismen überhaupt umgangen werden können, müssen verschiedene Programmierfehler im iOS gefunden werden. }]~\par
+  \begin{enumerate}
   \item \textbf{Einen oder mehrere Softwarefehler, die das Umgehen der iOS Sicherheitsmechanismen ermöglichen.}
   \item \textbf{Einen oder mehrere Softwarefehler, die es dem Jailbreak ermöglichen Root-Rechte zu erhalten.}
-  \item \textbf{Einen oder mehrere Softwarefehler, die das Patchen des Kernels ermöglichen.}
-\end{enumerate}
+  \item \textbf{Einen oder mehrere Softwarefehler, die das Patchen des Kernels ermöglichen. Das Patchen des Kernels ist nur notwendig, wenn ein untethered Jailbreak durchgeführt werden soll}
+\end{enumerate}\end{description} 
 (Vgl. \cite{TaiG[1], TaiG[2], TaiG[3]})
 
-Nur für einen Untethered Jailbreak ist das Patchen des Kernels notwendig.
+Andreas Kurtz definiert dies in seinem Fachartikel wie folgt: \textit{\glqq Die meisten Verfahren gründen auf zwei oder mehr Software-Schwachstellen: Einer Schwachstelle in einer der Userland-Komponenten, also etwa einer App, und mindestens einer weiteren, die sich zur Rechteerweiterung nutzen lässt. Mittels der ersten wird zunächst Code im Kontext der Userland- Komponente ausgeführt, beispielsweise im Webbrowser. Von dort ausgehend werden weitere Schwachstellen ausgenutzt, um die Rechte zu erweitern und um Sicherheitsmechanismen zu deaktivieren.\grqq{}} \cite{JB[2]}
 
 % ------------- Jailbreak Step 1 --------------------
 %\subsection{Breaking out of the sandbox}
