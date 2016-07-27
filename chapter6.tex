@@ -50,15 +50,27 @@ In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und  in Abhä
  
  Die Secure Enclave des Koprozessor des Apple A7 Prozessors und alle neueren Prozessoren (siehe Tabelle: \ref{tab:iOSHW}) bringen einen massiven Sicherheitsgewinn für die iOS Produkte mit sich. Unter iOS gibt es die Möglichkeit verschiedene Passcode Konfigurationen vorzunehmen. Neben der Anzahl der Stellen, kann auch konfiguriert werden, ob nur Zahlen oder auch alphanumerische Werte für den Passcode verwendet werden können.\par 
  Ein weiterer iOS Konfigurationsparameter ermöglicht es, das Device so zu konfigurieren, dass nach zehn falschen Passcode Eingabe alle Daten des Gerätes gelöscht werden. Die Anzahl der Fehlversuche wird bei iOS Devices ohne Secure Enclave in den Flash Memory geschrieben. \par
- Im Fall \textit{\glqq FBI gegen Apple\grqq{}} gibt es verschiedensten Theorien darüber, wie das iPhone 5c des Attentäters entsperrt wurde. 
- \begin{description}
-    \item[\parbox{\textwidth} {Der Sicherheitsforscher Zdziarski beschreibt in seinen Abhandlungen die unterschiedlichen Möglichkeiten wie folgt:}]~\par
-    \begin{enumerate}
-       \item \textit{\glqq .... based on all of this, is that an external forensics company, with hardware capabilities, is likely copying the NAND storage off the chip and frequently re-copying all or part of the chip’s contents back to the device in order to brute force the pin – and may or may not also be using older gear from iOS 8 techniques to do it. The two weeks the FBI has asked for are not to develop this technique (it’s most likely already been developed, if FBI is willing to vacate a hearing over it), but rather to demonstrate, and possibly sell, the technique to FBI by means of a field test on some demo units.\grqq{}} \cite{Hacking[4]}
-       \item \textit{\glqq If the FBI did in fact use a software exploit, the question then becomes one of how viable it is on other platforms.\grqq{}} \cite{Hacking[4]}
-   \end{enumerate}
-\end{description} 
+ Im Fall \textit{\glqq FBI gegen Apple\grqq{}} gibt es verschiedensten Theorien darüber, wie das iPhone 5c des Attentäters entsperrt wurde. Die Abbildung: \ref{fig:iOSSecurityArchitekturiOS7} zeigt die iOS Sicherheitsarchitektur des iPhone 5c. Der Coprozessor mit Secure Enclave ist nicht Teil dieser Architektur. 
 
+\begin{figure}[htb]
+    \begin{minipage}{0.6\textwidth} 
+ \begin{description}
+        \item[\parbox{\textwidth} {Der Sicherheitsforscher Zdziarski beschreibt in seinen Abhandlungen die plausiblen Varianten des FBI Hacks wie folgt}]~\par
+        \begin{enumerate}
+            \item \textit{\glqq .... based on all of this, is that an external forensics company, with hardware capabilities, is likely copying the NAND storage off the chip and frequently re-copying all or part of the chip’s contents back to the device in order to brute force the pin – and may or may not also be using older gear from iOS 8 techniques to do it. The two weeks the FBI has asked for are not to develop this technique (it’s most likely already been developed, if FBI is willing to vacate a hearing over it), but rather to demonstrate, and possibly sell, the technique to FBI by means of a field test on some demo units.\grqq{}} \cite{Hacking[4]}
+            \item \textit{\glqq If the FBI did in fact use a software exploit, the question then becomes one of how viable it is on other platforms.\grqq{}} \cite{Hacking[4]}
+        \end{enumerate}
+    \end{description}     
+    \end{minipage}
+	\hfil
+	\begin{minipage}{0.4\textwidth}
+		\includegraphics[width=0.9\textwidth]{Bilder/SecArchitektur-iOS7.png}
+		\caption {iOS Security Architektur iPhone 5c (\cite{Apple[9]} S.3)}
+        \label{fig:iOSSecurityArchitekturiOS7}
+	\end{minipage}
+\end{figure}
+
+\newpage
 \paragraph{Ergebnisse:} Die Secure Enclave biete einen Sicherheitsgewinn für die iOS Produkte, aber der Fall \textit{\glqq FBI via Apple\grqq{}} lässt einige Fragen offen. Da das FBI, Apple die Sicherheitslücke nicht offenlegte gibt es nur Mutmaßungen über den Hack der verwendet wurde um das iPhone des Attentäters zu entsperren. \par 
 Zdziarski meint dazu: \textit{\glqq The moral of the story is that the exploit the FBI may have is dangerous in and of itself, regardless of whether it serves their specific purposes of brute forcing a device’s pin. Such an exploit has numerous uses within the intelligence community and poses a threat to not only the hundreds of millions of older devices out there, but if it can be ported to a 64-bit platform, every single one of us – either directly as a threat from the government, a nation state the exploit developer also sold it to, or another hacker who finds the same hole because FBI didn’t report the vulnerability to Apple. FBI has left us all potentially exposed by choosing to keep their technique secret.\grqq{}} \cite{Hacking[4]} \par 
 Vor allem gibt es Vermutungen, dass der Hack des FBIs eine Möglichkeit bietet die Secure Enclave zu umgehen.
@@ -89,7 +101,7 @@ Die Abbildung \ref{fig:VergleichJBProzessorSW} stellt die Prozessoren des iDevic
     \end{center}
 \end{table}
 
-Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum diese iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen auf.   
+Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum dieser iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen auf.   
 \begin{figure}[htbp]
         \centering
                 \includegraphics[scale=0.55]{Bilder/iDeviceJB-SW-HW.png}
@@ -100,6 +112,7 @@ Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsd
 Anhand der Abbildung \ref{fig:VergleichJBProzessorSW} kann gezeigt werden, dass alle Apple Prozessorarchitekturen einschliesslich der Apple A6 einen Sicherheitsgewinn für die iOS Produkte bedeutet haben. Da die JBs für diese iOS Version auf älteren Apple Prozessorarchitekturen innerhalb von wenigen Tagen verfügbar war. Ab der Apple Prozessorarchitektur A7 ist der Unterschied, zwischen dem veröffentlichen des JBs für die HW und die SW, nur mehr marginal. \par
 \paragraph{Ergebnisse:} Dies lässt den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte zum heutigen Zeitpunkt nur mehr vom mobilen Betriebssystem von Apple abhängt und nicht von der verwendeten iOS HW.
 
+\newpage
 %------------------------------------------------------------------------------
 %------------------------------ 
 \subsection{iOS Version}
@@ -118,29 +131,43 @@ Anhand der Abbildung \ref{fig:VergleichJBProzessorSW} kann gezeigt werden, dass 
         \caption{iOS Version / JB Tools /\# Tage bis zum JB}
         \label{fig:AnalyseiOSJB2}
 \end{figure}
-Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} führen die bekanntesten und stabilsten untethered JBs an. Diese werden mit den iOS Versionen und der Anzahl an Tagen die benötigt wurden, um ein JB zu veröffentlichen, in Verbindung gesetzt.
 
-\textbf{Die Daten zeigen einerseits,} dass die Anzahl der veröffentlichten JB-Tool ab der iOS Version 7.0 massiv rückgängig sind. Es wurden nur mehr ein oder zwei JB-Tools pro Major iOS Version der Öffentlichkeit zur Verfügung gestellt. Zudem werden die JBs ab der iOS Version 7.x nur mehr von Teams veröffentlicht.
+Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} zeigen die bekanntesten und stabilsten untethered JBs in Abhängigkeit mit der iOS Version und der Anzahl an Tagen die benötigt wurden um für diese iOS Version ein Jailbreak durchzuführen \par 
+\textbf{Die Graphiken zeigen,} dass nach einem gelungen JB die Sicherheitsupdates von Apple einen kurzzeitigen Sicherheitsmehrwert mit sich bringen, aber innerhalb einiger Tage wurde ein neuer JB des selben JB-Team veröffentlicht. Dies lässt darauf schliessen, dass die Sicherheitslücken nur teilweise geschlossen worden sind. Dieser Verhalten gilt vor allem für alle iOS Versionen bis einschliesslich der iOS Version 7.x.\par  
+Ab der iOS Version 8.x ändert sich dieses Verhalten, da die JB Community jetzt länger für die JBs der nachfolgenden iOS minor Releases benötigt. \par 
+Markant ändern sich die Muster ab der iOS Version 9.x. Das JB für die Minor iOS Version 9.1 benötigte fast sechs länger, als das JB für die Major iOS Version 9.0 benötigte.\par
 
-\textbf{Anderseits zeigen die Daten,} dass nach einem gelungen JB die Sicherheitsupdates von Apple keinen Sicherheitsmehrwert mit sich bringen. Da innerhalb weniger Tage ein neuer JB des selben JB-Team veröffentlicht wurde. Dies gilt vor allem für alle iOS Versionen bis einschliesslich der iOS Version 7.x. Ab der iOS Version 8.x ändert sich dieses Verhalten. Markant ändern sich die Muster ab der iOS Version 9.x.
+\begin{figure}[htbp]
+        \centering
+                \includegraphics[scale=0.5]{Bilder/iOSJB1.png}
+        \caption{Anzahl der veröffentlichten JBs pro iOS Version 3.x - 5.1.1}
+        \label{fig:AnalyseAnzahliOSJB1}
+\end{figure}
 
-\paragraph{Ergebnisse:} Die aufbereitet Daten lassen den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte gesteigert wurden.
-%Ein Indiz dafür ist, dass die Anzahl an JB-Tools die pro iOS Version veröffentlicht wurden, sich auf ein oder zwei Tools pro Release reduzierten. 
+\begin{figure}[htbp]
+        \centering
+                \includegraphics[scale=0.5]{Bilder/iOSJB2.png}
+        \caption{Anzahl der veröffentlichten JBs pro iOS Version 6.x - 9.x.x}
+        \label{fig:AnalyseAnzahliOSJB2}
+\end{figure}
 
-\begin{description}
-    \item[\parbox{\textwidth} {Die Ursachen hierfür sind}]~\par
-    \begin{enumerate}
-        \item Die Sicherheitsupdates von Apple zeigen Wirkung (Siehe Kapitel: \ref{sec:Frage2}).
-        \item Apple änderte seine Vorgangsweise es wurde nicht mehr versucht gerichtlich die JBs zu unterbinden, sondern Apple beschäftigt nun namhafte iOS Hacker, wie z.B. Comex (Entwickler von JailbreakMe)
-        \item Die JB Community wurde kommerzialisiert. Neben Preisgelder die auf JBs ausgesetzt wurden, gibt es einen Markt für Zero-Day Bugs. 
-    \end{enumerate}
-\end{description} 
+\textbf{Die Abbildungen \ref{fig:AnalyseAnzahliOSJB1} und \ref{fig:AnalyseAnzahliOSJB2} zeigen,} dass die Anzahl der veröffentlichten JB-Tools, ab der iOS Version 7.0 massiv rückgängig sind. Es wurden nur mehr ein oder zwei JB-Tools pro iOS Version der Öffentlichkeit zur Verfügung gestellt. 
+\paragraph{Ergebnisse:} Die aufbereitet Daten lassen den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte mit steigender iOS Version zunimmt. Weiters muss angeführte werden, dass Apple seine Strategie im Bezug auf die JB Community geändert hat. In der Vergangenheit hat Apple versucht dagegen gerichtlich vorzugehen, nur mit begrenzten Erfolg (\textit{\glqq Fall Apple gegen Gehot\grqq{}}). Vor einigen Jahren hat Apple damit begonnen namhafte iOS Hacker anzustellen,  wie z.B. Comex (\textit{\glqq Entwickler von JailbreakMe\grqq}). Für Apple hat dies zwei Vorteile, ersten sie erhalten das Wissen der Person bezüglich der Schwachstellen der iOS Produkte und zweitens die JB Community verliert ein Mitglied. Aber was noch viel schwerwiegender einzustufen ist, dass mit dem Hacker auch eine Anzahl von Zero-Day Bugs Apple gemeldet werden.\par
+Seit dem Jahr 2015 ist der kommerzielle Aspekt in diesem Zusammenhang nicht ausser acht zu lassen. Angefangen mit dem Preisgeld auf ein JB der iOS Version 9.x bis hin zu Premieren für Zero-Day Bugs. Dies hat meiner Meinung nach einen grossen Einfluss auf die Dauer der Veröffentlichung des JB ab der iOS Version 9.x und verzerrt die erhobenen Metriken.
 
 %------------------------------------------------------------------------------
 %------------------------------ 
 \section{Welche Auswirkung haben die von Apple eingeführten Sicherheitsmechanismen und Sicherheitsupdates auf die Sicherheit des Systems?}
 \label{sec:Frage2}
+%------------------------------------------------------------------------------
+%------------------------------ 
+\subsection{iOS Sicherheitsmechanismen}
+\label{sec:Frage2SecMechanismen}
 
+%------------------------------------------------------------------------------
+%------------------------------ 
+\subsection{iOS Sicherheitsupdates}
+\label{sec:Frage2SecUpdate}
 \begin{figure}[htbp]
         \centering
                 \includegraphics[scale=0.4]{Bilder/iOSSicherheitsupdate3.png}
@@ -176,6 +203,11 @@ Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} führen die 
         \label{fig:AnalyseiOSSicherheitsupdate9}
 \end{figure}
 
+\newpage
+%------------------------------------------------------------------------------
+%------------------------------ 
+\section{Analyse der Hypothese H1}
+\label{sec:AnalyseHypo}
 
 
 

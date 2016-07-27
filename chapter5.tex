@@ -686,7 +686,8 @@ Die Sicherheit des iOS Devices hängt mit der Sicherheit des Passcodes zusammen.
 \label{sec:Sandbox}
 
 \textbf{Die Sandbox} ist ein weiterer Zugriffkontrollmechanismus um Userdaten zu schützen. Die Sandbox wird auch als \textbf{Last Line of Defense} bezeichnet. Wenn alle anderen Sicherheitsmechanismen schon versagt haben, verhindert die Sandbox ein übergreifen der Schadsoftware auf das gesamte Device. Die Schadsoftware kann sich nur in den Verzeichnissen der App ausbreiten. Die Malware kann nur auf die Daten in diesem Verzeichnisbaum zugreifen und es stehen auch nur die Systemressourcen zur Verfügung, die für diese App vom Entwickler festgelegt wurden. \par
-Würde eine Schadsoftware Zugriff auf eine App erhalten die in keiner Sandbox läuft, so hätte die Malware Zugriff auf alle Daten des Devices und könnte alle Systemressourcen uneingeschränkt verwenden.
+Würde eine Schadsoftware Zugriff auf eine App erhalten die in keiner Sandbox läuft, so hätte die Malware Zugriff auf alle Daten des Devices und könnte alle Systemressourcen uneingeschränkt verwenden.\par
+Fabin Vogt beschreibt dies in seiner Abhandlung so: \textit{\glqq Dealing with faults in software is a complicated task, especially when a system may be extended by various modules. These modules may contain unforeseen faults and thus portray a serious threat to the overall system reliability and security. So the main goal for software fault isolation is to limit the impact of module faults to a small part of the system. The untrusted module is therefore loaded in its own fault domain [9], which is logically separated from the rest of the system.\grqq{}} \cite{Sandbox[4]}
 
 \begin{description}
     \item[\parbox{\textwidth} {Unteranderem könnte die Malware folgende Systemressourcen unbemerkt vom User verwenden}]~\par
