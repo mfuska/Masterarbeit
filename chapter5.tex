@@ -355,19 +355,19 @@ Die Funktion \textit{\glqq MISProvisioningProfileCheckValidity\grqq{}} der Libra
  In den Systemeinstellung des iOS Devices werden alle auf dem Device installierten Provisioning Profile angezeigt. Nur wenn das Provisioning Profile gültig ist, kann das Profile am Gerät installiert und verwendet werden.(Vgl. \cite{iOSSec[5]} S.5, \cite{AppDist[1], Hacking[1]}) \par
 
 \begin{description}
-    \item[\parbox{\textwidth} {Ein Provisioning Profile ist nur gültig, wenn die folgenden Konditionen eingehalten werden}]~\par
+    \item[\parbox{\textwidth} {Stefan Esser beschreibt in seinem iOS Hacker's Handbook die Konditionen zur Überprüfung der Gültigkeit des Provisioning Profile wie folgt \cite{Hacking[1]} }]~\par
     \begin{itemize}
-        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
+        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5) 
     
-        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
+        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)
     
         \item  \glqq \textit{The certificate signing chain must be no longer than three links.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)     
     
-        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)   
+        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)    
     
-        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)     
-        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)    
-        \item  \glqq \textit{The profile must not expired.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5) 
+        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} ((Vgl. \cite{iOSSec[5]} S.5)     
+        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)    
+        \item  \glqq \textit{The profile must not expired.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5) 
     \end{itemize}
 \end{description} 
 
