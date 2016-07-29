@@ -112,40 +112,44 @@ Eine Veränderung ist in den Daten ab dem Apple A7 Prozessors sichtbar. Da zwisc
 \subsection{iOS Version}
 \label{sec:Frage1iOSVersion} 
 
-\begin{figure}[htbp!]
+\begin{figure}[hp!]
         \centering
-                \includegraphics[scale=0.41]{Bilder/Frage1_1.png}
+                \includegraphics[scale=0.35]{Bilder/Frage1_1.png}
         \caption{iOS Version / JB Tools /\# Tage bis zum JB}
         \label{fig:AnalyseiOSJB1}        
 \end{figure}
 
-\begin{figure}[htbp!]
+\begin{figure}[hp!]
         \centering
-                \includegraphics[scale=0.43]{Bilder/Frage1_2.png}
+                \includegraphics[scale=0.35]{Bilder/Frage1_2.png}
         \caption{iOS Version / JB Tools /\# Tage bis zum JB}
         \label{fig:AnalyseiOSJB2}
 \end{figure}
 
-Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} zeigen die bekanntesten und stabilsten untethered JBs, in Abhängigkeit mit der iOS Version und der Anzahl an Tagen die benötigt wurden, um für diese iOS Version ein Jailbreak durchzuführen \par 
-\textbf{Die Graphiken zeigen,} dass nach einem gelungen JB die Sicherheitsupdates von Apple einen kurzzeitigen Sicherheitsmehrwert mit sich bringen, aber innerhalb einiger Tage wurde ein neuer JB, des selben JB-Team veröffentlicht. Dies lässt darauf schliessen, dass die Sicherheitslücken nur teilweise geschlossen worden sind. Dieser Verhalten gilt vor allem für alle iOS Versionen bis einschliesslich der iOS Version 7.x.\par  
+Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} zeigen die bekanntesten und stabilsten untethered JBs, in Abhängigkeit mit der iOS Version und der Anzahl an Tagen die benötigt wurden, um für diese iOS Version ein Jailbreak bereitzustellen. \par 
+\textbf{Die Graphiken zeigen,} dass nach einem gelungen JB die Sicherheitsupdates von Apple einen kurzzeitigen Sicherheitsmehrwert mit sich bringen, aber innerhalb einiger Tage wurde ein neuer JB, des selben JB-Team veröffentlicht. Dies lässt darauf schliessen, dass die Sicherheitslücken nur teilweise geschlossen worden sind. Dieser Verhalten gilt  für alle iOS Versionen bis einschliesslich der iOS Version 9.x.\par  
 Ab der iOS Version 8.x ändert sich dieses Verhalten, da die JB Community jetzt länger für die JBs der nachfolgenden iOS minor Releases benötigt. \par 
 Markant ändern sich die Muster ab der iOS Version 9.x. Das JB für die Minor iOS Version 9.1 benötigte fast sechsmal länger, als das JB für die Major iOS Version 9.0 benötigte.\par
 
-\begin{figure}[htbp!]
+
+
+\begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.5]{Bilder/iOSJB1.png}
         \caption{Anzahl der veröffentlichten JBs pro iOS Version 3.x - 5.1.1}
         \label{fig:AnalyseAnzahliOSJB1}
 \end{figure}
 
-\begin{figure}[htbp!]
+\textbf{Die Abbildungen \ref{fig:AnalyseAnzahliOSJB1} und \ref{fig:AnalyseAnzahliOSJB2} zeigen,} dass die Anzahl der veröffentlichten JB-Tools, ab der iOS Version 7.0 massiv rückgängig sind. Es wurden nur mehr ein oder zwei JB-Tools pro iOS Version der Öffentlichkeit zur Verfügung gestellt. 
+
+\begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.5]{Bilder/iOSJB2.png}
         \caption{Anzahl der veröffentlichten JBs pro iOS Version 6.x - 9.x.x}
         \label{fig:AnalyseAnzahliOSJB2}
 \end{figure}
 
-\textbf{Die Abbildungen \ref{fig:AnalyseAnzahliOSJB1} und \ref{fig:AnalyseAnzahliOSJB2} zeigen,} dass die Anzahl der veröffentlichten JB-Tools, ab der iOS Version 7.0 massiv rückgängig sind. Es wurden nur mehr ein oder zwei JB-Tools pro iOS Version der Öffentlichkeit zur Verfügung gestellt. 
+
 \paragraph{Ergebnisse:} Die aufbereitet Daten lassen den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte mit steigender iOS Version zunimmt. \par 
 Es muss darauf hingewissen werden, dass Apple seine Strategie im Bezug auf die JB Community geändert hat. In der Vergangenheit hat Apple versucht, gegen JBs gerichtlich vorzugehen, aber nur mit begrenzten Erfolg (\textit{\glqq Klage gegen George Hotz alias Geohot\grqq{}}). Apple hat vor einigen Jahren damit begonnen namhafte iOS Hacker anzustellen, unteranderem Comex  der Entwickler von \textit{\glqq JailbreakMe\grqq}. Für Apple hat dies zwei Vorteile, ersten die Hacker kennen das mobile Betriebssystem und die Schwächen dieses, besser als viel interne Apple Entwickler.  Zweitens, die JB Community verliert ein aktives Mitglied. Als sehr viel schwerwiegender einzustufen ist, dass durch den ehemaligen Hacker auch eine Anzahl an Zero-Day Bugs Apple gemeldet werden.\par
 Seit dem Jahr 2015 ist der kommerzielle Aspekt in diesem Zusammenhang nicht ausser acht zu lassen. Angefangen mit dem Preisgeld auf ein JB der iOS Version 8.x bis hin zu Premieren für Zero-Day Bugs. Dies hat meiner Meinung nach einen grossen Einfluss auf die Dauer der Veröffentlichung des JBs. Die markanten Ausreißer in den Metriken, ab der iOS Version 8.x beruhen meiner Meinung nach auf dem kommerziellen Faktor. Der letzte JB wurde Anfang Dezember 2015 veröffentlicht, seit diesem Zeitpunkt wurden sechs iOS Versionen veröffentlicht und es sind 243 Tage seit es letzten JBs verstrichen.
@@ -178,70 +182,87 @@ Seit dem Jahr 2015 ist der kommerzielle Aspekt in diesem Zusammenhang nicht auss
 
 %------------------------------------------------------------------------------
 %------------------------------ 
+\newpage
 \subsection{iOS Sicherheitsupdates}
 \label{sec:Frage2SecUpdate}
 
-In diesem Kapitel wird versucht eine Wechselbeziehung zwischen der Sicherheit der iOS Versionen und den JBs, in Abhängigkeit der Hypothese H1 darzustellen. 
- 
-\begin{table}[htp!]
+In diesem Kapitel wird versucht, die Wechselbeziehung zwischen der Sicherheit des iOS Device und den JBs, in Abhängigkeit der Hypothese H1, darzustellen. Im Detail wird die Historie einzelner JB Tool betrachtet. 
+
+\begin{table}[hp!]
     \begin{center}
-        \begin{tabular}{| p{10mm} | p{18mm} | p{17mm} | p{25mm} | p{32mm} | p{22mm} | p{15mm} |} \hline
-            \textbf{iOS} & \textbf{Datum iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
-            4.2.6 & 10.02.2011 & 4 & 0 & JailbreakMe 3.0 & 02.6.2011 & 112 \\ \hline            4.2.7 & 14.04.2011 & 4 & 0 & JailbreakMe 3.0 & 02.6.2011 & 49 \\ \hline            4.2.8 & 04.05.2011 & 2 & 1 & JailbreakMe 3.0 & 02.6.2011 & 29 \\ \hline            4.3 & 09.03.2011 & 12 & 0 & JailbreakMe 3.0 &	02.6.2011 & 85 \\ \hline            4.3.1 & 25.03.2011 & 5 & 0 & JailbreakMe 3.0 & 02.6.2011 & 69 \\ \hline            4.3.2 & 15.04.2011 & 5 & 0 & JailbreakMe 3.0 & 02.6.2011 & 48 \\ \hline            4.3.3 & 04.05.2011 & 2 & 1 & JailbreakMe 3.0 & 02.6.2011 & 29 \\ \hline
-            4.3.4 & 15.07.2011 & 1 & 2	 & - & - & - \\ \hline
+        \begin{tabular}{| p{20mm} | p{12mm} | p{17mm} | p{25mm} | p{32mm} | p{22mm} | p{15mm} |} \hline
+             \textbf{Datum iOS} & \textbf{iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
+            10.02.2011 & 4.2.6 &  - & -  & JailbreakMe 3.0 & 02.06.2011 & 112 \\ \hline
+             09.03.2011 & 4.3 & 12 & 0 & JailbreakMe 3.0 &	02.06.2011 & 85 \\ \hline
+             25.03.2011 & 4.3.1 &  - & - & JailbreakMe 3.0 & 02.06.2011 & 69 \\ \hline            14.04.2011 & 4.2.7 &  4 & 0 & JailbreakMe 3.0 & 02.06.2011 & 49 \\ \hline             15.04.2011 & 4.3.2 & 5 & 0 & JailbreakMe 3.0 & 02.06.2011 & 48 \\ \hline
+             04.05.2011 & 4.2.8 &  - & - & JailbreakMe 3.0 & 02.06.2011 & 29 \\ \hline            \textbf{04.05.2011} & \textbf{4.3.3} &  - & -  & \textbf{JailbreakMe 3.0} & \textbf{02.06.2011} & \textbf{29} \\ \hline
+            15.07.2011 & 4.3.4 &  1 & 2	 & - & - & - \\ \hline
         \end{tabular} 
-        \caption{Analyse JB-Tool JailbreakMe 3.0}
+        \caption{Analyse JB-Tool JailbreakMe 3.0 \protect\footnotemark}         
         \label{tab:AnalyseJailbreakMe3.0}
     \end{center}
 \end{table}
+%iOS2011-2012
+\footnotetext{\url{https://support.apple.com/de-de/HT204611}}
+%\footnote{\label{foot:iOS2011-2012}{\url{https://support.apple.com/de-de/HT204611}}}
+
+\paragraph{JailbreakMe 3.0} ist einen \textit{\glqq webbasierter Userland Exploit\grqq{}} und wurde am 02.06.2011 veröffentlicht. Dieser untethered Jailbreak wurde für die iOS Version 4.3.3 bereitgestellt. Es konnten aber mit diesem Exploit die iOS Version 4.2.6-4.3.3 (Siehe Tabelle: \ref{tab:AnalyseJailbreakMe3.0})  \textit{\glqq gejailbreaked\grqq{}} werden. 
+Dieser Exploit nutzte einen Fehler im CoreGraphik Framework aus. Dieser ermöglicht es, im Zusammenhang mit dem Lesen eines PDFs, einen beliebigen Code auszuführen. Der IOMobileFrameBuffer hat einen Softwarefehler, welcher es JailbreakMe 3.0 Exploit ermöglichte, Systemprivilegien zu erhalten, Beide Bugs wurde in der iOS Version 4.3.4 \footnote{\label{foot:iOS4.3.4}{\url{https://support.apple.com/de-de/HT202272}}} geschlossen. Ab der iOS Version 4.3.4 ist dieser JB nicht mehr funktionsfähig.
+ 
+\paragraph{Ergebnisse:} Interessant an den Daten der Tabelle \ref{tab:AnalyseJailbreakMe3.0} ist, dass in einem Zeitraum von 112 Tagen sechs iOS Sicherheitsupdates von Apple zur Verfügung gestellt wurden. In dieses sechs Updates wurden insgesamt 24 Bugs behoben. Keiner der behobenen Bugs wurden jemals in einem JB verwendet. Am 15.07.2011 wurde das iOS Sicherheitsupdate 4.3.4 zum Download zur Verfügung gestellt. In diesem Update wurden insgesamt 3 Bugs beschlossen. JailbreakMe 3.0 verwendetet zwei von diesen Bugs und somit war der JB für alle weiteren iOS Version unterbunden. Dies zeigt das Apple die JB Tools \textit{\glqq reverse engineered\grqq{}} und mit dem nächsten Update wurde der JailbreakMe 3.0 JB für alle weiteren iOS Versionen unterbunden. Apple benötigte \textbf{43 Tage} um das Update bereitzustellen.
 
 
-\begin{table}[htp!]
+\newpage
+\begin{table}[hp!]
     \begin{center}
-        \begin{tabular}{| p{20mm} | p{18mm} | p{17mm} | p{25mm} | p{20mm} | p{22mm} | p{15mm} |} \hline
+        \begin{tabular}{| p{15mm} | p{20mm} | p{17mm} | p{25mm} | p{20mm} | p{22mm} | p{15mm} |} \hline
             \textbf{iOS} & \textbf{Datum iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
-7.0 & 18.09.2013 &	36 & 5 & evasi0n7 & 22.12.2013 & 95 \\ \hline7.0.1 & 19.09.2013 & - & - & evasi0n7 & 22.12.2013 &  94 \\ \hline7.0.2 & 26.09.2013 & 2 & 0 & evasi0n7 & 22.12.2013 & 87 \\ \hline7.0.3 & 22.10.2013 & 3 & 0 & evasi0n7 & 22.12.2013 & 61 \\ \hline7.0.4 & 14.11.2013 & 1 & 0 & evasi0n7 & 22.12.2013 & 38 \\ \hline & & & & & & \\ \hline7.0.5 & 29.01.2014 & - & - & evasi0n7 & 05.2.2014 & 7 \\ \hline7.0.6 & 21.02.2014 & 1 & 0 & evasi0n7 & 22.2.2014 & 1 \\ \hlineiPhone 5s & 20.09.2013 & - & - & evasi0n7 & 26.2.2014 & 159 \\ \hlineiPhone 5c & 20.09.2013	& - & - & evasi0n7 & 26.2.2014 & 159 \\ \hline7.1 & 10.03.2014 & 20 & 4 & - & - & - \\ \hline
-        \end{tabular} 
-        \caption{Analyse JB-Tool evasi0n7}
-        \label{tab:Analyseevasi0n7}
-    \end{center}
-\end{table}
-
-\begin{table}[htp!]
-    \begin{center}
-        \begin{tabular}{| p{10mm} | p{18mm} | p{17mm} | p{25mm} | p{20mm} | p{22mm} | p{15mm} |} \hline
-            \textbf{iOS} & \textbf{Datum iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
-7.1 & 10.03.2014 & 20 & 4 & Pangu & 23.6.2014 &105 \\ \hline7.1.1 & 22.04.2014 & 4 & 0 & Pangu & 23.6.2014 & 62 \\ \hline7.1.2 & 30.06.2014 & 18 & 0 & Pangu & 23.6.2014 & 0 \\ \hline & & & & & & \\ \hline8.0 & 17.09.2014 & 44 & 4 & Pangu8 & 22.10.2014 & 35 \\ \hline8.0.1 & 24.09.2014 & - & - & Pangu8 & 22.10.2014 & 42 \\ \hline8.0.2 & 25.09.2014 & - & - & Pangu8 & 22.10.2014 & 43 \\ \hline8.1 & 20.10.2014 & 5 & 0 & 	 & 22.10.2014 & 2 \\ \hline8.1.1 & 17.11.2014 & 1 & 0 & - & - & - \\ \hline
+7.1 & 10.03.2014 & 20 & 4 & Pangu & 23.6.2014 & 105 \\ \hline\textbf{7.1.1} & \textbf{22.04.2014} & \textbf{4} & \textbf{0} & \textbf{Pangu} & \textbf{23.6.2014} & \textbf{62} \\ \hline7.1.2 & 30.06.2014 & 18 & 0 & Pangu & 23.6.2014 & -7 \\ \hline & & & & & & \\ \hline8.0 & 17.09.2014 & 44 & 4 & Pangu8 & 22.10.2014 & 35 \\ \hline8.0.1 & 24.09.2014 & - & - & Pangu8 & 22.10.2014 & 28 \\ \hline8.0.2 & 25.09.2014 & - & - & Pangu8 & 22.10.2014 & 27 \\ \hline\textbf{8.1} & \textbf{20.10.2014} & \textbf{5} & \textbf{0} & \textbf{Pangu8} & \textbf{22.10.2014} & \textbf{2} \\ \hline8.1.1 & 17.11.2014 & 5 & 3 & - & - & - \\ \hline
+ & & & & & & \\ \hline
+9.0& 16.09.2015 & 71 & 1 & Pangu9 & 14.10.2015 & 28  \\ \hline\textbf{9.0.1} & \textbf{23.09.2015} & \textbf{-} & \textbf{-} & \textbf{Pangu9} & \textbf{14.10.2015} & \textbf{21}\\ \hline
+9.0.2 & 30.09.2015 & 1 & 0 & Pangu9 & 14.10.2015 & -14 \\ \hline
+9.1(32 Bit) & 21.10.2015 & 25 & 2 & Pangu9 & 14.10.2015 & -  \\ \hline		 & & & & & & \\ \hline				\textbf{9.1(64 Bit)} & \textbf{21.10.2015} & \textbf{25} & \textbf{2} & \textbf{Pangu9} & \textbf{11.3.2016} & \textbf{142}  \\ \hline9.2 & 08.12.2015	 & 27 & 3 & - & - & - \\ \hline		
      \end{tabular} 
-        \caption{Analyse JB-Tool Pangu}
+        \caption{Analyse JB-Tool Pangu \protect\footnotemark}
         \label{tab:AnalysePangu}
     \end{center}
 \end{table}
+%{\label{foot:iOS2015-2016}
+%\footnote{\url{https://support.apple.com/de-de/HT201222}}
+\footnotetext{\url{https://support.apple.com/de-de/HT201222}}
 
+\paragraph{Das JB Team Pangu} veröffentlicht in den letzten zwei Jahren für drei Major iOS Versionen JBs. Bevor das Team Pangu ein JB veröffentlichten, nahmen die Member des Teams an einem iOS Exploitation Trainings von von Stefan Essers teil \footnote{\url{https://www.sektioneins.de/en/trainings/iosexploitation.html}}. \par
+Bis zum heutigen Datum (18.07.2016) wurden vom Pangu Team vier unterschiedliche JB Version veröffentlicht. Mit diesen vier JBs können zwölf iOS Versionen \textit{\glqq gejailbreaked\grqq{}} werden (Siehe Tabelle: \ref{tab:AnalysePangu}).
+Die Tabelle \ref{tab:AnalysePangu} zeigt die selbe Wechselbeziehung zwischen den iOS Updates und den JBs,, wie beim JB JailbreakMe 3.0. 
+Es ist noch anzuführen, dass das Pangu Team das erste JB für die 64 Bit Architektur veröffentlicht. 
+\paragraph{Ergebnisse:}  Die iOS Version 7.1.2 ist das letzte Update für das iPhone 4. Für dieses Device, ist somit das letzte verfügbare Update, als nicht sicher einzustufen. Interessant ist auch, dass das Sicherheitsupdate 8.1.1 drei Softwarefehler behebt die von einem JB verwendet wurden. Alle drei Bugs wurden vom Pangu8 JB ausgenutzt und bedeuteten das Ende des Pangu8 JBs. 
+
+Nach \textbf{26 Tage} brachte Apple ein Sicherheitsupdate heraus und das JB Pangu8 konnte die iOS Version 8.1.1 nicht mehr jailbreaken.Die iOS Version 9.2 beendete nach \textbf{55 Tagen} die Funktionsfähigkeit des Pangu9 JBs.
+
+
+
+\newpage
 \begin{table}[htp!]
     \begin{center}
-        \begin{tabular}{| p{22mm} | p{18mm} | p{17mm} | p{25mm} | p{20mm} | p{22mm} | p{15mm} |} \hline
+        \begin{tabular}{| p{10mm} | p{22mm} | p{17mm} | p{25mm} | p{18mm} | p{22mm} | p{15mm} |} \hline
             \textbf{iOS} & \textbf{Datum iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
-9.0& 16.09.2015 & 71 & 1 & Pangu9 & 14.10.2015 & 28  \\ \hline9.0.1 & 23.09.2015 & - & - & Pangu9 & 14.10.2015 & 21  \\ \hline9.0.2 & 30.10.2015 & 1 & 0 & Pangu9 & 14.10.2015 & 0  \\ \hline 9.1(32 Bit) & 21.10.2015 & 25 & 2 & Pangu9 & 14.10.2015 & 0  \\ \hline		 & & & & & & \\ \hline				9.1(64 Bit) & 21.10.2015 & 25 & 2 & Pangu9 & 11.3.2016 & 142  \\ \hline9.2 & 08.12.2015	 & 27 & 3 & - & - & - \\ \hline		
-\end{tabular} 
-        \caption{Analyse JB-Tool Pangu9}
-        \label{tab:AnalysePangu9}
-    \end{center}
-\end{table}
-
-\begin{table}[htp!]
-    \begin{center}
-        \begin{tabular}{| p{10mm} | p{18mm} | p{17mm} | p{25mm} | p{18mm} | p{22mm} | p{15mm} |} \hline
-            \textbf{iOS} & \textbf{Datum iOS} & \textbf{\# Bugs} & \textbf{\# JB Bugs} & \textbf{JB Tool} & \textbf{JB Datum} & \textbf{\# Tage bis JB} \\ \hline 
-8.0 & 17.09.2014 & 44 & 4 & Taig & 29.11.2014 & 73  \\ \hline8.0.1 & 24.09.2014	& - & - & Taig & 29.11.2014 & 80  \\ \hline8.0.2 & 25.09.2014 & - & -  & Taig & 29.11.2014 & 81  \\ \hline8.1 & 20.10.2014 & 5 & 0 & Taig & 29.11.2014 & 40  \\ \hline8.1.1 & 17.11.2014 & 1 & 0 & Taig & 29.11.2014 & 12  \\ \hline & & & & & & \\ \hline						8.1.2 & 09.12.2014 & 16 & 5 & Taig & 08.3.2015 & 89  \\ \hline	 & & & & & & \\ \hline						8.1.3 & 27.01.2015 & 16 & 5 & Taig & 23.6.2015 & 147  \\ \hline8.2  & 09.03.2015 & 5 & 1 & Taig & 23.6.2015 & 106  \\ \hline8.3 &  08.04.2015 & 40 &1 & Taig & 23.6.2015 & 103  \\ \hline		 & & & & & & \\ \hline					8.4 &  30.06.2015 & 25 & 0 & Taig & 01.7.2015 & 1  \\ \hline8.4.1 & 13.08.2015 & 35 & 9 & - & - & -   \\ \hline
+8.0 & 17.09.2014 & 44 & 4 & TaiG & 29.11.2014 & 73  \\ \hline8.0.1 & 24.09.2014	& - & - & TaiG & 29.11.2014 & 66 \\ \hline8.0.2 & 25.09.2014 & - & -  & TaiG & 29.11.2014 & 65  \\ \hline8.1 & 20.10.2014 & 5 & 0 & TaiG & 29.11.2014 & 40  \\ \hline\textbf{8.1.1} & \textbf{17.11.2014} & \textbf{5} & \textbf{3} & \textbf{TaiG} & \textbf{29.11.2014} & \textbf{12}  \\ \hline & & & & & & \\ \hline						\textbf{8.1.2} & \textbf{09.12.2014} & \textbf{1} & \textbf{0} & \textbf{TaiG v2} & \textbf{08.03.2015} & \textbf{89}  \\ \hline	 & & & & & & \\ \hline						8.1.3 & 27.01.2015 & 16 & 5 & TaiG v3 & 23.06.2015 & 147  \\ \hline8.2  & 09.03.2015 & 5 & 1 & TaiG v3 & 23.06.2015 & 106 \\ \hline\textbf{8.3} &  \textbf{08.04.2015} & \textbf{40} & \textbf{1} & \textbf{TaiG v3} & \textbf{23.06.2015} & \textbf{103}  \\ \hline		 & & & & & & \\ \hline					\textbf{8.4} &  \textbf{30.06.2015} & \textbf{25} & \textbf{0} & \textbf{TaiG v4} & \textbf{01.07.2015} & \textbf{1}  \\ \hline8.4.1 & 13.08.2015 & 35 & 9 & - & - & -   \\ \hline
         \end{tabular} 
-        \caption{Analyse JB-Tool Taig}
+        \caption{Analyse JB-Tool TaiG \protect\footnotemark}
         \label{tab:AnalyseTaig}
     \end{center}
 \end{table}
+%{\label{foot:iOS2014}
+%\footnote{\url{https://support.apple.com/de-de/HT205762}
+\footnotetext{\url{https://support.apple.com/de-de/HT205762}}
 
-    
+\paragraph{TaiG} zeigt wie kein anderes JB-Tool wie sehr Apple und JB-Community Katz und Maus spielen. Apple antwortet innerhalb weniger Tage mit einem Update, welches das JB schliesst. Das JB Team TaiG veröffentlicht für jedes Update ein neues JB. Bis am Ende Apple das iOS Sicherheitsupdate 8.4.1 veröffentlicht. In diesem Update werden 8 Bugs geschlossen, auf denen der TaiG JB aufbaute. 
+ 
 
+Taig 10 Tage
+Taig v2 war schon bei der Veröffentlichung nicht mehr obsulet. 
+Taig v3 7 Tage
+Die iOS Version 8.4.1 beendete nach \textbf{43 Tagen} die Funktionsfähigkeit des JB Taigv4.
 \newpage
 %------------------------------------------------------------------------------
 %------------------------------ 
@@ -251,4 +272,4 @@ In diesem Kapitel wird versucht eine Wechselbeziehung zwischen der Sicherheit de
 
 
 
- 
+        
