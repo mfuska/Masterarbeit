@@ -16,14 +16,14 @@
 \section{iOS Grundlagen}
 \label{sec:iOSGrundlage}
 
-Das mobile Apple Betriebsystem iOS basiert auf dem Desktop Betriebssystem des Mac OS X. Darwin ist ein frei erhältliches Linux basiertes Betriebssystem. Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für das Mac OS X und dem mobilen Betriebssystem iOS.
-\begin{figure}[htbp]
+Das mobile Apple Betriebssystem iOS basiert auf dem Desktop Betriebssystem des Mac OS X. Darwin ist ein frei erhältliches, Linux basiertes Betriebssystem. Dieses Betriebssystem stellt die Grundlage für das Mac OS X dar. Der Kernel des Mac OS X ist der XNU-Kernel mit entsprechenden Adaptionen für das Mac OS X und dem mobilen Betriebssystem iOS.\par 
+\begin{figure}[hp!]
         \centering
                 \includegraphics[height=5cm]{Bilder/Chapter3_SystemArchitektur}
         \caption{iOS Software Layer (\cite{Apple[5]} S. 9)}
         	\label{fig:iOS Software Layer}
 \end{figure}
-Die abgebildeten Schichten zeigen das abstrahiert iOS Betriebssystem. Der grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
+Die abgebildeten Schichten zeigen das abstrahierte iOS Betriebssystem. Der grösste Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
   
 \begin{description}
 \item[Folgende Anforderungen werden an das iOS Software Layer Modell gestellt]~\par
@@ -119,7 +119,7 @@ Der \textbf{Core Service Layer} beinhaltet die fundamentalen System Services. Di
 %---------------------------------- Media Layer
 \subsection{Media Layer}
 \label{sec:MediaLayer}		
-Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik, Video und das abspielen von Tönen. Dieser Layer ist verantwortlich für das Design und den Sound der iOS Apps. 
+Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik, Video und das Abspielen von Tönen. Dieser Layer ist verantwortlich für das Design und den Sound der iOS Apps. 
 
 \begin{description}
 	\item[Dieser Layer stellt folgende Technologien zur Verfügung]~\par
@@ -160,7 +160,7 @@ Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik
 %---------------------------------- Cocoa Touch Layer
 \subsection{Cocoa Touch Layer}
 \label{sec:CocoaTouchLayer}
-Enthält die wichtigsten Frameworks um iOS Applikationen zu entwickeln. Dieser
+Enthält die wichtigsten Frameworks, um iOS Applikationen zu entwickeln. Dieser
 Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien zur Verfügung
 
 	\begin{itemize}
@@ -245,7 +245,7 @@ Die in diesem Kapitel beschrieben Sicherheitsmechanismen beziehen sich auf alle 
       					\end{enumerate}
 			\end{enumerate}
    		\end{description}
-Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Service um ein maximum an Sicherheit zu erreichen. (Vgl. \cite{Apple[4]} S.4)
+Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Service, um ein Maximum an Sicherheit zu erreichen. (Vgl. \cite{Apple[4]} S.4)
 	\end{minipage}
 	\hfil
 	\begin{minipage}{0.4\textwidth}
@@ -258,9 +258,9 @@ Die iOS Sicherheit passiert auf einer Kombination von Software, Hardware und Ser
 %---------------------------- System Security
 \subsection{System Security}
 \label{sec:SystemSec}
-Die \textbf{System Security} von einem iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu, sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
+Die \textbf{System Security} von einem iOS Device ist so kon­zep­ti­o­nie­rt, dass die Software und Hardware sicher über alle Kernkomponenten des Devices ist. Dies beinhaltet den sicheren Boot Prozess (Siehe Kapitel: \ref{sec:SecBootChain}), die Software Updates und die \textit{\glqq Secure Enclave \grqq{}} (Siehe Kapitel: \ref{sec:HardwareSecProtection}). Alle diese Maßnahmen dienen dazu sicherzustellen, dass nur vertrauenswürdige Applikationen auf dem iOS Device ausgeführt werden können.\par 
 
-Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (Vgl. \cite{Apple[4]} S.5)
+Die enge Verbindung zwischen Hardware und Software eines iOS Gerätes gewährleistet, dass alle Komponenten des Systems vertrauenswürdig sind, sowohl die Software als auch die Hardware. (Vgl. \cite{Apple[4]} S.5)
 
 \vspace*{1cm}
 
@@ -278,14 +278,14 @@ Die enge Verbindung zwischen Hardware und Software eines iOS Geräte gewährleis
 (Vgl. \cite{Apple[4]} S.5-9)
 
 %--------------------------- Encryption und Daten Sicherheit
-\subsection{Encryption und Daten Sicherheit}
+\subsection{Encryption und Daten-Sicherheit}
 \label{sec:DataEnc}
 
-Das iOS Device unterstützt standardmäßig eine Verschlüsselung für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst, wenn ein Teil des Betriebsystem kompromittiert ist, die anderen Bereiche des Devices, weiterhin sicher vor unerlaubten Zugriff sind. \par
+Das iOS Device unterstützt standardmäßig eine Verschlüsselung für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst wenn ein Teil des Betriebssystem kompromittiert ist, die anderen Bereiche des iOS Devices weiterhin sicher vor unerlaubtem Zugriff sind. \par
 Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration des mobilen Betriebssystems aktiv gesetzt.
 
 \begin{description}
-\item[\parbox{\textwidth} {Apple führt unter dem Kapitel Encryption und Daten Sicherheit folgende Features an}]~\par
+\item[\parbox{\textwidth} {Apple führt unter dem Kapitel Encryption und Daten-Sicherheit folgende Features an}]~\par
 	\begin{itemize}
 		\item \textbf{Hardware Security Features} (Siehe Kapitel: \ref{sec:HardwareSecProtection})
  		\item \textbf{File Datenschutz} (Siehe Kapitel: \ref{sec:DataProtection})
@@ -299,7 +299,7 @@ Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, das
 %------------------------------ Applikation Security
 \subsection{Applikation Security}
 \label{sec:AppSec}
-Für das Betriebssystem beinhalten die zu installierenden Apps das größte Sicherheitsrisiko. Das Verhalten des Betriebssystems kann durch eine App negativ beeinflusst werden. Es kann die Sicherheit und die Verfügbarkeit des iOS Devices negativ beeinflusst werden. Des weiter kann die Integrität der Benutzerdaten durch eine unsicher programmierte  App gefährdet werden.
+Für das Betriebssystem beinhalten die zu installierenden Apps das größte Sicherheitsrisiko. Das Verhalten des Betriebssystems kann durch eine App negativ beeinflusst werden. Es kann die Sicherheit und die Verfügbarkeit des iOS Devices negativ beeinflusst werden. Des weiteren kann die Integrität der Benutzerdaten durch eine unsicher programmierte  App gefährdet werden.
 \begin{description}
 \item[\parbox{\textwidth} {Apple führt unter dem Kapitel Applikation Security folgende Features an}]~\par
 	\begin{itemize}
@@ -314,11 +314,11 @@ Für das Betriebssystem beinhalten die zu installierenden Apps das größte Sich
 (Vgl. \cite{Apple[4]} S.18-26)
 
 %------------------------------ Network Security
-\subsection{Network Security}
+\subsection{Netwerk Sicherheit}
 \label{sec:NetworkSec}
-Die \textbf{ Netzwerk Sicherheit} ist ein wichtiger Bestandteil des Sicherheitskonzept und ergänzt die integrierten iOS Sicherheitsmechanismen. Die integrierten Sicherheitsmechanismen des mobilen Betriebssystem von Apple dienen dazu, die Daten auf dem Device zu schützen. Die Anforderungen an ein mobiles Device haben sich in den letzten Jahren dahin gehend verändert, dass der Zugriff auf externe Daten geschützt vorgenommen werden kann. Dieser Zugriff muss so abgesichert sein, dass die Datenübertragung sicher ist und die Usability des Produktes nicht eingeschränkt ist. Es werden Netzwerksicherheit Protokolle und Architekturen für eine authentifizierte, autorisierte und verschlüsselte Kommunikation verwendet.
+Die \textbf{ Netzwerk Sicherheit} ist ein wichtiger Bestandteil des Sicherheitskonzepts und ergänzt die integrierten iOS Sicherheitsmechanismen. Die integrierten Sicherheitsmechanismen des mobilen Betriebssystems von Apple dienen dazu, die Daten auf dem Device zu schützen. Die Anforderungen an ein mobiles Device haben sich in den letzten Jahren dahin gehend verändert, dass der Zugriff auf externe Daten geschützt vorgenommen werden kann. Dieser Zugriff muss so abgesichert sein, dass die Datenübertragung sicher ist und die Usability des Produktes nicht eingeschränkt ist. Es werden Netzwerksicherheit-Protokolle und -Architekturen für eine authentifizierte, autorisierte und verschlüsselte Kommunikation verwendet.
 \begin{description}
-\item[\parbox{\textwidth} {Ein iOS Device verfügt über folgende Netzwerksicherheit Protokolle und Architekturen
+\item[\parbox{\textwidth} {Ein iOS Device verfügt über folgende Netzwerksicherheit-Protokolle und -Architekturen
 an}]~\par
 	\begin{itemize}
 		\item \textbf{Virtual Private Network (VPN)}
@@ -328,19 +328,19 @@ an}]~\par
 		\item \textbf{Datagram Transport Layer Security (DTLS)}
         \end{itemize}
 \end{description}
-Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbindungen verwendet. (Vgl. \cite{Apple[4]} S.27-30)
+Weiters werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbindungen verwendet. (Vgl. \cite{Apple[4]} S.27-30)
 
 %------------------------------ Apple Pay ----------------------------------
 \subsection{Apple Pay}
 \label{sec:ApplePay}
 
-\textbf{Apple Pay} ist das interne Apple Zahlungssystem für mobile Geräte. Die Kommunikation findet über NFC statt. Neben NFC ist die App \textit{\glqq Wallet\grqq{}} Teil des Apple Pay Produkt.
+\textbf{Apple Pay} ist das interne Apple Zahlungssystem für mobile Geräte. Die Kommunikation findet über NFC statt. Neben NFC ist die App \textit{\glqq Wallet\grqq{}} Teil des Apple Pay Produkts.
 
 \begin{description}
 \item[\parbox{\textwidth} {Folgende Komponenten gehören zu dem Apple Pay Produkt}]~\par
 	\begin{itemize}
-		\item \textbf{Secure Element:} \\
-        Alle Secure Element erfüllen den Industriestandard. Der zertifizierte Chip wird ein einer Java Card Plattform ausgeführt. Diese Elemente erfüllen den finanzindustrie Standard. 
+		\item \textbf{Secure Elements:} \\
+        Alle Secure Elements erfüllen den Industriestandard. Der zertifizierte Chip wird auf einer Java Card Plattform ausgeführt. Diese Elemente erfüllen den Finanzindustrie Standard. 
  		\item \textbf{Near Field Communication (NFC) Controller:} \\
         Der NFC Controller und die NFC Kommunikation Protokolle sind für die Kommunikation zwischen den Anwendungsprozessoren und Secure Elementen zuständig.
  		\item \textbf{Wallet:} \\
@@ -357,7 +357,7 @@ Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Ver
         \textbf{abzuspeichern und anzuzeigen.}
         
  		\item \textbf{Secure Enclave:}\\
-        Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des weiter werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
+        Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des weiteren werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
         \end{itemize}
 \end{description}
 (Vgl. \cite{Apple[4]} S.31-37)
@@ -366,7 +366,7 @@ Des weiter werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Ver
 \subsection{Internet Services}
 \label{sec:InternetServices}
 
-Apple hat sich die Prämisse gestellt stabile Applikationen mit guter Benutzbarkeit für den Benutzer zu entwickeln. 
+Apple hat sich die Prämisse gestellt, stabile Applikationen mit guter Benutzbarkeit für den Benutzer zu entwickeln. 
 \begin{description}
     \item[\parbox{\textwidth} {Beispiele für solche internen iOS Apps sind }]~\par
     \begin{itemize}
@@ -377,17 +377,17 @@ Apple hat sich die Prämisse gestellt stabile Applikationen mit guter Benutzbark
     \end{itemize}
 \end{description} 
 
-Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste die selben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}}, sowie \textit{\glqq den Schutz vor nicht autorisierten Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (Vgl. \cite{Apple[4]} S.38-49)
+Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste die selben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}} sowie \textit{\glqq den Schutz vor nicht autorisiertem Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen. (Vgl. \cite{Apple[4]} S.38-49)
 
 \begin{description}
     \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple Internet Service}]~
     \begin{itemize}
         
         \item \textbf{Apple-ID:}\\
-        Die \textbf{Apple-ID} ist Teil des persönliche Apple-Accounts, der zusammen mit dem \textit{\glqq Password\grqq{}} den Zugriff auf die Apple Service ermöglicht. 
+        Die \textbf{Apple-ID} ist Teil des persönlichen Apple-Accounts, der zusammen mit dem \textit{\glqq Password\grqq{}} den Zugriff auf die Apple Service ermöglicht. 
         
         \item \textbf{iCloud:} \\
-        Die \textbf{iCloud} ist der Apple Online-Dienst zum speichern und synchronisieren von Daten/Konfigurationen. 
+        Die \textbf{iCloud} ist der Apple Online-Dienst zum Speichern und Synchronisieren von Daten/Konfigurationen. 
         
         \item \textbf{iCloud Keychain:}\\
         Die \textbf{iCloud Keychain} ist das Apple Online \textit{\glqq Password Management System\grqq{}}. \begin{description}
@@ -401,12 +401,12 @@ Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung
                 \end{description} 
  
         \item \textbf{Continuity:}\\
-        Darunter versteht Apple, dass Verteilen von Informationen und Services über mehrere iOS Devices. 
+        Darunter versteht Apple das Verteilen von Informationen und Services über mehrere iOS Devices. 
         \begin{description}
         \item[\parbox{\textwidth} {Beispiele für Continuity sind}]~\par
             \begin{itemize}
                 \item Die Anrufannahme auf unterschiedlichen iOS Devices
-                \item Die Möglichkeit Nachrichten auf unterschiedlichen iOS Devices zu lesen und zuschreiben.
+                \item Die Möglichkeit, Nachrichten auf unterschiedlichen iOS Devices zu lesen und zu schreiben.
                 \item Das Verteilen von Dateien auf iOS Devices.
             \end{itemize}
         \end{description}  
@@ -417,8 +417,8 @@ Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung
 \subsection{Device Controls}
 \label{sec:DeviceControl}
 
-Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe flexible Sicherheitsrichtlinien und Konfigurationen umzusetzen. Eine weitere Rahmenbedingung ist, dass die Konfiguration der Geräte leicht umsetzbar und verwaltbar ist.\par 
- Für Unternehmen bringt dies den Vorteil mit sich, dass Sicherheitsrichtlinien und Konfigurationen auf mehrere iOS Geräte verteilt werden können. Dadurch können Firmen sicherstellen, dass alle Geräte die selben Einstellungen besitzen. Des weiter ermöglicht es Mitarbeiter ihre eigenen Geräte im Unternehmen zu verwenden (BYOD). 
+Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe, flexible Sicherheitsrichtlinien und Konfigurationen umzusetzen. Eine weitere Rahmenbedingung ist, dass die Konfiguration der Geräte leicht umsetzbar und verwaltbar ist.\par 
+ Für Unternehmen bringt dies den Vorteil mit sich, dass Sicherheitsrichtlinien und Konfigurationen auf mehrere iOS Geräte verteilt werden können. Dadurch können Firmen sicherstellen, dass alle Geräte die selben Einstellungen besitzen. Weiters ermöglicht es Mitarbeitern ihre eigenen Geräte im Unternehmen zu verwenden (BYOD). 
 
 \begin{description}
     \item[\parbox{\textwidth} {Dies sind die Mainfeature des Apple Device Control Service} ]~\par
@@ -443,7 +443,7 @@ Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe flexible Siche
 
 \subsection{Datenschutzkontrolle}
 \label{sec:PrivacyControls}
-Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuerelemente und Optionen. Diese iOS Einstellungen ermöglichen es dem Benutzer zu entscheiden, wie mit seinen persönlichen Daten umgegangen werden soll. Dies inkludiert welche App Zugriff auf welche Informationen bekommen soll. 
+Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuerelemente und Optionen. Diese iOS Einstellungen ermöglichen es dem Benutzer zu entscheiden, wie mit seinen persönlichen Daten umgegangen werden soll. Dies inkludiert, welche App Zugriff auf welche Informationen bekommen soll. 
 
 \begin{description}
     \item[\parbox{\textwidth} {Folgende Daten werden für die Ortung des Users verwendet (Location Service) }]~\par
@@ -453,7 +453,7 @@ Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuer
         \item öffentliche WLAN-Hotspots
         \item Mobilfunkmasten
     \end{itemize}
-    Der User hat die Möglichkeit mit Hilfe von iOS Einstellungen zu definieren, welche App welche Location Daten verwenden kann.
+    Der User hat die Möglichkeit, mit Hilfe von iOS Einstellungen zu definieren, welche App welche Location Daten verwenden kann.
     \item[\parbox{\textwidth} {Zu den persönlichen User-Daten zählen}]~\par
     \begin{multicols}{2}
     \begin{itemize}
