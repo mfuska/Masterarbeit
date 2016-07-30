@@ -661,9 +661,9 @@ Zusätzlich zur Hardware Protection stellt Apple eine weiter Sicherheitstechnolo
 Der \textbf{Initialisierungsvektor(IV)} wird mit Hilfe des Block Offset der Datei berechnet und zur Verschlüsselung wird der SHA-1 Hash des \textit{\glqq File Keys\grqq{}} verwendet. (Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
 
 Der Content des Files wird mit dem \textbf{File Key} verschlüsselt. Dieser wird mit einem \textbf{Class Key} verpackt (wrapped) und in den Metadaten des Files gespeichert. Die Metadaten werden mit dem \textbf{File System Key} verschlüsselt. Der Class Key ist mit dem \textbf{Hardware Key} geschützt. Manche Klassen werden zusätzlich noch mit \textbf{Passcode Key} gewrapped.(Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
-\begin{figure}[!ht]
+\begin{figure}[hp!]
         \centering
-        \includegraphics[scale=0.9]{fileDataProtection.PNG}
+        \includegraphics[scale=0.75]{fileDataProtection.PNG}
         \caption{File Data Protection (\cite{Apple[4]} S.11)}
         \label{fig:FileDataProtection}
 \end{figure}
@@ -701,9 +701,9 @@ Fabin Vogt beschreibt dies in seiner Abhandlung so: \textit{\glqq Dealing with f
 \end{description} 
 (Vgl. \cite{Apple[6], Sandbox[1], Sandbox[2],Sandbox[3], Sandbox[4], Sandbox[5], Sandbox[6]})
 
-\begin{figure}[!ht]
+\begin{figure}[hp!]
         \centering
-                \includegraphics[scale=0.6]{iOSsandbox}
+                \includegraphics[scale=0.5]{iOSsandbox}
         \caption{iOS Sandbox (Vgl. \cite{Sandbox[3]}, S.6)}
         \label{fig:iOSsandbox}
 \end{figure}
