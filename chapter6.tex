@@ -210,8 +210,8 @@ In diesem Kapitel wird auf die Wechselbeziehung zwischen der Sicherheit des iOS 
 \footnotetext{\url{https://support.apple.com/de-de/HT204611}}
 %\footnote{\label{foot:iOS2011-2012}{\url{https://support.apple.com/de-de/HT204611}}}
 
-\paragraph{JailbreakMe 3.0} ist einen \textit{\glqq webbasierter Userland Exploit\grqq{}} und wurde am 02.06.2011 veröffentlicht. Dieser untethered Jailbreak wurde für die iOS Version 4.3.3 bereitgestellt. Es konnten aber mit diesem Exploit die iOS Version 4.2.6-4.3.3 (Siehe Tabelle: \ref{tab:AnalyseJailbreakMe3.0})  \textit{\glqq gejailbreaked\grqq{}} werden. 
-Dieser Exploit nutzte einen Fehler im CoreGraphik Framework aus. Dieser ermöglicht es, im Zusammenhang mit dem Lesen eines PDFs, einen beliebigen Code auszuführen. Der IOMobileFrameBuffer hatte einen Softwarefehler, welcher es JailbreakMe 3.0 Exploit ermöglichte, Systemprivilegien zu erhalten, Beide Bugs wurde in der iOS Version 4.3.4 \footnote{\label{foot:iOS4.3.4}{\url{https://support.apple.com/de-de/HT202272}}} geschlossen. Ab der iOS Version 4.3.4 ist dieser JB nicht mehr funktionsfähig.
+\paragraph{JailbreakMe 3.0} ist ein \textit{\glqq webbasierter Userland Exploit\grqq{}} und wurde am 02.06.2011 veröffentlicht. Dieser untethered Jailbreak wurde für die iOS Version 4.3.3 bereitgestellt. Es konnten aber mit diesem Exploit die iOS Version 4.2.6-4.3.3 (Siehe Tabelle: \ref{tab:AnalyseJailbreakMe3.0})  \textit{\glqq gejailbreaked\grqq{}} werden. 
+Dieser Exploit nutzte einen Fehler im CoreGraphik Framework aus. Dieser ermöglicht es, im Zusammenhang mit dem Lesen eines PDFs, einen beliebigen Code auszuführen. Der IOMobileFrameBuffer hatte einen weiteren Softwarefehler, welcher es dem JailbreakMe 3.0 Exploit ermöglichte, Systemprivilegien zu erhalten, Beide Bugs wurde in der iOS Version 4.3.4 \footnote{\label{foot:iOS4.3.4}{\url{https://support.apple.com/de-de/HT202272}}} geschlossen. Ab der iOS Version 4.3.4 ist dieser JB nicht mehr funktionsfähig.
  
 \paragraph{Ergebnisse:} Interessant an den Daten der Tabelle \ref{tab:AnalyseJailbreakMe3.0} ist, dass in einem Zeitraum von 112 Tagen sechs iOS Sicherheitsupdates von Apple zur Verfügung gestellt wurden. In dieses sechs Updates wurden insgesamt 21 Bugs behoben. Das Schliessen dieser Sicherheitslücken hatte keine Auswirkung auf den später veröffentlichten JB. Dieses Verhalten zeigen sich in allen Analysen der JB-Tools. \par  
 Am 15.07.2011 wurde das iOS Sicherheitsupdate 4.3.4 zum Download zur Verfügung gestellt. In diesem Update wurden insgesamt drei Sicherheitslücken von Apple geschlossen. JailbreakMe 3.0 verwendetet zwei von diesen Bugs und somit war der JB für alle weiteren iOS Version unterbunden. Dies zeigt, das Apple die JB-Tools \textit{\glqq reverse engineered\grqq{}} und gezielt Sicherheitsupdates zum Unterbinden des JBs zur Verfügung stellt. Apple benötigte \textbf{43 Tage} um das Update bereitzustellen. Dadurch wird gezeigt, das die Jbs einen direkten Einfluss auf die Sicherheit und Vertrauenswürdigkeit des iOS Systems haben, da Apple anhand der, in der Analyse gefunden Bugs, Sicherheitsupdates zur Verfügung stellt. \par 
@@ -234,7 +234,7 @@ Am 15.07.2011 wurde das iOS Sicherheitsupdate 4.3.4 zum Download zur Verfügung 
 %\footnote{\url{https://support.apple.com/de-de/HT201222}}
 \footnotetext{\url{https://support.apple.com/de-de/HT201222}}
 
-\paragraph{Das JB-Team Pangu} veröffentlicht in den letzten zwei Jahren für drei Major iOS Versionen JBs. Bevor das Team Pangu ihren ersten JB veröffentlichte, nahmen die Member des Teams an einem iOS Exploitation Trainings von von Stefan Essers teil \footnote{\url{https://www.sektioneins.de/en/trainings/iosexploitation.html}}. Zu Kontroversen führte dieser JB, da dieser auf den im Training vorgeführten Kernel Exploits beruhte.\par
+\paragraph{Das JB-Team Pangu} veröffentlicht in den letzten zwei Jahren JBs für drei Major iOS Versionen. Bevor das Team Pangu ihren ersten JB veröffentlichte, nahmen die Member des Teams an einem iOS Exploitation Trainings von von Stefan Essers teil \footnote{\url{https://www.sektioneins.de/en/trainings/iosexploitation.html}}. Zu Kontroversen führte dieser JB, da dieser auf den im Training vorgeführten Kernel Exploits beruhte.\par
 Bis zum heutigen Datum (18.07.2016) wurden vom Pangu Team vier unterschiedliche JB Version veröffentlicht. Mit diesen vier JBs können zwölf iOS Versionen \textit{\glqq gejailbreaked\grqq{}} werden (siehe Tabelle: \ref{tab:AnalysePangu}).
 
 Die Tabelle \ref{tab:AnalysePangu} zeigt, das selbe Muster, wie in den zuvor analysierten JB-Tool JailbreakMe 3.0. Mit einer Ausnahme, das nächste iOS Sicherheitsupdate 9.0.2 verhinderte nicht den JB der vierzehn Tage zuvor veröffentlicht wurde. \par 
@@ -242,7 +242,7 @@ Pangu Team veröffentlichte als erstes JB-Team ein JB für die neue 64 Bit Archi
 \paragraph{Ergebnisse:}  Die iOS Version 7.1.2 ist das letzte Sicherheitsupdate für das iPhone 4. Für dieses Device, ist somit das letzte verfügbare Update, als nicht sicher einzustufen. \par 
 Interessant ist auch, dass das iOS Sicherheitsupdate 8.1.1 drei Softwarefehler behebt, die von JB-Tool Pangu8 verwendet wurden. Nach \textbf{26 Tage} wurde die Sicherheitslücken geschlossen, die den JB Pangu8 ermöglichten. Das iOS Sicherheitsupdate 8.1.1 hatte aber nur eine geringen Einfluss auf das JB-Tool TaiG. Dies zeigt deutlich, dass Apple gezielt Bugs von einzelnen JB-Tool schliesst. 
 
-Apple schloss in der iOS Version 9.0 72ig Sicherheitslücken und das JB-Team Pangu benötigte 28 Tage um diese Version zu \textit{\glqq jailbreaken\grqq{}}. Die iOS Version 9.2 beendete nach \textbf{55 Tagen} die Funktionsfähigkeit des JB-Tools Pangu9 .
+Apple schloss in der iOS Version 9.0 zweiundsiebzig Sicherheitslücken und das JB-Team Pangu benötigte 28 Tage um diese Version zu \textit{\glqq jailbreaken\grqq{}}. Die iOS Version 9.2 beendete nach \textbf{55 Tagen} die Funktionsfähigkeit des JB-Tools Pangu9 .
 
 \begin{table}[htp!]
     \begin{center}
@@ -264,13 +264,22 @@ Das iOS Sicherheitsupdate 8.1.2 wurde \textbf{zehn Tagen} nach dem JB-Tool TaiG 
 
 Das JB-Tool TaiG v2 war schon bei seiner Veröffentlichung nicht mehr obsolet, da das iOS Sicherheitsupdate 8.1.3 schon zuvor veröffentlicht wurde. In diesem wurden fünf Sicherheitslücken geschlossen, auf denen das JB-Tool TaiG v2 aufbaute.
 Die Sicherheitslücken die das JB-Tool TaiG v3 verwendet wurden teilweise nach \textbf{sieben Tagen} im iOS Sicherheitsupdate 8.4 geschlossen. In diesem iOS Sicherheitsupdate wurden 25 Bugs geschlossen, aber schon nach einem Tag wurde das JB-Tool TaiG v4 veröffentlicht. Die iOS Version 8.4.1 beendete nach \textbf{43 Tagen} die Funktionsfähigkeit des JB TaiG v4.
-\newpage
 %------------------------------------------------------------------------------
 %------------------------------ 
 \section{Analyse der Hypothese H1}
 \label{sec:AnalyseHypo}
 
+Die Daten zeigen, dass die Hypothese H1: (siehe Kapitel: \ref{sec:GQMHypothese}) nicht bestätigt werden kann. Die Anzahl an Tagen die für ein JB benötigt werden, hängen von zu vielen anderen Faktoren ab. 
+
+\begin{description}
+    \item[\parbox{\textwidth} {Neben der Sicherheit der iOS Versionen haben folgende Faktoren einen Einfluss auf die Veröffentlichungsdauer eines JBs}]~\par
+    \begin{enumerate}
+       \item die mangelnde Kontinuität der JB-Teams, 
+       \item der kommerzielle Faktor, 
+       \item  und das die JB Community ihre JBs zurück halten, wenn Apple bekannt gibt, dass eine neue Major Release veröffentlicht wird.   
+   \end{enumerate}
+\end{description} 
+Diese Faktoren können nicht aus den Daten extrahiert werden, und deshalb kann die Hypothese nicht bestätigt werden.
 
 
 
-        
