@@ -9,9 +9,32 @@
 % 
 %----------------------------------------------------------------
 
-
 \chapter{Conclusion}
 \label{ch:Conclusion}
-Die Apple Produkte sind eine Gratwanderung zwischen \textit{\glqq usability\grqq{}} und \textit{\glqq security\grqq{}}. Dies ist der Hauptgrund für die User um ein JB auf dem iOS Device zu installieren. Hat der User auf einem iOS Device ein JB installiert, so verlässt der User freiwillig die sicher iOS Umgebung. Es hat einen  massiven Einfluss auf die Sicherheit und auf die Vertrauenswürdigkeit des iOS Produktes, wenn der User ein JB installiert. Ein JB erlaubt es, dass Apps mit einen selbst signierten Zertifikat auf dem iOS Device installiert werden kann. Es liegt in der Hand des User abzuschätzen oder er dem Hersteller der App soweit vertraut, dass er die App am Device installiert. Diese Apps wurde nicht auf Malware geprüft und somit ist die Installation dieser App ein Glücksspiel. Sicherheitsanalysen zeigen, dass die meisten Viren nur auf einem iOS Device funktionieren, die ein JB installiert haben.\par  
-Das ist die eine Seite des JBs, die andere Seite ist, dass durch \textit{\glqq Reverse Engineering\grqq{}} der JB-Tools die Sicherheitslücken in der iOS Software geschlossen werden. Die Sicherheitsupdates zeigen, dass einige Sicherheitslücken nur auf Grund der JBs geschlossen werden. Da Apple durch den öffentlichen Druck \textit{\glqq gezwungen\grqq{}} wird die Bugs der iOS Versionen zuschliessen. Dieser Druck entsteht dadurch, das für die Öffentlichkeit die Unsicherheit des iOS Devices mit einem JB \textit{\glqq sichtbar\grqq{}} gemacht wird. 
+Apple versucht die  Anforderungen \textit{\glqq usability\grqq{}} und \textit{\glqq security\grqq{}} in ihren iOS Produkten zu vereinen. Das ist eine Begründung für die restriktiven Sicherheitsmechanismen von Apple. Die iOS Produkte sind ein geschlossenes System. Dies bedeutet, dass weder die Hardware noch die Software vom User verändert werden können. Dies ist auch ein Grund für die Stabilität der iOS Produkte. Ein weiterer Grund ist die simple Konfiguration des iOS Systems. Der User benötigt keine Vorkenntnisse um eine sichere iOS Konfiguration vorzunehmen. Die Default-Konfiguration des iOS Device ist als sicher anzusehen. Nur die Passcode Konfiguration sollte von vier Digits auf sechs Digits verändert werden. Da die gesamte Sicherheit des Systems von dem verwendeten Passcode abhängt, inklusive der Datenverschlüsselung des iOS Gerätes. \par 
+
+\begin{description}
+    \item[\parbox{\textwidth} {Die Sicherheit und Vertrauenswürdigkeit eines mobilen Gerätes hängt von mehreren Faktoren ab}]~\par
+    \begin{enumerate}
+        \item Der Passcode der zum entsperren des Gerätes verwendet wird.
+        \item Den Apps die auf dem Gerät installiert wurden. 
+        \item Die Verschlüsselung die verwendet wird um die Daten des Gerät zu verschlüsseln
+        \item Den Sicherheitsmechanismen die im mobilen Betriebssystems umgesetzt wurden.
+        \item Die regelmässigen Sicherheitsupdates die dazu verwendet wurden, um die Sicherheitslücken des mobilen Betriebssystem zuschliessen.  
+    \end{enumerate}
+\end{description} 
+Installiert nun der User auf seinen iOS Device ein JB, so verlässt der User freiwillig die sichere iOS Umgebung. Die Installation eines JBs hat einen massiven Einfluss auf die Sicherheit und auf die Vertrauenswürdigkeit des iOS Systems. Ein JB erlaubt es, dass Apps mit einem selbst signierten Zertifikat auf dem iOS Device installiert werden können. Es liegt in der Hand des Users abzuschätzen, inwieweit er dem Hersteller der Apps vertraut, die er auf seinem iOS Device installieren möchte. Diese Apps wurde nicht auf Malware geprüft und somit ist die Installation der Apps ein Glücksspiel. Die Sicherheitsanalysen zeigen, dass die meisten Viren auf einem iOS Device nur funktionieren, wenn ein JB auf dem Gerät installiert wurde. Ein Beispiel dafür ist die Malware KeyRaider \cite{KeyRaider}. Diese Malware funktioniert nur auf einem gejailbreaked iOS Device und wird mit einer App installiert die über Cydia heruntergeladen wurde. \par 
+ Ein weiterer Punkt der in diesem Zusammenhang angeführt werden muss ist, dass die Konfiguration mancher Apps Fachwissen benötigt.  Er User muss sich bewusst sein, welche Seiteneffekte diese Installation haben kann. Nach der Installation eines JBs haben alle iOS Devices das selbe root-Passwort und der User muss dieses ändern.Der Virus \textit{\glqq ikee\grqq{}} basiert genau darauf, dass der User sein root-Passwort nicht geändert hat. Der Virus konnte sich am iOS Device einloggen und persönliche Daten konnte verändert werden.\par 
+ 
+Das ist die eine Seite des JBs, die andere Seite ist, dass durch \textit{\glqq Reverse Engineering\grqq{}} der JB-Tools, die Sicherheitslücken in der iOS Software geschlossen werden. Die Sicherheitsupdates zeigen, dass einige Sicherheitslücken nur auf Grund der JBs geschlossen wurden. Da Apple durch den öffentlichen Druck \textit{\glqq gezwungen\grqq{}} wird, die Bugs der iOS Versionen zuschliessen. Dieser Druck entsteht dadurch, dass für die Öffentlichkeit die Unsicherheit des iOS Devices \textit{\glqq sichtbar\grqq{}} gemacht wird. 
+
+\begin{description}
+    \item[\parbox{\textwidth} {Zum heutigen Zeitpunkt sind drei iOS Devices als nicht sicher einzustufen}]~\par
+    \begin{enumerate}
+        \item iPhone - letzte unterstützte iOS Version 3.1.3
+        \item iPhone 3G - letzte unterstützte iOS Version 4.2.1
+        \item iPhone 3GS - letzte unterstützte iOS Version 6.1.6
+    \end{enumerate}
+\end{description} 
+
 
