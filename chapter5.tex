@@ -633,7 +633,7 @@ Jedes iOS Device hat eine eigene \textbf{AES 256 Crypto Engine}. Diese Crypto En
 Während der Herstellung des Applikationsprozessors und der Secure Enclave wird die \textit{\glqq Unique ID\grqq{}} (UID, eindeutige ID des Gerätes) und die \textit{\glqq device Group ID\grqq{}} (GID, Gerätegruppen ID) in die Hardware gebrannt oder kompiliert. Die GID ist für alle Prozessor Geräteklassen gleich, so haben alle Apple A8 die selbe GID. \par 
 Die UID und die GID bestehen aus \textbf{AES 256-Bit Keys}. Es ist für keine Software oder Firmware möglich, diesen Key direkt auszulesen. Es können nur die Ver- und Entschlüsselung-Funktionen verwendet werden, die von der AES Engine zur Verfügung gestellt werden. (Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
 
-Der \textbf{Secure Enclave} ist ein \textbf{Coprozessor} des \textit{\glqq Apple A7 Prozessors\grqq{}} und der späteren \textit{\glqq A-Serie Prozessoren\grqq}. Jeder Secure Enclave hat ihre eigene UID, die bei der Herstellung des Koprozessors gebrannt wird.
+Der \textbf{Secure Enclave} ist ein \textbf{Coprozessor} des \textit{\glqq Apple A7 Prozessors\grqq{}} und der späteren \textit{\glqq A-Serie Prozessoren\grqq}. Jeder Secure Enclave hat ihre eigene UID, die bei der Herstellung des Coprozessors gebrannt wird.
 
 \newpage
 \begin{description}
@@ -648,7 +648,7 @@ Der \textbf{Secure Enclave} ist ein \textbf{Coprozessor} des \textit{\glqq Apple
 
 Alle anderen kryptographischen Keys werden vom \textit{\glqq Random Number Generator(RNG)\grqq{}} erzeugt. Der RNG basiert auf dem \textit{\glqq AES 256 CTR\_DRBG Algorithmus\grqq{}}.(Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
 
-Durch die Verschachtelung der UID mit dem AES 256-Bit Key ist es nicht möglich, den Flash Memory in ein anderes iOS Device einzubauen und dann die Userdaten zu dekodieren. Somit können die Userdaten nur auf dem Device mit dem Koprozessor mit der entsprechenden UID entschlüsselt werden. (Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
+Durch die Verschachtelung der UID mit dem AES 256-Bit Key ist es nicht möglich, den Flash Memory in ein anderes iOS Device einzubauen und dann die Userdaten zu dekodieren. Somit können die Userdaten nur auf dem Device mit dem Coprozessor mit der entsprechenden UID entschlüsselt werden. (Vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
 
 \subsubsection{Datenschutz}
 \label{sec:DataProtection}
