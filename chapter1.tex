@@ -17,7 +17,7 @@
 \section{Einführung}
 \label{sec:Einführung}
 
-Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit und Stabilität der Smartphones zunehmend an Bedeutung gewinnen müssen.\par Am 29.Juni 2007 wurde das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq root-Zugriffsrechte\grqq{}} für das Betriebssystem zu erhalten. Der \textit{\glqq root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem unautorisierte Software auf dem iOS Device installieren.\par 
+Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit und Stabilität der Smartphones zunehmend an Bedeutung gewinnen müssen.\par Am 29.Juni 2007 wurde das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak (JB) für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq root-Zugriffsrechte\grqq{}} für das Betriebssystem zu erhalten. Der \textit{\glqq root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem unautorisierte Software auf dem iOS Device installieren.\par 
 
 Es gibt für \textit{\glqq gejailbreakte\grqq{}} iOS Devices, neben dem offiziellen App Store (Apple), zwei weitere App Stores
 \begin{itemize}
@@ -85,11 +85,17 @@ In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \r
 \label{sec:MethArbeit}
 In dieser Arbeit wird die Goal Question Metric (GQM) Methode zur Analyse der erhobenen Daten herangezogen. Die GQM Methode ist eine systematische Vorgehensweise zur Erstellung spezifischer Qualitätsmodelle im Bereich der Softwareentwicklung (Vgl. \cite{GQM[1], GQM[2]}).  Hierbei ist vor allem die klar strukturierte Vorgehensweise dieses Systems hervorzuheben.\par
 
-Briand beschreibt in seiner Arbeit die GQM Methode wie folgt: \textit{\glqq Goal-oriented measurement is the definition of a measurement program based on explicit and precisely defined goals that state how measurement will be used. In addition, explicit models have to be defined to support the derivation of measures from the goals in a traceable and unambiguous manner.\grqq{}} \cite{GQM[5]} \par  
+Briand beschreibt in seiner Arbeit die GQM Methode wie folgt: 
+\begin{quote}
+\textit{\glqq Goal-oriented measurement is the definition of a measurement program based on explicit and precisely defined goals that state how measurement will be used. In addition, explicit models have to be defined to support the derivation of measures from the goals in a traceable and unambiguous manner.\grqq{}} \cite{GQM[5]} 
+\end{quote}
 
-Basili begründet die Verwendung der GQM Methode für den Softwareentwicklungsprozess so: \textit{\glqq Any engineering process requires feedback and evaluation. Software development is an engineering discipline and measurement is an ideal mechanism for feedback and evaluation. The measurement and information fed back to all parties, e.g., developers, managers, customers and the corporation, help in the understanding and control of the software process and products, and the relationships between them. It helps in making intelligent decisions and improving over time. But measurement must be focused, based upon goals and models. We need to establish goals for the various software process and products and models. We need to establish the goals for the various software process and products and these goals should be measurable, driven by the appropriate models.\grqq{}} \cite{GQM[4]} 
+Basili begründet die Verwendung der GQM Methode für den Softwareentwicklungsprozess so: 
+\begin{quote}
+    \textit{\glqq Any engineering process requires feedback and evaluation. Software development is an engineering discipline and measurement is an ideal mechanism for feedback and evaluation. The measurement and information fed back to all parties, e.g., developers, managers, customers and the corporation, help in the understanding and control of the software process and products, and the relationships between them. It helps in making intelligent decisions and improving over time. But measurement must be focused, based upon goals and models. We need to establish goals for the various software process and products and models. We need to establish the goals for the various software process and products and these goals should be measurable, driven by the appropriate models.\grqq{}} \cite{GQM[4]} 
+\end{quote}
  
-Dadurch soll die Nachvollziehbar und die Beweisbarkeit dieser Arbeit gewährleistet werden (Vgl. \cite{GQM[3], GQM[4]}).
+Dadurch soll die Nachvollziehbar und die Beweisbarkeit dieser Arbeit gewährleistet werden (vgl. \cite{GQM[3], GQM[4]}).
 \begin{description}
     \item[\parbox{\textwidth} {Die GQM-Methode ist in drei Schritte unterteilt und dient zur Bewertung der erhobenen Daten}]~\par
     \begin{enumerate}
@@ -102,16 +108,16 @@ Dadurch soll die Nachvollziehbar und die Beweisbarkeit dieser Arbeit gewährleis
 \subsection{GQM - Goal Definition}
 \label{sec:GQMGoal}
 
-\paragraph{G1:} \textit{\glqq Das Ziel dieser Arbeit ist es, eine Aussage über die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte(iPhone, iPad) tätigen zu können.\grqq{}} \par 
+\paragraph{G1:} \textit{\glqq Das Ziel dieser Arbeit ist es, eine Aussage über die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte(iPhone) tätigen zu können.\grqq{}} \par 
 \textbf{G1.1:} \textit{\glqq Erstes abgeleitetes Ziel ist es, einen Zusammenhang zwischen der Sicherheit und der Vertrauenswürdigkeit des iOS Device und der verwendeten Hardware der iOS Geräte herzustellen.\grqq{}} \par 
 \textbf{G1.2:} \textit{\glqq Zweites abgeleitetes Ziel dieser Arbeit ist es, einen Zusammenhang zwischen der Sicherheit und der Vertrauenswürdigkeit des iOS Device und der installierten iOS Software herzustellen.\grqq{}}
 
 \subsection{GQM - Fragen Definition}
 \label{sec:GQMFragen}
 
-\paragraph{Q1:} \textit{\glqq Welche Faktoren sind für die Sicherheit und die Vertrauenswürdigkeit eines iOS Device ausschlaggebend (Kapitel: \ref{sec:Frage1})?\grqq{}}
+\paragraph{Q1:} \textit{\glqq Welche Faktoren sind für die Sicherheit und die Vertrauenswürdigkeit eines iOS Device ausschlaggebend (siehe Kap. \ref{sec:Frage1})?\grqq{}}
                     
- \paragraph{Q2:} \textit{\glqq Welche Auswirkung haben die von Apple eingeführten Sicherheitsupdates auf die Sicherheit des Systems (Kapitel: \ref{sec:Frage2})?\grqq{}}
+ \paragraph{Q2:} \textit{\glqq Welche Auswirkung haben die von Apple eingeführten Sicherheitsupdates auf die Sicherheit des Systems (siehe Kap. \ref{sec:Frage2})?\grqq{}}
         
 \subsection{Hypothese}
 \label{sec:GQMHypothese}
@@ -145,7 +151,7 @@ Es werden in dieser Arbeit zwei Arten von Metriken für die Aufbereitung der Dat
 %\begin{description}
 %    \item[\parbox{\textwidth} {Es werden nur folgenden}]~\par
 %    \begin{enumerate}
-%        \item  iOS Produkte betrachtet: iPhone 1 bis iPhone SE (Siehe Tabelle: \ref{tab:iOSHW})
+%        \item  iOS Produkte betrachtet: iPhone 1 bis iPhone SE (siehe Tabelle: \ref{tab:iOSHW})
 %        \item iOS Version betrachtet: iOS Version 3.0 bis 9.3.2
 %        \item JBs betrachtet. JBs die bis zum 01.07.2016 veröffentlicht wurden.
 %    \end{enumerate}

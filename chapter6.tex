@@ -36,12 +36,13 @@
             \textbf{iPhone 6s} & 25.09.2016 & 9.0 &  9.3.2 & A & Apple A9 & 19\\ \hline
             \textbf{iPhone 6s Plus} & 25.09.2016 & 9.0 & 9.3.2 &  A & Apple A9 & 19\\ \hline
             \textbf{iPhone SE} & 31.03.2016 & 9.0 &  9.3.2 & A & Apple A9 & nA\\ \hline          \end{tabular} 
-        \caption{Auflistung iOS Device/ Verkaufsstart/ initial iOS/ last supported iOS / Prozessor/ \#Tage bis zum JB}
+        \caption{Auflistung iOS Device/ Verkaufsstart/ initial iOS/ last supported iOS / Prozessor/ \#Tage bis zum JB \protect\footnotemark}
         \label{tab:iOSHW}
     \end{center}
 \end{table}
+\footnotetext{Eigenwerk}
 
-In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und in Verbindung zum Verkaufszeitpunkt des Device, der initial installierten iOS Version und des Prozessor-Typs des iDevice gebracht. Zusätzlich wird in der Tabelle angeführt, ob diesem Device ein Coprozessor mit Secure Enclave zur Verfügung steht und wie lange die JB Community benötigt, um ein JB für dieses Device zu veröffentlichen. Diese Tabelle beinhaltet alle Daten, die als Grundlage für alle weiteren Analysen in diesem Kapitel dienen.\par
+In der Tab. \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und in Verbindung zum Verkaufszeitpunkt des Device, der initial installierten iOS Version und des Prozessor-Typs des iDevice gebracht. Zusätzlich wird in der Tabelle angeführt, ob diesem Device ein Coprozessor mit Secure Enclave zur Verfügung steht und wie lange die JB Community benötigt, um ein JB für dieses Device zu veröffentlichen. Diese Tabelle beinhaltet alle Daten, die als Grundlage für alle weiteren Analysen in diesem Kapitel dienen.\par
 
 
 %------------------------------------------------------------------------------
@@ -49,7 +50,7 @@ In der Tabelle \ref{tab:iOSHW} werden alle iOS Devices aufgelistet und in Verbin
 \subsection{iOS Device (G1.1)}
 \label{sec:Frage1iOSDevice} 
 
-Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusammenhang zwischen der Sicherheit des Systems und der verwendeten iOS Hardware. Da die Tabelle \ref{tab:iOSHW} keine Aussagen darüber zulässt, ob der Zeitraum bis zum Veröffentlichen des JB nur von der HW abhängt oder von der iOS Version, die am Device installiert wurde. Aus diesem Grund müssen die Daten der beiden Tabellen (Tabelle: \ref{tab:iOSHW}, Tabelle: \ref{tab:iOSVersion}) korreliert werden. \par 
+Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusammenhang zwischen der Sicherheit des Systems und der verwendeten iOS Hardware. Da die Tab. \ref{tab:iOSHW} keine Aussagen darüber zulässt, ob der Zeitraum bis zum Veröffentlichen des JB nur von der HW abhängt oder von der iOS Version, die am Device installiert wurde. Aus diesem Grund müssen die Daten der beiden Tabellen (Tab. \ref{tab:iOSHW}, Tab. \ref{tab:iOSVersion}) korreliert werden. \par 
 \begin{table}[htp!]
     \begin{center}
         \begin{tabular}{|l|l|l|} \hline
@@ -62,20 +63,25 @@ Die Tabelle \ref{tab:iOSHW} alleine gibt noch keinen Aufschluss über den Zusamm
        % 9.3.1 & 31.03.2016 & nA\\ \hline
        % 9.3.2 & 17.05.2016 & nA \\ \hline
         \end{tabular} 
-        \caption{Auflistung iOS Version/ Veröffentlichungsdatum/ \# Tage bis zum JB}
+        \caption{Auflistung iOS Version/ Veröffentlichungsdatum/ \# Tage bis zum JB \protect\footnotemark}
         \label{tab:iOSVersion}
     \end{center}
 \end{table}
+\footnotetext{Eigenwerk}
 
-Die Tabelle \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum dieser iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen auf.  \par 
-\begin{figure}[htbp]
+Die Tab. \ref{tab:iOSVersion} listet die iOS Version, das Veröffentlichungsdatum dieser iOS Version und die Anzahl an Tagen die benötigt wurden, um einen JB für diese iOS Version zu veröffentlichen auf.  \par 
+Die Abbildung \ref{fig:VergleichJBProzessorSW} stellt die Verbindung zwischen den Prozessoren des iDevices, der installierten iOS Version und der benötigten Tage für die Veröffentlichung eines JB her. Es kann gezeigt werden, dass alle Apple Prozessorarchitekturen einschliesslich des Apple A6 ein Sicherheitsgewinn für die iOS Produkte bedeutet haben. Dieser Schluss ist darauf begründet, dass die JBs für die selbe iOS Version auf älteren Apple Prozessorarchitekturen innerhalb von wenigen Tagen verfügbar war. \par 
+
+Eine Veränderung ist in den Daten ist ab dem Apple A7 Prozessor sichtbar, da zwischen dem Veröffentlichen des JBs für die iOS Hardware und die iOS Version nur mehr ein marginaler Unterschied vorliegt.
+\newpage
+\begin{figure}[htbp!]
         \centering
                 \includegraphics[scale=0.55]{Bilder/iDeviceJB-SW-HW.png}
-         \caption{Vergleich der Anzahl der Tage eines JB für die Prozessoren und für die initiale iOS Version}
+         \caption{Vergleich der Anzahl der Tage eines JB für die Prozessoren und für die initiale iOS Version \protect\footnotemark}
         \label{fig:VergleichJBProzessorSW}      
 \end{figure}
-Die Abbildung \ref{fig:VergleichJBProzessorSW} stellt die Verbindung zwischen den Prozessoren des iDevices, der installierten iOS Version und der benötigten Tage für die Veröffentlichung eines JB her. Es kann gezeigt werden, dass alle Apple Prozessorarchitekturen einschliesslich des Apple A6 ein Sicherheitsgewinn für die iOS Produkte bedeutet haben. Dieser Schluss ist darauf begründet, dass die JBs für die selbe iOS Version auf älteren Apple Prozessorarchitekturen innerhalb von wenigen Tagen verfügbar war. \par 
-Eine Veränderung ist in den Daten ist ab dem Apple A7 Prozessor sichtbar, da zwischen dem Veröffentlichen des JBs für die iOS Hardware und die iOS Version nur mehr ein marginaler Unterschied vorliegt.
+\footnotetext{Eigenwerk}
+
 \paragraph{Ergebnis:} Dies lässt den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte zum heutigen Zeitpunkt nur mehr von Apples mobilen Betriebssystem abhängt und nicht von der verwendeten iOS Hardware. 
 % TODO
 %64 BIT Architektur
@@ -91,18 +97,17 @@ Eine Veränderung ist in den Daten ist ab dem Apple A7 Prozessor sichtbar, da zw
 % Die Secure Enclave des Coprozessor (siehe Tabelle: \ref{tab:iOSHW}) bringen einen massiven Sicherheitsgewinn für die iOS Produkte mit sich, da die  
  
  Im Fall \textit{\glqq FBI gegen Apple\grqq{}} wurde der Tatsache, dass das iOS Device keine Secure Enclave enthält, besondere Bedeutung beigemessen. Das FBI beauftragte ein Unternehmen, um das iPhone 5c des Attentäters zu entsperren. Die Abbildung: \ref{fig:iOSSecurityArchitekturiOS7} zeigt die iOS Sicherheitsarchitektur des iPhone 5c. Die Systemarchitektur dieses iOS Device beinhaltet keine Secure Enclave. \par 
-\begin{description}
-    \item[\parbox{\textwidth} { Der Sicherheitsforscher Zdziarski beschreibt in seinen Abhandlungen die plausiblen Varianten des FBI Hacks wie folgt}]~\par
-    \begin{enumerate}
-        \item \textit{\glqq .... based on all of this, is that an external forensics company, with hardware capabilities, is likely copying the NAND storage off the chip and frequently re-copying all or part of the chip’s contents back to the device in order to brute force the pin – and may or may not also be using older gear from iOS 8 techniques to do it. The two weeks the FBI has asked for are not to develop this technique (it’s most likely already been developed, if FBI is willing to vacate a hearing over it), but rather to demonstrate, and possibly sell, the technique to FBI by means of a field test on some demo units.\grqq{}} \cite{Hacking[4]}
-        \item \textit{\glqq If the FBI did in fact use a software exploit, the question then becomes one of how viable it is on other platforms.\grqq{}} \cite{Hacking[4]}
-    \end{enumerate}
-\end{description} 
-
+\paragraph{Der Sicherheitsforscher Zdziarski beschreibt in seinen Abhandlungen die plausiblen Varianten des FBI Hacks wie folgt}
+\begin{quote}
+    \textit{\glqq .... based on all of this, is that an external forensics company, with hardware capabilities, is likely copying the NAND storage off the chip and frequently re-copying all or part of the chip’s contents back to the device in order to brute force the pin – and may or may not also be using older gear from iOS 8 techniques to do it. The two weeks the FBI has asked for are not to develop this technique (it’s most likely already been developed, if FBI is willing to vacate a hearing over it), but rather to demonstrate, and possibly sell, the technique to FBI by means of a field test on some demo units.\grqq{}} \cite{Hacking[4]} \par 
+    \textit{\glqq If the FBI did in fact use a software exploit, the question then becomes one of how viable it is on other platforms.\grqq{}} \cite{Hacking[4]}
+\end{quote}
 \paragraph{Ergebnisse:} Die Secure Enclave bietet einen Sicherheitsgewinn für die iOS Produkte, aber der Fall \textit{\glqq FBI via Apple\grqq{}} lässt einige Fragen offen. Da das FBI Apple die Sicherheitslücke nicht offenlegte, gibt es nur Mutmaßungen, über den Hack der verwendet wurde, um das iPhone des Attentäters zu entsperren. \par 
 
-Zdziarski beschreibt die möglichen Folgen dieses Hacks wie folgt: \textit{\glqq The moral of the story is that the exploit the FBI may have is dangerous in and of itself, regardless of whether it serves their specific purposes of brute forcing a device’s pin. Such an exploit has numerous uses within the intelligence community and poses a threat to not only the hundreds of millions of older devices out there, but if it can be ported to a 64-bit platform, every single one of us – either directly as a threat from the government, a nation state the exploit developer also sold it to, or another hacker who finds the same hole because FBI didn’t report the vulnerability to Apple. FBI has left us all potentially exposed by choosing to keep their technique secret.\grqq{}} \cite{Hacking[4]} \par 
-
+Zdziarski beschreibt die möglichen Folgen dieses Hacks wie folgt: 
+\begin{quote}
+    \textit{\glqq The moral of the story is that the exploit the FBI may have is dangerous in and of itself, regardless of whether it serves their specific purposes of brute forcing a device’s pin. Such an exploit has numerous uses within the intelligence community and poses a threat to not only the hundreds of millions of older devices out there, but if it can be ported to a 64-bit platform, every single one of us – either directly as a threat from the government, a nation state the exploit developer also sold it to, or another hacker who finds the same hole because FBI didn’t report the vulnerability to Apple. FBI has left us all potentially exposed by choosing to keep their technique secret.\grqq{}} \cite{Hacking[4]} \par 
+\end{quote}
 Vor allem gibt es Vermutungen, dass der Hack des FBIs eine Möglichkeit bietet, die Secure Enclave zu umgehen.
 
 
@@ -115,48 +120,51 @@ Vor allem gibt es Vermutungen, dass der Hack des FBIs eine Möglichkeit bietet, 
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.38]{Bilder/Frage1_1.png}
-        \caption{iOS Version / JB Tools /\# Tage bis zum JB}
+        \caption{iOS Version / JB Tools /\# Tage bis zum JB \protect\footnotemark}
         \label{fig:AnalyseiOSJB1}        
 \end{figure}
+\footnotetext{Eigenwerk}
 
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.35]{Bilder/Frage1_2.png}
-        \caption{iOS Version / JB Tools /\# Tage bis zum JB}
+        \caption{iOS Version / JB Tools /\# Tage bis zum JB \protect\footnotemark}
         \label{fig:AnalyseiOSJB2}
 \end{figure}
+\footnotetext{Eigenwerk}
 
-Die Abbildungen \ref{fig:AnalyseiOSJB1} und \ref{fig:AnalyseiOSJB2} zeigen die bekanntesten und stabilsten untethered JBs, in Abhängigkeit mit der iOS Version und der Anzahl an Tagen, die benötigt wurden, um für diese iOS Version einen Jailbreak bereitzustellen. \par 
+Die Abb. \ref{fig:AnalyseiOSJB1} und Abb. \ref{fig:AnalyseiOSJB2} zeigen die bekanntesten und stabilsten untethered JBs, in Abhängigkeit mit der iOS Version und der Anzahl an Tagen, die benötigt wurden, um für diese iOS Version einen Jailbreak bereitzustellen. \par 
 \textbf{Die Graphiken zeigen,} dass ein JB immer nur bei einer Serie von iOS Versionen funktioniert. In den meisten Fällen funktioniert der JB für die \textit{\glqq aktuelle\grqq{}} iOS Version und einigen iOS Versionen davor. Nach wenigen Wochen stellt Apple ein iOS Sicherheitsupdate zur Verfügung, welches das JB verhindert. Dieses Verhalten zieht sich durch alle betrachteten Metriken.  
 %
 %dass nach einem gelungen JB die Sicherheitsupdates von Apple einen kurzzeitigen Sicherheitsmehrwert mit sich bringen, aber innerhalb einiger Tage wurde ein neuer JB, des selben JB-Team veröffentlicht. Dies lässt darauf schliessen, dass die Sicherheitslücken nur teilweise geschlossen worden sind. Dieser Verhalten gilt  für alle iOS Versionen bis einschliesslich der iOS Version 9.x.\par  
 %Ab der iOS Version 8.x ändert sich dieses Verhalten, da die JB Community jetzt länger für die JBs der nachfolgenden iOS minor Releases benötigt. \par 
 %Markant ändern sich die Muster ab der iOS Version 9.x. Das JB für die Minor iOS Version 9.1 benötigte fast sechsmal länger, als das JB für die Major iOS Version 9.0 benötigte.\par
 
-
-
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.5]{Bilder/iOSJB1.png}
-        \caption{Anzahl der veröffentlichten JBs pro iOS Version 3.x - 5.1.1}
+        \caption{Anzahl der veröffentlichten JBs pro iOS Version 3.x - 5.1.1 \protect\footnotemark}
         \label{fig:AnalyseAnzahliOSJB1}
 \end{figure}
+%\protect\footnotemark
+\footnotetext{Eigenwerk}
 
 \textbf{Die Abbildungen \ref{fig:AnalyseAnzahliOSJB1} und \ref{fig:AnalyseAnzahliOSJB2} zeigen,} dass die Anzahl der veröffentlichten JB-Tools ab der iOS Version 7.0 massiv rückgängig sind. Es wurden nur mehr ein oder zwei JB-Tools pro iOS Version der Öffentlichkeit zur Verfügung gestellt. 
 
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.5]{Bilder/iOSJB2.png}
-        \caption{Anzahl der veröffentlichten JBs pro iOS Version 6.x - 9.x.x}
+        \caption{Anzahl der veröffentlichten JBs pro iOS Version 6.x - 9.x.x \protect\footnotemark}
         \label{fig:AnalyseAnzahliOSJB2}
 \end{figure}
-
+%\protect\footnotemark
+\footnotetext{Eigenwerk}
 
 \paragraph{Ergebnisse:} Die aufbereiteten Daten lassen den Schluss zu, dass die Sicherheit und die Vertrauenswürdigkeit der iOS Produkte mit steigender iOS Version zunimmt. Dieser Schluss ist darauf begründet, dass die Anzahl der Tage, die benötigt wurden, um einen JB zur Verfügung zu stellen, eine steigende Tendenz aufweisen. Der letzte untethered JB wurde Anfang Dezember 2015 veröffentlicht, seit diesem Zeitpunkt wurden sechs iOS Versionen veröffentlicht, und in diesen 243 Tagen (per 18.07.2016) kamen keine JBs vor.\par 
-Ein weiterer Anhaltspunkt für die Steigerung der Sicherheit ist, dass die Anzahl der Menschen die noch einen funktionsfähigen Jailbreak entwickeln können sinkt. 
+Ein weiterer Anhaltspunkt für die Steigerung der Sicherheit ist, dass die Anzahl der Softwareentwickler(Hacker) die noch einen funktionsfähigen Jailbreak entwickeln können sinkt  (siehe Abb. \ref{fig:AnalyseAnzahliOSJB1} und \ref{fig:AnalyseAnzahliOSJB2}). 
 \par 
 Es muss darauf hingewiesen werden, dass Apple seine Strategie in Bezug auf die JB Community geändert hat. In der Vergangenheit hat Apple versucht, gegen JBs gerichtlich vorzugehen, aber nur mit begrenztem Erfolg (\textit{\glqq Klage gegen George Hotz alias Geohot\grqq{}}). Apple hat vor einigen Jahren damit begonnen, namhafte iOS Hacker anzustellen, unter anderem \textit{\glqq Comex\grqq{}}  den Entwickler von \textit{\glqq JailbreakMe\grqq}. Dies bringt zwei Vorteile für Apple mit sich. Erstens, die Hacker kennen das mobile Betriebssystem und die Schwächen dieses besser als viele interne Apple Entwickler.  Zweitens, die JB Community verliert ein aktives Mitglied. Als sehr viel schwerwiegender für die JB-Community einzustufen ist, dass durch den ehemaligen Hacker auch einige Zero-Day Bugs Apple gemeldet werden.\par
-Seit dem Jahr 2015 ist der kommerzielle Aspekt in diesem Zusammenhang nicht außer Acht zu lassen. Angefangen mit dem Preisgeld, welches auf ein JB der iOS Version 9.x ausgesetzt wurde, bis hin zu Premieren für Zero-Day Bugs. Dies hat meiner Meinung nach einen großen Einfluss auf die Dauer der Veröffentlichung der JBs. Die markanten Ausreißer in den Metriken– ab der iOS Version 9.1 beruhen meiner Meinung nach auf dem kommerziellen Faktor. 
+Seit dem Jahr 2015 ist der kommerzielle Aspekt in diesem Zusammenhang nicht außer Acht zu lassen. Angefangen mit dem Preisgeld, welches auf ein JB der iOS Version 9.x ausgesetzt wurde, bis hin zu Premieren für Zero-Day Bugs. Dies hat meiner Meinung nach einen großen Einfluss auf die Dauer der Veröffentlichung der JBs. Die markanten Ausreißer in den Metriken, ab der iOS Version 9.1 beruhen meiner Meinung nach auf dem kommerziellen Faktor. 
 
 \newpage
 %------------------------------------------------------------------------------
@@ -200,15 +208,15 @@ In diesem Kapitel wird auf die Wechselbeziehung zwischen der Sicherheit des iOS 
              04.05.2011 & 4.2.8 &  - & - & JailbreakMe 3.0 & 02.06.2011 & 29 \\ \hline            \textbf{04.05.2011} & \textbf{4.3.3} &  - & -  & \textbf{JailbreakMe 3.0} & \textbf{02.06.2011} & \textbf{29} \\ \hline
             15.07.2011 & 4.3.4 &  1 & 2	 & - & - & - \\ \hline
         \end{tabular} 
-        \caption{Analyse JB-Tool JailbreakMe 3.0 \protect\footnotemark}         
+        \caption{Analyse JB-Tool JailbreakMe 3.0 \protect\footnotemark }         
         \label{tab:AnalyseJailbreakMe3.0}
     \end{center}
 \end{table}
-%iOS2011-2012
-\footnotetext{\url{https://support.apple.com/de-de/HT204611}}
+\footnotetext{Eigenwerk}
+%\footnotetext{Eigenwerk \url{https://support.apple.com/de-de/HT204611}}
 %\footnote{\label{foot:iOS2011-2012}{\url{https://support.apple.com/de-de/HT204611}}}
 
-\paragraph{JailbreakMe 3.0} ist ein \textit{\glqq webbasierter Userland Exploit\grqq{}} und wurde am 02.06.2011 veröffentlicht. Dieser untethered Jailbreak wurde für die iOS Version 4.3.3 bereitgestellt. Es konnten aber mit diesem Exploit auch die iOS Version 4.2.6-4.3.3 (siehe Tabelle: \ref{tab:AnalyseJailbreakMe3.0})  \textit{\glqq gejailbreaked\grqq{}} werden. 
+\paragraph{JailbreakMe 3.0} ist ein \textit{\glqq webbasierter Userland Exploit\grqq{}} und wurde am 02.06.2011 veröffentlicht. Dieser untethered Jailbreak wurde für die iOS Version 4.3.3 bereitgestellt. Es konnten aber mit diesem Exploit auch die iOS Version 4.2.6-4.3.3 (siehe Tab.\ref{tab:AnalyseJailbreakMe3.0})  \textit{\glqq gejailbreaked\grqq{}} werden. 
 Dieser Exploit nutzte einen Fehler im CoreGraphik Framework aus. Dieser ermöglicht es, im Zusammenhang mit dem Lesen eines PDFs einen beliebigen Code auszuführen. Der IOMobileFrameBuffer hatte einen weiteren Softwarefehler, welcher es den JailbreakMe 3.0 Exploit ermöglichte, Systemprivilegien zu erhalten. Beide Bugs wurden in der iOS Version 4.3.4 \footnote{\label{foot:iOS4.3.4}{\url{https://support.apple.com/de-de/HT202272}}} geschlossen. Ab der iOS Version 4.3.4 ist dieser JB nicht mehr funktionsfähig.
  
 \paragraph{Ergebnisse:} Interessant an den Daten der Tabelle \ref{tab:AnalyseJailbreakMe3.0} ist, dass in einem Zeitraum von 112 Tagen sechs iOS Sicherheitsupdates von Apple zur Verfügung gestellt wurden. In diesen sechs Updates wurden insgesamt 21 Bugs behoben. Das Schließen dieser Sicherheitslücken hatte keine Auswirkung auf den später veröffentlichten JB. Dieses Verhalten zeigt sich in allen Analysen der JB-Tools. \par  
@@ -228,14 +236,13 @@ Am 15.07.2011 wurde das iOS Sicherheitsupdate 4.3.4 zum Download zur Verfügung 
         \label{tab:AnalysePangu}
     \end{center}
 \end{table}
-%{\label{foot:iOS2015-2016}
-%\footnote{\url{https://support.apple.com/de-de/HT201222}}
-\footnotetext{\url{https://support.apple.com/de-de/HT201222}}
+\footnotetext{Eigenwerk}
+%\footnotetext{\url{https://support.apple.com/de-de/HT201222}}
 
 \paragraph{Das JB-Team Pangu} veröffentlichte in den letzten zwei Jahren JBs für drei Major iOS Versionen. Bevor das Team Pangu ihren ersten JB veröffentlichte, nahmen die Member des Teams an einem iOS Exploitation Training von \textit{\glqq Stefan Essers\grqq{}} teil \footnote{\url{https://www.sektioneins.de/en/trainings/iosexploitation.html}}. Zu Kontroversen führte dieser JB, da dieser auf dem im Training vorgeführten Kernel Exploits beruhte.\par
-Bis zum heutigen Datum (18.07.2016) wurden vom Pangu Team vier unterschiedliche JB Versionen veröffentlicht. Mit diesen vier JBs können zwölf iOS Versionen \textit{\glqq gejailbreaked\grqq{}} werden (siehe Tabelle: \ref{tab:AnalysePangu}).
+Bis zum heutigen Datum (18.07.2016) wurden vom Pangu Team vier unterschiedliche JB Versionen veröffentlicht. Mit diesen vier JBs können zwölf iOS Versionen \textit{\glqq gejailbreaked\grqq{}} werden (siehe Tab.\ref{tab:AnalysePangu}).
 
-Die Tabelle \ref{tab:AnalysePangu} zeigt dasselbe Muster wie in dem zuvor analysierten JB-Tool JailbreakMe 3.0. Mit einer Ausnahme verhinderte das nächste iOS Sicherheitsupdate 9.0.2 nicht den JB, der vierzehn Tage zuvor veröffentlicht wurde. \par 
+Die Tab. \ref{tab:AnalysePangu} zeigt dasselbe Muster wie in dem zuvor analysierten JB-Tool JailbreakMe 3.0. Mit einer Ausnahme verhinderte das nächste iOS Sicherheitsupdate 9.0.2 nicht den JB, der vierzehn Tage zuvor veröffentlicht wurde. \par 
 Das Pangu Team veröffentlichte als erstes JB-Team einen JB für die neue 64 Bit Architektur. 
 
 \paragraph{Ergebnisse:}  Die iOS Version 7.1.2 ist das letzte Sicherheitsupdate für das iPhone 4. Für dieses Device ist somit das letzte verfügbare Update als nicht sicher einzustufen. \par 
@@ -253,10 +260,8 @@ Apple schloss in der iOS Version 9.0 zweiundsiebzig Sicherheitslücken und das J
         \label{tab:AnalyseTaig}
     \end{center}
 \end{table}
-
-%{\label{foot:iOS2014}
-%\footnote{\url{https://support.apple.com/de-de/HT205762}
-\footnotetext{\url{https://support.apple.com/de-de/HT205762}}
+\footnotetext{Eigenwerk}
+%\footnotetext{\url{https://support.apple.com/de-de/HT205762}}
 
 \paragraph{TaiG} zeigt wie kein anderes JB-Tool, wie sehr Apple und die JB-Community Katz und Maus spielen  (siehe Tabelle: \ref{tab:AnalyseTaig}). Apple antwortete innerhalb weniger Tage mit einem Update, welches das JB schließt. Das JB-Team TaiG veröffentlichte für jedes iOS Sicherheitsupdate ein neues JB, bis am Ende Apple das iOS Sicherheitsupdate 8.4.1 veröffentlichte. In diesem Update werden acht Softwarefehler geschlossen, auf dem der TaiG JB aufbaute. 
  
@@ -277,10 +282,11 @@ Die Sicherheitslücken, die für das JB-Tool TaiG v3 verwendet, wurden teilweise
                   8.4 & TaiG v3 & 7  \\ \hline
                   8.4.1 & TaiG v4 & 43  \\ \hline
         \end{tabular} 
-        \caption{Apple Reaktionszeit auf ein JB}
+        \caption{Apple Reaktionszeit auf ein JB \protect\footnotemark}
         \label{tab:AppleReaktionszeit}
     \end{center}
 \end{table}
+\footnotetext{Eigenwerk}
 Im Durchschnitt veröffentlicht Apple nach 37 Tagen ein Sicherheitsupdate, welches den JB behebt. Die gesamten Daten der Reaktionszeiten sind in der Tabelle \ref{tab:AppleReaktionszeitAll} ersichtlich.  
 
 %------------------------------------------------------------------------------
@@ -294,7 +300,7 @@ Die ausgewerteten Daten zeigen, dass die Sicherheit und die Vertrauenswürdigkei
     \begin{enumerate}
         \item die Anzahl der veröffentlichten JB-Tools pro iOS Version sinkt,
         \item die Anzahl der Tage, die benötigt werden, um ein JB zu veröffentlichen, markant zunimmt. Vor allem ab der iOS Release 9.x;
-        \item und die Anzahl der geschlossenen Sicherheitslücken pro Major Release eine aufsteigende Tendenz aufweist. (Siehe Abbildung: \ref{fig:SecUpdateMajor})
+        \item und die Anzahl der geschlossenen Sicherheitslücken pro Major Release eine aufsteigende Tendenz aufweist. (Siehe Abb. \ref{fig:SecUpdateMajor})
     \end{enumerate}
 \end{description} 
 
@@ -308,16 +314,15 @@ Die ausgewerteten Daten zeigen, dass die Sicherheit und die Vertrauenswürdigkei
 gibt, dass eine neue Major Release veröffentlicht wird.
     \end{enumerate}
 \end{description}
-Diese Faktoren können nicht aus den Daten, auf denen diese Arbeit aufbaut, extrahiert werden und deshalb kann die Hypothese H1 (siehe Kapitel: 1.4.3) nur teilweise bestätigt werden.
+Diese Faktoren können nicht aus den Daten, auf denen diese Arbeit aufbaut, extrahiert werden und deshalb kann die Hypothese H1 (siehe Kap. 1.4.3) nur teilweise bestätigt werden.
 
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.45]{Bilder/SecUpdateMajor.png}
-        \caption{Anzahl Bugs pro iOS Major Release}
+        \caption{Anzahl Bugs pro iOS Major Release \protect\footnotemark}
         \label{fig:SecUpdateMajor}
 \end{figure}
-
-
+\footnotetext{Eigenwerk}
 
 \section{Analyse des Ziels G1.1}
 \label{sec:AnalyseG11}
@@ -325,7 +330,7 @@ Diese Faktoren können nicht aus den Daten, auf denen diese Arbeit aufbaut, extr
  Die Hardware der iOS Produkte spielt bei der Sicherheit des iOS Device nur eine begrenzte Rolle. Die Daten in den Kapiteln \ref{sec:Frage1iOSVersion} und \ref{sec:Frage1SecureEnclave} zeigen diesen Sachverhalt ganz klar.\par  Die Secure Enclave verbesserte die Vertraulichkeit des iOS Device, da die gesamten kryptographischen Verfahren für die File Keys, die Daten für den FingerPrint und vieles mehr in der Trust Zone des AMD Prozessors gespeichert werden. \parZu diesem Thema muss noch gesagt werden, dass die iOS Produkte ein in sich geschlossenes System sind. Dies bedeutet, der User kann weder die Hardware des Systems noch das Betriebssystem verändern. Alle Komponenten passen perfekt zueinander und sind aufeinander abgestimmt. Das iOS wurde für die Hardware des iOS Devices entwickelt und abgestimmt. Dies bringt Vorteile gegenüber anderen mobilen Betriebssystemen wie z.B. Android.  
 
 \begin{description}
-    \item[\parbox{\textwidth} {Zum heutigen Zeitpunkt sind drei iOS Devices als nicht sicher einzustufen}]~\par
+    \item[\parbox{\textwidth} {Zum heutigen Zeitpunkt sind sieben iOS Devices als nicht sicher einzustufen}]~\par
     \begin{enumerate}
         \item iPhone - letzte unterstützte iOS Version 3.1.3
         \item iPhone 3G - letzte unterstützte iOS Version 4.2.1
@@ -354,14 +359,13 @@ Die erhobenen Daten zeigen, dass die Sicherheit des Systems neben dem verwendete
 \section{Analyse des Ziels G1}
 \label{sec:AnalyseG1}
 
-Das iOS Device gehört zu den sichersten mobilen Geräten auf dem freien Markt. Die iOS Update-Funktionalität ist im iOS Betriebssystem integriert. Der User wird in regelmäßigen Abständen daran erinnert, dass eine neue iOS Version zur Verfügung steht. Somit wird der User aktiv animiert, die iOS Version auf seinem Gerät aktuell zu halten. Bei Android ist der OS Updatemechanismus vom Gerätehersteller abhängig. Wenn der Hersteller dieses Feature unterstützt, dann sind die Sicherheitsupdates meist zeitverzögert, da der Hersteller seine eigene Android Versionen zur Verfügungen stellt. Unterstützt der Hersteller die automatischen Sicherheitsupdates nicht, so ist der User selbst für die Betriebssystem-Aktualisierung verantwortlich (siehe Abbildung: \ref{fig:VergleichUpdateiOSAndroid}).\par
+Das iOS Device gehört zu den sichersten mobilen Geräten auf dem freien Markt. Die iOS Update-Funktionalität ist im iOS Betriebssystem integriert. Der User wird in regelmäßigen Abständen daran erinnert, dass eine neue iOS Version zur Verfügung steht. Somit wird der User aktiv animiert, die iOS Version auf seinem Gerät aktuell zu halten. Bei Android ist der OS Updatemechanismus vom Gerätehersteller abhängig. Wenn der Hersteller dieses Feature unterstützt, dann sind die Sicherheitsupdates meist zeitverzögert, da der Hersteller seine eigene Android Versionen zur Verfügungen stellt. Unterstützt der Hersteller die automatischen Sicherheitsupdates nicht, so ist der User selbst für die Betriebssystem-Aktualisierung verantwortlich (siehe Abb. \ref{fig:VergleichUpdateiOSAndroid}).\par
  \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.8]{Bilder/updatesiOSAndroid.PNG}
         \caption{OS Update-Vergleich zwischen iOS und Android \cite{ANDROID[1]} \protect\footnotemark}
         \label{fig:VergleichUpdateiOSAndroid}
 \end{figure}
-
 \footnotetext{\url{http://www.bloomberg.com/news/articles/2016-05-25/google-steps-up-pressure-on-partners-tardy-in-updating-android}}
 
 
@@ -369,13 +373,13 @@ Im Vergleich zu Android veröffentlicht Apple weit mehr Sicherheitsupdates pro J
 \begin{description}
     \item[\parbox{\textwidth} {Auch in Bezug auf die Sicherheitsmechanismen hat Apple weitere Vorteile gegenüber Android}]~\par
     \begin{enumerate}
-        \item Apple verwendet MAC und nicht wie Android DEP (Siehe Kapitel: \ref{sec:MAC})
+        \item Apple verwendet MAC und nicht wie Android DEP (siehe Kap. \ref{sec:MAC})
         \item Es können nur Apps am iOS Device installiert werden die mit einen Apple Zertifikat signiert wurden. Unter Android können selbstsignierte Apps installiert werden, sowie bei iOS Device mit JB.
         \item Android überprüft die Apps automatisiert, während bei Apple diese von Apple Mitarbeitern geprüft werden, bevor die Apps im iTunes Store heruntergeladen werden.  
     \end{enumerate}
 \end{description} 
 
-Ein interessantes Detail ist noch anzuführen. Die im Laufe der Jahre eingeführten Sicherheitsmechanismen wie zum Beispiel, ALSR, MAC und Sandbox, hatten keine markanten Einfluss auf die Anzahl an Tagen, die benötigt wurden, um ein JB zu veröffentlichen. In den Abbildungen 5.2 und 5.3 gibt es keine Ausreißer in den Metriken.\par  
+Ein interessantes Detail ist noch anzuführen. Die im Laufe der Jahre eingeführten Sicherheitsmechanismen wie zum Beispiel, ALSR, MAC und Sandbox, hatten keine markanten Einfluss auf die Anzahl an Tagen, die benötigt wurden, um ein JB zu veröffentlichen. In den Abb. 5.2 und 5.3 gibt es keine Ausreißer in den Metriken.\par  
 Erwartet hätte ich mir, dass zwischen der iOS Version 2.0 und 4.3 die Anzahl an Tagen, bis ein JB veröffentlicht wurde, massiv ansteigt.  Es gab nur eine markante Stelle. Die iOS Version 3.1.2 zeigt einen massiven Anstieg der Anzahl an Tagen, die benötigt wurden, um die untethered JBs JailbreakMe 2.0 und Spirit zu veröffentlichen. Dies ist aber darauf zurückzuführen, dass in den iOS Releases 3.1 und 3.1.1 Bugs geschlossen wurden,  die den untethered JB der vorhergehenden JBs ermöglichten. Ein untethered JB war für die iOS 3.1.2 nach 95 Tagen (JB-Tool sn0wbreeze 1.1) verfügbar.\par
  
-In Bezug auf JBs kann gesagt werden, dass ein installierter JB die Sicherheit und Vertrauenswürdigkeit des Systems reduziert, da Sicherheitsmechanismen von Apple eingeschränkt und/oder ausgeschaltt werden. Der normale User ist sich über diese Konsequenzen nicht im Klaren und verfügt meisten, nicht über das Wissen, das Device wieder sicher zu machen.
+In Bezug auf JBs kann gesagt werden, dass ein installierter JB die Sicherheit und Vertrauenswürdigkeit des Systems reduziert, da Sicherheitsmechanismen von Apple eingeschränkt und/oder ausgeschalte werden. Der normale User ist sich über diese Konsequenzen nicht im Klaren und verfügt meisten, nicht über das Wissen, das Device wieder sicher zu machen.

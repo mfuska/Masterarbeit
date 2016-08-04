@@ -94,36 +94,34 @@ Apple veröffentlicht im Durchschnitt sieben iOS Updates pro Jahr.
 	    \item Neue Sicherheitsmechanismen für das Betriebssystem und Apps einzuführen
 	    \item Neue Sicherheitsarchitekturen für Apps bereitzustellen
 	\end{enumerate}
-\end{description}  
-Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 79 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 70  Minor-Updates. Siehe Figure \ref{fig:iOS Software Updates}.
-
+\end{description}
+ 
 \begin{figure}[ht!]
         \centering
-                \includegraphics[scale=0.7]{Bilder/iOSUpdates1}
-        \caption{iOS Software Updates\cite{Apple[7]}}
+                \includegraphics[scale=0.65]{Bilder/iOSUpdates1}
+        \caption{iOS Software Updates\cite{Apple[7]} \protect\footnotemark}
         	\label{fig:iOS Software Updates}
 \end{figure}
-
-Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die iOS Bugs, die für ein Jailbreak verwendet werden, sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Software Fehler werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreaks veröffentlicht. Siehe Abbildung \ref{fig:iOS Jailbreak}.
-
-\begin{figure}[ht!  ]
+\footnotetext{Eigenwerk}
+Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 79 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 70  Minor-Updates (siehe Abb. \ref{fig:iOS Software Updates}).
+\begin{figure}[hb!]
         \centering
-                \includegraphics[scale=0.7]{Bilder/AnzahlJB}
-        \caption{Anzahl iOS Jailbreaks 2007 - 2015}
+                \includegraphics[scale=0.8]{Bilder/AnzahlJB}
+        \caption{Anzahl iOS Jailbreaks 2007 - 2015 \protect\footnotemark}
         	\label{fig:iOS Jailbreak}
 \end{figure}
-
-
+\footnotetext{Eigenwerk}
+Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die iOS Bugs, die für ein Jailbreak verwendet werden, sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Software Fehler werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreaks veröffentlicht (siehe Abb. \ref{fig:iOS Jailbreak}).
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
 Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss Schritt für Schritt jeder Sicherheitsmechanismus des iOS ausgehebelt werden. Ab der iOS Version 8.1.3 müssen folgende Sicherheitsvorkehrungen umgangen werden, um einen untethered Jailbreak durchzuführen.
 
 \begin{enumerate}
-	    \item \textbf{Secure Boot Chain} (siehe Kapitel: \ref{sec:SecBootChain})
-	    \item \textbf{ALSR }(siehe Kapitel: \ref{sec:ASLR}) 
-	    \item \textbf{Code Signing}(siehe Kapitel: \ref{sec:SigningProcess}) 	   
-	    \item \textbf{Sandbox} (siehe Kapitel: \ref{sec:Sandbox}) 
+	    \item \textbf{Secure Boot Chain} (siehe Kap. \ref{sec:SecBootChain})
+	    \item \textbf{ALSR }(siehe Kap. \ref{sec:ASLR}) 
+	    \item \textbf{Code Signing}(siehe Kap. \ref{sec:SigningProcess}) 	   
+	    \item \textbf{Sandbox} (siehe Kap. \ref{sec:Sandbox}) 
 \end{enumerate}
 
 \begin{description}
@@ -135,12 +133,15 @@ Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss 
 \end{enumerate}\end{description} 
 (Vgl. \cite{TaiG[1], TaiG[2], TaiG[3]})
 
-Andreas Kurtz beschreibt in seinem Fachartikel die benötigten iOS Sicherheitslücken für ein JB, wie folgt: \textit{\glqq Die meisten Verfahren gründen auf zwei oder mehr Software-Schwachstellen: Einer Schwachstelle in einer der Userland-Komponenten, also etwa einer App, und mindestens einer weiteren, die sich zur Rechteerweiterung nutzen lässt. Mittels der ersten wird zunächst Code im Kontext der Userland- Komponente ausgeführt, beispielsweise im Webbrowser. Von dort ausgehend werden weitere Schwachstellen ausgenutzt, um die Rechte zu erweitern und um Sicherheitsmechanismen zu deaktivieren.\grqq{}} \cite{JB[2]}
+Andreas Kurtz beschreibt in seinem Fachartikel die benötigten iOS Sicherheitslücken für ein JB, wie folgt: 
+\begin{quote}
+\textit{\glqq Die meisten Verfahren gründen auf zwei oder mehr Software-Schwachstellen: Einer Schwachstelle in einer der Userland-Komponenten, also etwa einer App, und mindestens einer weiteren, die sich zur Rechteerweiterung nutzen lässt. Mittels der ersten wird zunächst Code im Kontext der Userland- Komponente ausgeführt, beispielsweise im Webbrowser. Von dort ausgehend werden weitere Schwachstellen ausgenutzt, um die Rechte zu erweitern und um Sicherheitsmechanismen zu deaktivieren.\grqq{}} \cite{JB[2]} 
+\end{quote}
 
 % ------------- Jailbreak Step 1 --------------------
 %\subsection{Breaking out of the sandbox}
 %\label{sec:JBStep1}
-%Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden, welcher es erlaubt \glqq die Sandbox\grqq{} (siehe Kapitel: \ref{sec:Sandbox}) zu umgehen. 
+%Im ersten Schritt muss ein Bug im iOS und/oder einer Applikation gefunden werden, welcher es erlaubt \glqq die Sandbox\grqq{} (siehe e: \ref{sec:Sandbox}) zu umgehen. 
 
 % ------------- Jailbreak Step 2 --------------------
 %\subsection{Obtaining arbitrary (unsigned) code execution}
