@@ -52,12 +52,12 @@ Die wichtigsten \textbf{Memory Protection Mechanismen} unter iOS sind
 
 Die \textbf{Secure Boot Chain} ist eine Kernsicherheit-Funktionalität des iOSs. Jede Phase des Boot-Prozesses ist verschlüsselt. Jede Phase enthält den Key zum Entschlüsseln der nächsten Phase. Dadurch ist sichergestellt, dass die Boot Kette nicht unterbrochen wird. \par
 
-Der \textit{\glqq Boot Read Only Memory (ROM)\grqq{}} ist der \textit{\glqq Root of Trust\grqq{}} der Secure Boot Chain. Im ersten Step wird das \textit{\glqq Root Zertifikat\grqq{}} aus dem ROM gelesen. Das Root Zertifikat wurde durch die \textit{\glqq Apple Certificate Authority (CA)\grqq{}} signiert. Der öffentliche Schlüssel des Root Zertifikates wird verwendet, um die Signatur des Low Level Boot Loaders zu prüfen. Wenn die Signatur erfolgreich validiert wurde, wird der LLB mit dem Key aus dem ROM entschlüsselt und geladen. Diese Schritte werden für jedes Modul/Phase des Secure Boot Chain durchgeführt. Diese Vorgangsweise  wird Secure Boot Chain genannt.
+Der \textit{\glqq Boot Read Only Memory (ROM)\grqq{}} ist der \textit{\glqq Root of Trust\grqq{}} der Secure Boot Chain. Im ersten Step wird das \textit{\glqq Root Zertifikat\grqq{}} aus dem ROM gelesen. Das Root Zertifikat wurde durch die \textit{\glqq Apple Certificate Authority (CA)\grqq{}} signiert. Der öffentliche Schlüssel des Root Zertifikates wird verwendet, um die Signatur des Low Level Boot Loaders (LLB) zu prüfen. Wenn die Signatur erfolgreich validiert wurde, wird der LLB mit dem Key aus dem ROM entschlüsselt und geladen. Diese Schritte werden für jedes Modul/Phase des Secure Boot Chain durchgeführt. Diese Vorgangsweise  wird Secure Boot Chain genannt.
 
 \begin{description}
     \item[\parbox{\textwidth}{Die Secure Boot Chain beinhaltet folgende Module/Phasen}]~\par
    \begin{enumerate}
-        \item \textbf{Low Level Bootloader (LLB)},
+        \item \textbf{Low Level Bootloader},
         \item \textbf{iBoot},
         \item \textbf{Kernel},
         \item \textbf{Kernel Extension}
@@ -65,39 +65,8 @@ Der \textit{\glqq Boot Read Only Memory (ROM)\grqq{}} ist der \textit{\glqq Root
     \end{enumerate}
 \end{description} 
 
-Die Secure Boot Chain stellt sicher, dass keine Veränderung der Hardware und/oder des iOS Kernels während des Boot Prozesses vorgenommen werden kann. Nach erfolgreicher Verifikation der Kernel Signatur, wird der Kernel entschlüsselt und das mobile Betriebsystem von Apple wird geladen. Im nächsten Schritt wird die Signatur jedes Prozesses, sowohl vom Betriebssystem als auch von den User Applikationen, validiert. Nur wenn die Prüfung der Signatur erfolgreich war, werden der Code und die Libraries in den Memory des iOS Devices geladen. Dies stellt sicher, dass nur eine Software auf einem iOS Gerät geladen werden kann, welche mit einem gültigen Zertifikat signiert wurde (vgl. \cite{Apple[4], Apple[5], Apple[6]}).
+Die Secure Boot Chain stellt sicher, dass keine Veränderungen der Hardware und/oder des iOS Kernels, während des Boot Prozesses, vorgenommen werden können. Nach erfolgreicher Verifikation der Kernel Signatur, wird der Kernel entschlüsselt und das mobile Betriebssystem von Apple wird geladen. Im nächsten Schritt wird die Signatur jedes Prozesses, sowohl vom Betriebssystem als auch von den User Applikationen, validiert. Nur wenn die Prüfung der Signatur erfolgreich war, werden der Code und die Libraries in den Memory des iOS Devices geladen. Dies stellt sicher, dass nur eine Software auf einem iOS Gerät geladen werden kann, die mit einem gültigen Zertifikat signiert wurde (vgl. \cite{Apple[4], Apple[5], Apple[6]}).
 
-% -------------------------
-% -------------------------
-%\subsection{Boot ROM}
-%\label{sec:BootROM}
-%% http://resources.infosecinstitute.com/understanding-ios-security-part-1/
-%
-%% -------------------------
-%% -------------------------
-%\subsection{Low Level Boot Loader}
-%\label{sec:LowLevelBootLoader}
-%
-%% -------------------------
-%% -------------------------
-%\subsection{iBoot}
-%\label{sec:iBoot}
-%
-%% -------------------------
-%% -------------------------
-%\subsection{Kernel}
-%\label{sec:Kernel}
-%
-%------------------------------------------------------------------------------
-%------------------------------ Secure Recovery Boot Chain
-%\section{Secure Recovery Boot Chain}
-%\label{sec:SecureRecoveryBootChain}
-
-%\subsection{Recovery Mode}
-%\label{sec:RecoveryMode}
-
-% -------------------------
-% -------------------------
 \subsection{Address Space Layout Randomization (ASLR)}
 \label{sec:ASLR}
 
@@ -113,7 +82,7 @@ Das mobile Betriebssystem von Apple unterstützt ASLR seit der iOS Version 4.3. 
     \item \textbf{dem Heapsegment}
     \item \textbf{und den Libraries der App}
 \end{itemize}
-unterschiedliche \textit{\glqq virtual Memory-Adressen\grqq{}} zugewiesen. Alle unter iOS vorinstallierten Apps wurden mit diesem PIE Flag kompiliert. 
+unterschiedliche \textit{\glqq virtuelle Memory-Adressen\grqq{}} zugewiesen. Alle unter iOS vorinstallierten Apps wurden mit diesem PIE Flag kompiliert. 
 
 Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data segment}, \ref{tab:PIE stack segment}, \ref{tab:PIE heap segment}, \ref{tab:PIE libraries} und \ref{tab:PIE linker } zeigen die PIE Variationen
 
@@ -197,7 +166,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
  \textbf{Mandatory Access Control (MAC)} ist ein Konzept zur Kontrolle und Steuerung von Zugriffsrechten. MAC überprüft jeden ausführbaren Code und jede Library, die in den Memory geladen werden sollen. Im Gegensatz dazu prüft \textbf{Data Execution Prevention (DEP)} nur Binaries. iOS erfährt somit einen deutlichen Sicherheitsgewinn gegenüber anderen mobilen Betriebssystemen. \par 
  MAC wurde mit der iOS Version 2.0 eingeführt. Bis zum heutigen Zeitpunkt gibt es keinen Weg, um diese Zugriffskontrolle zu umgehen. Von jedem ausführbaren Code und jeder Library wird die Signatur geprüft, bevor die Daten in den virtuellen Memory geladen werden (vgl. \cite{iOSSec[5], Hacking[1]}).
 Der MAC Mechanismus hat zwei Vorteile gegenüber anderen Memory Protection Systemen. \par 
-Erstens, Malware kann auf einem iOS Gerät nur ausgeführt werden, wenn diese auch zuvor von einem gültigen Zertifikat signiert worden ist. Es gibt Beispiele, in denen es Hackern gelungen ist, die Malware in einer App so zu verstecken, dass die App offiziell von Apple signiert worden ist. Dies konnte erreicht werden, indem Malware in Code Branches versteckt wurde, die in dem normalen Codefluss der App nie durchlaufen wird (vgl. \cite{iOSSec[5], Hacking[1]}). \par
+Erstens, Malware kann auf einem iOS Gerät nur ausgeführt werden, wenn diese auch zuvor von einem gültigen Zertifikat signiert worden ist. Es gibt Beispiele, in denen es Hackern gelungen ist, die Malware in einer App so zu verstecken, dass die App offiziell von Apple signiert worden ist. Dies konnte erreicht werden, indem die Malware in \textit{\glqq Code Branches\grqq{}} versteckt wurde, die in dem normalen Codefluss der App nie durchlaufen wird (vgl. \cite{iOSSec[5], Hacking[1]}). \par
  Der zweite Vorteil ist, dass die Exploits nur unter Anwendung von \textit{ \glqq Return Oriented Programming(ROP)\grqq{} } durchgeführt werden können. ROP ist weitaus komplexer als normale Shell Code Exploits (vgl. \cite{Architecture[1], Architecture[2], Architecture[3], ROP[1], ROP[2], iOSSec[5], Hacking[1]}).
 
 MAC wurde unter iOS im \textbf{Mandatory Access Control Framework(MACF)} implementiert. Für iOS wurden zwei \textit{\glqq mandatory access control policies\grqq{}} konfiguriert
@@ -259,7 +228,7 @@ CS\_VALID & 0x00001 & Der Prozess ist dynamisch \textit{\glqq valid\grqq{}} \\ \
     \item \textbf{AMFI RPC Interface} 
 \end{enumerate}   
   
- Aus sicherheitstechnischen Gründen wurde die Verifizierung des CDHash vom \textit{\glqq Kernelspace\grqq{}} in den \textit{\glqq Userspace\grqq{}} ausgelagert. Damit werden die sehr komplexen und teuren kryptographische Rechenoperationen nicht mehr im sicherheitskritischen Kernelspace durchgeführt. Die Kommunikation zwischen der AMFI Kernel Extension (Kernelspace) und dem \textit{\glqq amfid Dämon (Userspace)\grqq{}} findet über die Remote Prozedur Calls(RPC) statt. Für diese Interprozesskommunikation stehen zwei Prozeduren zur Verfügung. Diese werden im Table \ref{tab:AMFID} beschrieben (vgl. \cite{iOSSec[5]} S.13, \cite{Mach[1]}).
+ Aus sicherheitstechnischen Gründen wurde die Verifizierung des CDHash vom \textit{\glqq Kernelspace\grqq{}} in den \textit{\glqq Userspace\grqq{}} ausgelagert. Damit werden die sehr komplexen und teuren kryptographischen Rechenoperationen nicht mehr im sicherheitskritischen Kernelspace durchgeführt. Die Kommunikation zwischen der AMFI Kernel Extension (Kernelspace) und dem \textit{\glqq amfid Dämon (Userspace)\grqq{}} findet über die Remote Prozedur Calls (RPC) statt. Für diese Interprozesskommunikation stehen zwei Prozeduren zur Verfügung. Diese wird in der Tabelle \ref{tab:AMFID} dargestellt (vgl. \cite{iOSSec[5]} S.13, \cite{Mach[1]}).
 
 \begin{table}[ht]
 \begin{center}
@@ -279,14 +248,14 @@ Diese Funktion überprüft die UDIDs der Provisioning Profiles des iOSs. Die Pro
 % -------------------------
 \subsubsection{Virtual Memory Pages}
 \label{sec:virMemoryPages}
- Als \textbf{virtual Memory} wird die Technik bezeichnet, die den \textit{\glqq Adressraum\grqq{}} eines Prozesses unabhängig vom physischen Arbeitsspeicher des iOS Devices macht. Der Begriff \textbf{Paging} bezeichnet die Abbildung der virtuellen Adressen auf die physischen.\par 
+ Als \textbf{virtueller Memory} wird die Technik bezeichnet, die den \textit{\glqq Adressraum\grqq{}} eines Prozesses unabhängig vom physischen Arbeitsspeicher des iOS Devices macht. Der Begriff \textbf{Paging} bezeichnet die Abbildung der virtuellen Adressen auf die physischen.\par 
 Unter iOS gibt es zwei verschiedene Typen von virtuellen Memory Pages, die sich in den gesetzten Permissions unterscheiden 
 
 \begin{enumerate}
     \item Lese- (read) und Schreibzugriff (write)
     \item Lesezugriff (read) und ausführbarer Zugriff (execute)
 \end{enumerate}
-Diese Permissions verhindern, dass der Inhalt des Speichers nach dem Laden verändert werden kann. Ein weiterer Vorteil ist, dass das Erzeugen von \textit{\glqq neuen dynamischen Codes\grqq{}} unterbunden wird. iOS macht  nur für einige Apps/Prozesse eine Ausnahme von dieser Regel. Der \textit{\glqq MobileSafari Webbrowser\grqq}, ist einer dieser Apps und kann zur Laufzeit \textit{\glqq dynamische HTML Seiten\grqq{}} generieren (Java Script). (Just in Time(JIT) Kap. \ref{sec:Jit}).
+Diese Permissions verhindern, dass der Inhalt des Speichers nach dem Laden verändert werden kann. Ein weiterer Vorteil ist, dass das Erzeugen von \textit{\glqq neuen dynamischen Codes\grqq{}} unterbunden wird. iOS macht  nur für einige Apps/Prozesse eine Ausnahme von dieser Regel. Der \textit{\glqq MobileSafari Webbrowser\grqq}, ist einer dieser Apps und kann zur Laufzeit \textit{\glqq dynamische HTML Seiten\grqq{}} generieren (Java Script). (Just in Time(JIT) siehe Kap. \ref{sec:Jit}).
 
 
 %CSE is built into the iOS kernel’s virtual memory system and most of its implementation is visible in Apple’s open source xnu kernel7, which is shared between iOS and Mac OS X. In essence, the virtual memory system tracks the validity of executable memory Pages and the process as a whole using the “dirty” bit used to implement Copy-on-Write (COW) semantics and virtual memory Pages -ins. When an executable memory Pages is Pages d-in and is marked as being “dirty”, its signature may have been invalidated and it must be reverified. New executable memory Pages are always “dirty”. If a single memory Pages is found to be invalid, then the entire process’ code signing validity is also set to be invalid.%The code signing validity of the process is tracked with the CS_VALID flag in the csflags member of the kernel’s proc structure for that process. If the executable’s code signing signature has been validated prior to it being executed, the process begins execution with the CS_VALID flag set. If the process becomes invalid, then this flag will be cleared. What happens next depends on the CS_KILL flag. If this flag is set, the kernel will forcibly kill the process once it becomes invalid. On Mac OS X, the default is to not set this flag so that processes created from signed binaries may become invalid. On iOS, however, this flag is set by default so the process is killed once it becomes invalid. The flags defined for this field and a system call (csops) for getting and setting them from user space are documented in bsd/sys/codesign.h. The defined flags are also summarized in the table below:
@@ -297,7 +266,7 @@ Diese Permissions verhindern, dass der Inhalt des Speichers nach dem Laden verä
 \label{sec:Jit}
 
 Mit der iOS Version 2.0 wurde \textbf{Dynamisches Code Signing (DCS)} eingeführt, um den Performance-Ansprüchen der User gerecht zu werden. Es wurden in den unterschiedlichen iOS Versionen immer wieder DCS-Bugs behoben, bis die endgültige DCS-Version in iOS Version 4.3 veröffentlicht wurde. 
-\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Compiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einen bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performance-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse, die das Entitlement \textbf{dynamic-codesigning} (siehe Abb. \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden (vgl. \cite{ASLR[4]}).
+\paragraph{Just In Time (JIT)} wird unter iOS mit Hilfe von DCS ermöglicht. Der JIT-Compiler übersetzt zur Laufzeit das Programm in Bytecode. Der Bytecode wird in einem bestimmten Speicher geschrieben und ausgeführt. Somit muss es auch unter iOS einen Speicherbereich im virtual Memory geben, der sowohl beschreibbar als auch ausführbar ist.  JIT ist aber aus Sicherheits- und Performance-Gründen auf einige wenige Anwendungen beschränkt. Weiter wird sichergestellt, dass immer nur ein Prozess Zugang zu einem schreib- und ausführbaren Memory Bereich hat. Nur Prozesse, die das Entitlement \textbf{dynamic-codesigning} (siehe Abb. \ref{fig:JIT}) gesetzt haben, können JIT verwenden und diesen speziellen Speicherbereich anfordern. Dadurch kann JavaScript im MobileSafari Webbrowser verwendet werden (vgl. \cite{ASLR[4]}).
 
 Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel setzt nach der Prüfung der Entitlement, der Signatur und der Prüfung, ob dieser Prozess JIT verwenden darf, die entsprechenden Berechtigungen(RWX) im Virtual Memory.
 
@@ -312,12 +281,16 @@ Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel se
 \section{Signieren von Apps}
 \label{sec:SigningProcess}
 
-Apple führte mit der iOS Version 2.0 \textit{\glqq das verpflichtende Signieren von Apps\grqq{}} ein, um ausführbaren Codes und Libraries zur Laufzeit zu prüfen. Das Signieren einer App verhindert, dass 
-\begin{itemize}
-    \item \textbf{unsignierte Libraries,}
-    \item \textbf{ein neuer Code zur Laufzeit,} 
-    \item \textbf{und/oder ein selbstmodifizierender Code geladen und ausgeführt werden.}
-\end{itemize}
+Apple führte mit der iOS Version 2.0 \textit{\glqq das verpflichtende Signieren von Apps\grqq{}} ein, um ausführbare Codes und Libraries zur Laufzeit prüfen zu können. 
+
+\begin{description}
+    \item[\parbox{\textwidth} {Das Signieren einer App verhindert, dass}]~\par
+    \begin{itemize}
+        \item \textbf{unsignierte Libraries,}
+        \item \textbf{ein neuer Code zur Laufzeit,} 
+        \item \textbf{und/oder ein selbstmodifizierender Code geladen und ausgeführt werden.}
+    \end{itemize}
+\end{description} 
 Jede App wird mit einem Zertifikat signiert. Dadurch wird eine digitale Identität einer App zugeordnet (vgl. \cite{Cert[2], Cert[3]}).
 \begin{description}
     \item[\parbox{\textwidth} {Eine App kann auf zwei Arten signiert werden}]~\par
@@ -328,13 +301,13 @@ Jede App wird mit einem Zertifikat signiert. Dadurch wird eine digitale Identit�
     \end{enumerate} 
 \end{description} 
 (Vgl. \cite{Sign[1], Sign[2], Sign[3], Sign[4], Sign[5], ROP[1]}) \par 
-Die Signatur der App wird von der AMFI Kernel Extension (siehe Kap. \ref{sec:AMFI}) geprüft, und es wird sichergestellt, dass nur ein valider Code vom Prozessor ausgeführt wird.    
+Die Signatur der App wird von der AMFI Kernel Extension (siehe Kap. \ref{sec:AMFI}) geprüft, und stellt sicher, dass nur ein valider Code vom Prozessor ausgeführt wird.    
  
  %------------------------------------------------------------------------- 
 \subsection{Provisioning Profile}
 \label{sec:ProvisioningProfile}
 Das \textbf{Provisioning Profile} ist ein XML formatiertes File, in dem die \textit{\glqq Properties (Einstellungen)\grqq{}} der App gespeichert werden. Die Einstellungen werden in einem verschachtelten \textit{\glqq Schlüssel-Werte Paar (key-value pair)\grqq{}} abgelegt. Neben den unterschiedlichsten Konfigurationsmöglichkeiten und Entitlements enthält das Provisioning Profile auch das Developer Zertifikat(Public Key). Der Public Key wird zum Überprüfen der Signatur der App benötigt (vgl. \cite{iOSSec[5]} S.5, \cite{Hacking[1], ProvisioningProfile[1], ProvisioningProfile[2]}). \par
-Ein wichtiger Bestandteil des Provisioning Profile ist das \textit{\glqq Entitlement Item\grqq{}}. Mit dem Entitlement Item legt der Entwickler die \textit{\glqq Permissions\grqq{}} für seine App fest. Weiter ist es möglich, die Unique Device Identifiers (UDIDs) im Provisioning Profile festzulegen, dies hat zur Folge, dass die App nur auf dem iOS Devices mit diesen UDIDs läuft (vgl. \cite{iOSSec[5]} S.5). \par 
+Ein wichtiger Bestandteil des Provisioning Profile ist das \textit{\glqq Entitlement Item\grqq{}}. Mit dem Entitlement Item legt der Entwickler die \textit{\glqq Permissions\grqq{}} für seine App fest. Weiter ist es möglich, die Unique Device Identifiers (UDIDs) im Provisioning Profile festzulegen. Dies hat zur Folge, dass die App nur auf dem iOS Devices mit diesen UDIDs läuft (vgl. \cite{iOSSec[5]} S.5). \par 
 
 \begin{description}
     \item[\parbox{\textwidth} {Es gibt drei unterschiedliche Arten von Provisioning Profiles }]~\par
@@ -356,17 +329,17 @@ Die Funktion \textit{\glqq MISProvisioningProfileCheckValidity\grqq{}} der Libra
 \begin{description}
     \item[\parbox{\textwidth} {Stefan Esser beschreibt in seinem iOS Hacker's Handbook die Konditionen zur Überprüfung der Gültigkeit des Provisioning Profile wie folgt \cite{Hacking[1]} }]~\par
     \begin{itemize}
-        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5) 
+        \item \glqq \textit{The signing certificate must be issued by the Apple iPhone Certification Authority.}\grqq{} (\cite{iOSSec[5]}, S.5) 
     
-        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)
+        \item  \glqq \textit{The signing certificate must be named Apple iPhone OS Provisioning Profile Signing.}\grqq{} (\cite{iOSSec[5]}, S.5)
     
-        \item  \glqq \textit{The certificate signing chain must be no longer than three links.}\grqq{} (\cite{Hacking[1]}, vgl. \cite{iOSSec[5]} S.5)     
+        \item  \glqq \textit{The certificate signing chain must be no longer than three links.}\grqq{} (\cite{Hacking[1]}, \cite{iOSSec[5]}, S.5)     
     
-        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)    
+        \item  \glqq \textit{The root certificate (referred to as the “Apple CA”) must have a particular SHA1 hash.}\grqq{} (\cite{iOSSec[5]}, S.5)    
     
-        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)     
-        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5)    
-        \item  \glqq \textit{The profile must not expired.}\grqq{} (Vgl. \cite{iOSSec[5]} S.5) 
+        \item  \glqq \textit{The provisioning profile version number must be 1.}\grqq{} (\cite{iOSSec[5]}, S.5)     
+        \item  \glqq \textit{The provisioning profile must contain the UDID of this device or the profile must contain the key ProvisionsAllDevices.}\grqq{} (\cite{iOSSec[5]}, S.5)    
+        \item  \glqq \textit{The profile must not expired.}\grqq{} (\cite{iOSSec[5]}, S.5)
     \end{itemize}
 \end{description} 
 
@@ -429,7 +402,7 @@ Dieses Item beinhaltet den Zeitstempel der Provisioning Profile Generierung (vgl
     <string>iOS</string>
 </array>
 \end{lstlisting}
-Dieser Item beinhaltet eine Betriebssystem Liste(Array). Auf diesen Systemen kann die App installiert und ausgeführt werden (vgl. \cite{iOSSec[5], Hacking[1]}).
+Dieses Item beinhaltet eine Betriebssystem Liste(Array). Auf diesen Systemen kann die App installiert und ausgeführt werden (vgl. \cite{iOSSec[5], Hacking[1]}).
 %------ DEVELOPERCERTIFICATES -----------------------
     \item DeveloperCertificates Item
 \begin{lstlisting}[captionpos=b, caption={DeveloperCertificates Item}]        
@@ -454,7 +427,7 @@ openssl x509 -text -in Attributor.pem
         \label{fig:DeveloperCertificates}
 \end{figure}
 \footnotetext{Eigenwerk}
-
+\newpage
 %-------------ENTITLEMENTS -----------------------
     \item Entitlements Item
 \begin{lstlisting}[captionpos=b, caption={Entitlements Item}]
@@ -473,7 +446,7 @@ openssl x509 -text -in Attributor.pem
 </dict>
 \end{lstlisting}
 
-Nachfolgend werden die möglichen \textit{\glqq Entitlements-Key\grqq{}} beschrieben:
+Nachfolgend werden die möglichen \textit{\glqq Entitlement-Keys\grqq{}} beschrieben:
 
 \paragraph{keychain-access-groups:}
 Dieses Entitlement verwaltet eine Liste (Array) von ApplicationIdentifierPrefix inklusive Namespace und ist ein Datensicherheit-Mechanismus für Apps. \par 
@@ -593,7 +566,7 @@ Mit dem Befehl \glqq codesign\grqq{} (siehe Listing: \ref{list:codeSignApp}) kö
 
 \paragraph{CDHash} ist die Abkürzung für \textit{\glqq Code Directory Hash\grqq{}}. Der CDHash ist ein SHA-1 Hash über die \textit{\glqq Program Code Directory Resource\grqq{}}. Die Code Directory Resource ist das Master Directory des Program Content (vgl. \cite{CDHash[1], Debug[1], Debug[2]}). \par
 
-Wie in Kapitel \ref{sec:ProvisioningProfile} beschrieben, gibt es drei unterschiedliche Arten wie eine App signiert kann.
+Wie in Kapitel \ref{sec:ProvisioningProfile} beschrieben, gibt es drei unterschiedliche Arten wie eine App signiert werden kann.
 
 Die Abbildung \ref{fig:Developer signed CDHash} zeigt eine App die mit einem Developer Zertifikat signiert wurde. Nur mit dem entsprechenden Provisioning Profile kann die App auf einem iOS Device ausgeführt werden. Das Provisioning Profile muss auf dem iOS Device installiert sein, und es muss den \textit{\glqq Public Key des Developer\grqq{}} enthalten.\par 
 \begin{figure}[!ht]
@@ -612,7 +585,7 @@ Es besteht immer die Möglichkeit, dass eine App von Apple bzw. einem anderen En
         \label{fig:Apple signed CDHash}
 \end{figure}
 
-Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App ohne Informationen betreffend des Zertifikates, mit welchen die App signiert wurde. Es ist nur der CDHash verfügbar und das Entitlement adhoc ist gesetzt. Dies bedeutet, dass dieser CDHash im \textit{\glqq static trusted cache\grqq{}} enthalten ist (vgl. \cite{Sign[1], Sign[2], Sign[3], Sign[4], Sign[5]}).
+Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App die nicht signiert wurde. Es ist nur der CDHash verfügbar und das Entitlement adhoc ist gesetzt. Dies bedeutet, dass dieser CDHash im \textit{\glqq static trusted cache\grqq{}} enthalten ist (vgl. \cite{Sign[1], Sign[2], Sign[3], Sign[4], Sign[5]}).
 
 \begin{figure}[!ht]
         \centering
@@ -626,17 +599,16 @@ Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App ohne Informationen betreffe
 \section{Datenverschlüsselung und -schutz}
 \label{sec:EncryptionandDataProtection}
 
-In den Kapiteln zuvor wurden die Sicherheitsmechanismen beschreiben, die sicherstellen, dass nur ein vertrauenswürdiger Code auf dem Device ausgeführt werden kann. Dieses Kapitel befasst sich mit der Sicherheit von Userdaten auf dem iOS Device. 
+In den Kapiteln zuvor wurden die Sicherheitsmechanismen beschrieben, die sicherstellen, dass nur ein vertrauenswürdiger Code auf dem Device ausgeführt werden kann. Dieses Kapitel befasst sich mit der Sicherheit von Userdaten auf dem iOS Device. 
 
 Ab der iOS Version 8 wurde die verpflichtende Verschlüsselung von Userdaten eingeführt. Die iOS Produkte verfügen über unterschiedliche Schutzmechanismen, sowohl im Betriebssystem, als auch im iOS Device. Wenn alle anderen Sicherheitsmechanismen umgangen werden, kann trotzdem nicht auf die unverschlüsselten Userdaten zugegriffen werden. Dies ist der Datenverschlüsselung und dem Datenschutz-Mechanismus zuzuschreiben.
 
 \subsubsection{Hardware Security Protection}
 \label{sec:HardwareSecProtection}
 
-Jedes iOS Device hat eine eigene \textbf{AES 256 Crypto Engine}. Diese Crypto Engine ist Teil des \textit{\glqq Direct Memory Access(DMA)\grqq{}} Pfades und wurde zwischen dem \textit{\glqq Main System Memory(Hauptspeicher des Systems)\grqq{}} und dem \textit{\glqq Flash Memory\grqq{}} angeordnet. Das ermöglicht es, dem iOS Device die sehr teuren und komplexen kryptographischen Operationen effizient und energiesparend durchzuführen (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]})
-.
+Jedes iOS Device hat eine eigene \textbf{AES 256 Crypto Engine}. Diese Crypto Engine ist Teil des \textit{\glqq Direct Memory Access(DMA)\grqq{}} Pfades und wurde zwischen dem \textit{\glqq Main System Memory (Hauptspeicher des Systems)\grqq{}} und dem \textit{\glqq Flash Memory\grqq{}} angeordnet. Das ermöglicht es, dem iOS Device die sehr teuren und komplexen kryptographischen Operationen effizient und energiesparend durchzuführen (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}). \par 
 Während der Herstellung des Applikationsprozessors und der Secure Enclave wird die \textit{\glqq Unique ID\grqq{}} (UID, eindeutige ID des Gerätes) und die \textit{\glqq device Group ID\grqq{}} (GID, Gerätegruppen ID) in die Hardware gebrannt oder kompiliert. Die GID ist für alle Prozessor Geräteklassen gleich, so haben alle Apple A8 die selbe GID. \par 
-Die UID und die GID bestehen aus \textbf{AES 256-Bit Keys}. Es ist für keine Software oder Firmware möglich, diesen Key direkt auszulesen. Es können nur die Ver- und Entschlüsselung-Funktionen verwendet werden, die von der AES Engine zur Verfügung gestellt werden (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
+Die UID und die GID bestehen aus \textbf{AES 256-Bit Keys}. Es ist für keine Software oder Firmware möglich, diesen Key direkt auszulesen. Es können nur die Ver- und Entschlüsselungsfunktionen verwendet werden, die von der AES Engine zur Verfügung gestellt werden (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
 
 Der \textbf{Secure Enclave} ist ein \textbf{Coprozessor} des \textit{\glqq Apple A7 Prozessors\grqq{}} und der späteren \textit{\glqq A-Serie Prozessoren\grqq}. Jeder Secure Enclave hat ihre eigene UID, die bei der Herstellung des Coprozessors gebrannt wird.
 
@@ -657,11 +629,11 @@ Durch die Verschachtelung der UID mit dem AES 256-Bit Key ist es nicht möglich,
 \subsubsection{Datenschutz}
 \label{sec:DataProtection}
 
-Zusätzlich zur Hardware Protection stellt Apple eine weitere Sicherheitstechnologie für iOS Geräte zur Verfügung, diese wird \textbf{Data Protection}(Datenschutz) genannt. Ab der iOS Version 7.0 wird Data Protection für alle Third-Party Apps defaultmäßig aktiviert (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
+Zusätzlich zur Hardware Protection stellt Apple eine weitere Sicherheitstechnologie für iOS Geräte zur Verfügung. Diese Technologie wird \textbf{Data Protection}  (Datenschutz) genannt. Ab der iOS Version 7.0 wird Data Protection für alle Third-Party Apps defaultmäßig aktiviert (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
 
-\paragraph{Datenschutz} wurde speziell für mobile Geräte entwickelt. iOS entschlüsselt immer nur die Daten, die gerade von Apps/Prozessen verwendet/benötigt werden. Dies hat den Vorteil, dass bei einem Event (zB. eingehender Anruf) nicht die gesamte Daten entschlüsselt werden müssen, um diesen Event behandeln zu können (vgl. \cite{Apple[4]}).
+\paragraph{Datenschutz} wurde speziell für mobile Geräte entwickelt. iOS entschlüsselt immer nur die Daten, die gerade von Apps/Prozessen verwendet/benötigt werden. Dies hat den Vorteil, dass bei einem Event (zB. eingehender Anruf) nicht die gesamten Daten entschlüsselt werden müssen, um diesen Event behandeln zu können (vgl. \cite{Apple[4]}).
 
-\paragraph{File Datenschutz} basiert auf dem Datenschutz-Mechanismus, dieser wiederum beruht auf einer hierarchischen Schlüsselverteilung. Mit dem Erstellen eines neuen Files auf der Datenpartition wird auch ein neuer \textit{\glqq File Key 256-Bit\grqq{}} (\glqq File Key\grqq) erzeugt. Dieser wird der Hardware AES Engine übergeben und dann zur Verschlüsselung des Files verwendet.  Der \textit{\glqq AES-CBC Mode\grqq{}} wird verwendet, um das File auf den Flash Memory zu schreiben. Der A8 Prozessor verwendt hierfür den \textit{\glqq AES-XTS Mode\grqq{}}.  \par
+\paragraph{File Datenschutz} basiert auf dem Datenschutz-Mechanismus. Welcher wiederum auf einer hierarchischen Schlüsselverteilung beruht. Mit dem Erstellen eines neuen Files auf der Datenpartition wird auch ein neuer \textit{\glqq File Key 256-Bit\grqq{}} (\glqq File Key\grqq) erzeugt. Dieser wird der Hardware AES Engine übergeben und dann zur Verschlüsselung des Files verwendet.  Der \textit{\glqq AES-CBC Mode\grqq{}} wird verwendet, um das File auf den Flash Memory zu schreiben. Der A8 Prozessor verwendet hierfür den \textit{\glqq AES-XTS Mode\grqq{}}.  \par
 Der \textbf{Initialisierungsvektor(IV)} wird mit Hilfe des Block Offset der Datei berechnet, und zur Verschlüsselung wird der SHA-1 Hash des \textit{\glqq File Keys\grqq{}} verwendet (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
 
 Der Content des Files wird mit dem \textbf{File Key} verschlüsselt. Dieser wird mit einem \textbf{Class Key} verpackt (wrapped) und in den Metadaten des Files gespeichert. Die Metadaten werden mit dem \textbf{File System Key} verschlüsselt. Der Class Key ist mit dem \textbf{Hardware Key} geschützt. Manche Klassen werden zusätzlich noch mit \textbf{Passcode Key} gewrapped (vgl. \cite{iOSSec[5], iOSSec[2],iOSSec[1], Apple[4], Apple[5], Apple[6], Apple[3]}).
@@ -690,10 +662,8 @@ Die Sicherheit des iOS Devices hängt mit der Sicherheit des Passcodes zusammen.
 \subsection{Sandbox}
 \label{sec:Sandbox}
 
-\textbf{Die Sandbox} ist ein weiterer Zugriffkontrollmechanismus, um Userdaten zu schützen. Die Sandbox wird auch als \textbf{Last Line of Defense} bezeichnet. Wenn alle anderen Sicherheitsmechanismen schon versagt haben, verhindert die Sandbox ein Übergreifen der Schadsoftware auf das gesamte Device. Die Schadsoftware kann sich nur in den Verzeichnissen der App ausbreiten. Die Malware kann nur auf die Daten in diesem Verzeichnisbaum zugreifen, und es stehen auch nur die Systemressourcen zur Verfügung, die für diese App vom Entwickler festgelegt wurden. \par
+\textbf{Die Sandbox} ist ein weiterer Zugriffskontrollmechanismus, um Userdaten zu schützen. Die Sandbox wird auch als \textbf{Last Line of Defense} bezeichnet. Wenn alle anderen Sicherheitsmechanismen schon versagt haben, verhindert die Sandbox ein Übergreifen der Schadsoftware auf das gesamte Device. Die Schadsoftware kann sich nur in den Verzeichnissen der App ausbreiten. Die Malware kann nur auf die Daten in diesem Verzeichnisbaum zugreifen, und es stehen ausschließlich die Systemressourcen zur Verfügung, die für diese App vom Entwickler festgelegt wurden. \par
 Würde eine Schadsoftware Zugriff auf eine App erhalten, die in keiner Sandbox läuft, so hätte die Malware Zugriff auf alle Daten des Devices und könnte alle Systemressourcen uneingeschränkt verwenden.\par
-
-\newpage
 Fabina Vogt beschreibt dies in seiner Abhandlung so: 
 \begin{quote}
     \textit{\glqq Dealing with faults in software is a complicated task, especially when a system may be extended by various modules. These modules may contain unforeseen faults and thus portray a serious threat to the overall system reliability and security. So the main goal for software fault isolation is to limit the impact of module faults to a small part of the system. The untrusted module is therefore loaded in its own fault domain [9], which is logically separated from the rest of the system.\grqq{}} \cite{Sandbox[4]}
@@ -720,7 +690,7 @@ Fabina Vogt beschreibt dies in seiner Abhandlung so:
     \item[\parbox{\textwidth} {Wenn eine Sandbox für eine App vom iOS angelegt wird, stehen der App folgende Container Verzeichnisse zur Verfügung}]~\par
     \begin{enumerate}
         \item \textbf{ App Container Directory:} \\
-        Beim ersten Starten der App wird vom Betriebssystem ein Verzeichnis erstellt, dieses kann nur von dieser App verwendet werden. Dies wird als Container bezeichnet. Jeder User des Systems erhält seinen eigenen Container für diese App.
+        Beim ersten Starten der App wird vom Betriebssystem ein Verzeichnis erstellt, welches nur von dieser App verwendet werden kann. Dies wird als Container bezeichnet. Jeder User des Systems erhält seinen eigenen Container für diese App.
         \item \textbf{ App Group Container Directory:} \\
         Mit Hilfe von Entitlements kann konfiguriert werden, welche Apps Zugriff auf den Group Container haben. Dieser Container dient zum Datenaustausch zwischen unterschiedlichen Apps.
         \item \textbf{Diverse System Verzeichnisse}
