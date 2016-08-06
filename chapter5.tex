@@ -163,7 +163,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
 \subsection{Mandatory Access Control}
 \label{sec:MAC}
 
- \textbf{Mandatory Access Control (MAC)} ist ein Konzept zur Kontrolle und Steuerung von Zugriffsrechten. MAC überprüft jeden ausführbaren Code und jede Library, die in den Memory geladen werden sollen. Im Gegensatz dazu prüft \textbf{Data Execution Prevention (DEP)} nur Binaries. iOS erfährt somit einen deutlichen Sicherheitsgewinn gegenüber anderen mobilen Betriebssystemen. \par 
+ \textbf{Mandatory Access Control (MAC)} ist ein Konzept zur Kontrolle und Steuerung von Zugriffsrechten. MAC überprüft jeden ausführbaren Code und jede Library, die in den Memory geladen werden sollen. Im Gegensatz dazu prüft \textbf{  (DEP)} nur Binaries. iOS erfährt somit einen deutlichen Sicherheitsgewinn gegenüber anderen mobilen Betriebssystemen. \par 
  MAC wurde mit der iOS Version 2.0 eingeführt. Bis zum heutigen Zeitpunkt gibt es keinen Weg, um diese Zugriffskontrolle zu umgehen. Von jedem ausführbaren Code und jeder Library wird die Signatur geprüft, bevor die Daten in den virtuellen Memory geladen werden (vgl. \cite{iOSSec[5], Hacking[1]}).
 Der MAC Mechanismus hat zwei Vorteile gegenüber anderen Memory Protection Systemen. \par 
 Erstens, Malware kann auf einem iOS Gerät nur ausgeführt werden, wenn diese auch zuvor von einem gültigen Zertifikat signiert worden ist. Es gibt Beispiele, in denen es Hackern gelungen ist, die Malware in einer App so zu verstecken, dass die App offiziell von Apple signiert worden ist. Dies konnte erreicht werden, indem die Malware in \textit{\glqq Code Branches\grqq{}} versteckt wurde, die in dem normalen Codefluss der App nie durchlaufen wird (vgl. \cite{iOSSec[5], Hacking[1]}). \par
@@ -273,7 +273,7 @@ Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel se
 \begin{figure}[htp!]
         \centering
                 \includegraphics[scale=0.8]{JIT}
-        \caption{Just in Time Entitlement (vgl. \cite{Hacking[1]}) }
+        \caption{Just in Time Entitlement (Quelle \cite{Hacking[1]}) }
         \label{fig:JIT}
 \end{figure}
 % -------------------------
@@ -357,16 +357,6 @@ security cms -D -i "filename"
 openssl smime -in filename -inform der -verify
 \end{lstlisting}
 
-\newpage
-\begin{figure}[htp!]
-        \centering
-                \includegraphics[scale=0.6]{SGML-Format}
-        \caption{Provisioning Profile \protect\footnotemark}
-        \label{fig:ProvisioningProfile}
-\end{figure}
-\footnotetext{Eigenwerk}
-
-\newpage
 \paragraph{Alle Items eines Provisioning Profile werden nachfolgend aufgelistet}
 \begin{enumerate}
 % --------APPIDNAME --------------
@@ -419,15 +409,9 @@ Dieses Item beinhaltet eine Developer Zertifikat Liste(Array). Jedes Zertifikat 
 \begin{lstlisting}[captionpos=b, caption={Befehl: openssl -- (siehe Abb. \ref{fig:DeveloperCertificates})}]
 openssl x509 -text -in Attributor.pem 
 \end{lstlisting}
-
-\begin{figure}[!ht]
-        \centering
-                \includegraphics[scale=0.7]{Cert-output}
-        \caption{Developer Certificates \protect\footnotemark}
-        \label{fig:DeveloperCertificates}
-\end{figure}
-\footnotetext{Eigenwerk}
+%--------------
 \newpage
+%-------------
 %-------------ENTITLEMENTS -----------------------
     \item Entitlements Item
 \begin{lstlisting}[captionpos=b, caption={Entitlements Item}]
@@ -572,7 +556,7 @@ Die Abbildung \ref{fig:Developer signed CDHash} zeigt eine App die mit einem Dev
 \begin{figure}[!ht]
         \centering
         \includegraphics[scale=0.6]{developerZert-codesign-CDHash.png}
-        \caption{Developer signed CDHash (vgl. \cite{Hacking[1]})}
+        \caption{Developer signed CDHash (Quelle \cite{Hacking[1]})}
         \label{fig:Developer signed CDHash}
 \end{figure}
 
@@ -581,7 +565,7 @@ Es besteht immer die Möglichkeit, dass eine App von Apple bzw. einem anderen En
 \begin{figure}[!ht]
         \centering
         \includegraphics[scale=1.0]{AppleZert_CDHash.png}
-        \caption{Apple signed CDHash vgl. \cite{Hacking[1]})}
+        \caption{Apple signed CDHash (Quelle \cite{Hacking[1]})}
         \label{fig:Apple signed CDHash}
 \end{figure}
 
@@ -590,7 +574,7 @@ Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App die nicht signiert wurde. E
 \begin{figure}[!ht]
         \centering
         \includegraphics[scale=0.9]{ADhoc_CDHash.png}
-        \caption{Ad-Hoc CDHash (vgl. \cite{Hacking[1]})}
+        \caption{Ad-Hoc CDHash (Quelle \cite{Hacking[1]})}
         \label{fig:Ad-Hoc CDHash}
 \end{figure}
 
@@ -640,7 +624,7 @@ Der Content des Files wird mit dem \textbf{File Key} verschlüsselt. Dieser wird
 \begin{figure}[hp!]
         \centering
         \includegraphics[scale=0.75]{fileDataProtection.PNG}
-        \caption{File Data Protection (\cite{Apple[4]} S.11)}
+        \caption{File Data Protection (Quelle \cite{Apple[4]} S.11)}
         \label{fig:FileDataProtection}
 \end{figure}
 
@@ -682,7 +666,7 @@ Fabina Vogt beschreibt dies in seiner Abhandlung so:
 \begin{figure}[hp!]
         \centering
                 \includegraphics[scale=0.5]{iOSsandbox}
-        \caption{iOS Sandbox (vgl. \cite{Sandbox[3]}, S.6)}
+        \caption{iOS Sandbox (Quelle \cite{Sandbox[3]}, S.6)}
         \label{fig:iOSsandbox}
 \end{figure}
 
