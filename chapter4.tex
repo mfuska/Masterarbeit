@@ -238,7 +238,7 @@ Die in diesem Kapitel beschriebenen Sicherheitsmechanismen beziehen sich auf all
       					\end{enumerate}
 			\end{enumerate}
    		\end{description}
-Die iOS Sicherheit basiert auf einer Kombination von Software, Hardware und Diensten, welches ein Maximum an Sicherheit garantieren soll (vgl. \cite{Apple[4]} S.4).
+Die iOS Sicherheit basiert auf einer Kombination aus Software, Hardware und Services, welche ein Maximum an Sicherheit garantieren soll (vgl. \cite{Apple[4]} S.4).
 	\end{minipage}
 	\hfil
 	\begin{minipage}{0.4\textwidth}
@@ -271,7 +271,7 @@ Die enge Verbindung zwischen Hardware und Software eines iOS Gerätes gewährlei
 \subsection{Encryption und Daten-Sicherheit}
 \label{sec:DataEnc}
 Das iOS Device unterstützt standardmäßig eine Verschlüsselung für persönliche Daten und Unternehmensdaten. Die Sicherheitsinfrastruktur des iOS Devices ist so aufgebaut, dass selbst wenn ein Teil des Betriebssystems kompromittiert ist, die anderen Bereiche des iOS Devices weiterhin sicher vor unerlaubtem Zugriff sind. \par
-Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Devices die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration des mobilen Betriebssystems aktiv gesetzt.
+Dies ist besonders für Unternehmen wichtig, da dadurch gewährleistet wird, dass vertrauliche Unternehmensdaten nicht gelesen werden können. Weitere iOS Features stellen sicher, dass selbst bei Diebstahl oder Verlust des iOS Device die Daten sicher sind. Alle diese Features sind in der Standardkonfiguration des mobilen Betriebssystems aktiv gesetzt.
 \begin{description}
 \item[\parbox{\textwidth} {Apple führt unter dem Kapitel Encryption und Daten-Sicherheit folgende Features an}]~\par
 	\begin{itemize}
@@ -303,9 +303,9 @@ Für das Betriebssystem beinhalten die zu installierenden Apps das größte Sich
 %------------------------------ Network Security
 \subsection{Netwerk Sicherheit}
 \label{sec:NetworkSec}
-Die \textbf{ Netzwerk Sicherheit} ist ein wichtiger Bestandteil des Sicherheitskonzepts und ergänzt die integrierten iOS Sicherheitsmechanismen. Die integrierten Sicherheitsmechanismen des mobilen Betriebssystems von Apple dienen dazu, die Daten auf dem Device zu schützen. Die Anforderungen an ein mobiles Device haben sich in den letzten Jahren dahin gehend verändert, dass der Zugriff auf externe Daten geschützt vorgenommen werden kann. Dieser Zugriff muss so abgesichert sein, dass die Datenübertragung sicher ist und die Usability des Produktes nicht eingeschränkt ist. Es werden Netzwerksicherheit-Protokolle und -Architekturen für eine authentifizierte, autorisierte und verschlüsselte Kommunikation verwendet.
+Die \textbf{ Netzwerk Sicherheit} ist ein wichtiger Bestandteil des Sicherheitskonzepts und ergänzt die integrierten iOS Sicherheitsmechanismen. Die integrierten Sicherheitsmechanismen des mobilen Betriebssystems von Apple dienen dazu, die Daten auf dem Device zu schützen. Die Anforderungen an ein mobiles Device haben sich in den letzten Jahren dahin gehend verändert, dass der Zugriff auf externe Daten geschützt vorgenommen werden kann. Dieser Zugriff muss so abgesichert sein, dass die Datenübertragung sicher ist und die Usability des Produktes nicht eingeschränkt ist. Es werden Netzwerksicherheits-Protokolle und -Architekturen für eine authentifizierte, autorisierte und verschlüsselte Kommunikation verwendet.
 \begin{description}
-\item[\parbox{\textwidth} {Ein iOS Device verfügt über folgende Netzwerksicherheit-Protokolle und -Architekturen
+\item[\parbox{\textwidth} {Ein iOS Device verfügt über folgende Netzwerksicherheits-Protokolle und -Architekturen
 }]~\par
 	\begin{itemize}
 		\item \textbf{Virtual Private Network (VPN)}
@@ -342,7 +342,7 @@ Weiters werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbin
         \textbf{abzuspeichern und anzuzeigen.}
         
  		\item \textbf{Secure Enclave:}\\
-        Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des weiteren werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
+        Die Secure Enclave ist für den Authentifizierungsprozess einer Finanztransaktion zuständig. Des Weiteren werden in der Secure Enclave die Touch-ID Fingerabdrücke gespeichert.	
         \end{itemize}
 \end{description}
 (Vgl. \cite{Apple[4]} S.31-37)
@@ -354,15 +354,15 @@ Weiters werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbin
 Apple hat sich die Prämisse gestellt, stabile Applikationen mit guter Benutzbarkeit für den Benutzer zu entwickeln. 
 \begin{description}
     \item[\parbox{\textwidth} {Beispiele für solche internen iOS Apps sind }]~\par
-    \begin{itemize}
-       \item iMessage,
-       \item Facetime,
-       \item iCloud und 
-       \item iCloud Keychain.
-    \end{itemize}
+        \begin{itemize}
+            \item iMessage,
+            \item Facetime,
+            \item iCloud und 
+            \item iCloud Keychain.
+        \end{itemize}
 \end{description} 
 
-Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste dieselben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den \textit{\glqq sicheren Umgang mit den persönlichen Daten der Benutzer\grqq{}} sowie \textit{\glqq den Schutz vor nicht autorisiertem Zugriff auf die persönlichen Daten des Benutzers\grqq{}} und \textit{\glqq anderer Dienstleistungen\grqq{}}. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen (vgl. \cite{Apple[4]} S.38-49).
+Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste dieselben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den sicheren Umgang mit den persönlichen Daten der Benutzer sowie den Schutz vor nicht autorisiertem Zugriff auf die persönlichen Daten des Benutzers und anderer Dienstleistungen. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen (vgl. \cite{Apple[4]} S.38-49).
 
 \begin{description}
     \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple Internet Service}]~
@@ -428,12 +428,14 @@ Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe, flexible Sich
 Das mobile Betriebssystem von Apple verfügt über zahlreiche integrierte Steuerelemente und Optionen. Diese iOS Einstellungen ermöglichen es dem Benutzer zu entscheiden, wie mit seinen persönlichen Daten umgegangen werden soll. Dies inkludiert, welche App Zugriff auf welche Informationen bekommen soll. 
 \begin{description}
     \item[\parbox{\textwidth} {Folgende Daten werden für die Ortung des Users verwendet (Location Service) }]~\par
+    \begin{multicols}{2}
     \begin{itemize}
         \item GPS Daten,
         \item Bluetooth Daten,
         \item öffentliche WLAN-Hotspots
         \item Mobilfunkmasten
     \end{itemize}
+      \end{multicols}
     Der User hat die Möglichkeit, mit Hilfe von iOS Einstellungen zu definieren, welche App die Location Daten verwenden kann.
     \item[\parbox{\textwidth} {Zu den persönlichen User-Daten zählen}]~\par
     \begin{multicols}{2}

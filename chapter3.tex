@@ -18,7 +18,7 @@
 \section{Allgemein}
 \label{sec:JBAllgemein}
 
-Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren, die nicht von Apple signiert und verteilt worden sind. Um dies zu ermöglichen, muss ein Jailbreak die Sicherheitsmechanismen von Apple umgehen. Weiters erhält der User den Zugriff auf den \textit{\glqq root-User\grqq{}} des Devices. Der \textit{\glqq root-User Login\grqq{}} ermöglicht vollen Zugriff auf das Betriebssystem (iOS) und somit auf alle Daten des Devices. Durch die Installation eines Jailbreaks stehen zwei weitere \textit{\glqq App Stores\grqq{}} zur Verfügung
+Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren, die nicht mit einem Apple Zertifikat signiert und von Apple verteilt worden sind. Um dies zu ermöglichen, muss ein Jailbreak die Sicherheitsmechanismen von Apple umgehen. Weiters erhält der User den Zugriff auf den \textit{\glqq root-User\grqq{}} des Devices. Der \textit{\glqq root-User Login\grqq{}} ermöglicht vollen Zugriff auf das Betriebssystem (iOS) und somit auf alle Daten des Devices. Durch die Installation eines Jailbreaks stehen zwei weitere \textit{\glqq App Stores\grqq{}} zur Verfügung
 
 \begin{description}
 \item[Alle von Apple nicht autorisierten App Stores]~
@@ -36,7 +36,7 @@ Abhängig davon, wie sich ein iOS Device nach dem Reboot des Devices verhält, u
 % ------------- Tethered Jailbreak--------------------
 \subsection{Tethered Jailbreak}
 \label{sec:JBTethered}
-Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich, das Device ohne weitere Tools neu zu starten. Nach einem Neustart des iOS startet das Betriebssystem in den sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
+Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich, das Device ohne weitere Tools neu zu starten. Nach einem Neustart des iOS startet das Betriebssystem im sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
 Mit dem zuvor am PC installierten Jailbreak Tool kann das Device wieder gestartet werden. Es wird in den selben Zustand versetzt, wie vor dem Reboot. Nur mit Hilfe von iTunes kann auf dem Device wieder die originale iOS Software installiert werden. 
 \newpage
 \begin{description}
@@ -51,7 +51,7 @@ Mit dem zuvor am PC installierten Jailbreak Tool kann das Device wieder gestarte
 \subsection{Semi Tethered Jailbreak}
 \label{sec:JBSemiTethered}
 
-Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device neu gestartet werden. Das System startet nicht in den DFU Mode, sondern in einem eingeschränkt funktionsfähigen Betriebsmodus. Safari, Mail, Cydia und alle Apps, die mit iTunes installiert worden sind, können nach einem Neustart weiterhin verwendet werden. Bei der Installation des Jailbreaks wird auch eine App am Device installiert, diese muss nach einem Neustart ausgeführt werden, um das Device wieder in den selben Zustand zu versetzen, wie vor dem Reboot. Danach ist das iOS Device wieder vollständig funktionsfähig.
+Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device neu gestartet werden. Das System startet nicht in dem DFU Mode, sondern in einem eingeschränkt funktionsfähigen Betriebsmodus. Safari, Mail, Cydia und alle Apps, die mit iTunes installiert worden sind, können nach einem Neustart weiterhin verwendet werden. Bei der Installation des Jailbreaks wird auch eine App am Device installiert, diese muss nach einem Neustart ausgeführt werden, um das Device wieder in den selben Zustand zu versetzen, wie vor dem Reboot. Danach ist das iOS Device wieder vollständig funktionsfähig.
 
 \begin{description}
     \item[Ein Beispiel für einen Semi-Tethered Jailbreak ist]~\par
@@ -99,7 +99,7 @@ Apple veröffentlicht im Durchschnitt sieben iOS Updates pro Jahr.
 \begin{figure}[ht!]
         \centering
                 \includegraphics[scale=0.9]{Bilder/iOSUpdates1}
-        \caption{iOS Updates \cite{Apple[7]} \protect\footnotemark}
+        \caption{iOS Updates (vgl. \cite{Apple[7]}) \protect\footnotemark}
         	\label{fig:iOS Software Updates}
 \end{figure}
 \footnotetext{Eigenwerk}
@@ -133,7 +133,7 @@ Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss 
 \end{enumerate}\end{description} 
 (Vgl. \cite{TaiG[1], TaiG[2], TaiG[3]})
 
-\paragraph{Andreas Kurtz} beschreibt in seinem Fachartikel die benötigten iOS Sicherheitslücken für ein JB, wie folgt: 
+Andreas Kurtz beschreibt in seinem Fachartikel die benötigten iOS Sicherheitslücken für ein JB, wie folgt: 
 \begin{quote}
 \textit{\glqq Die meisten Verfahren gründen auf zwei oder mehr Software-Schwachstellen: Einer Schwachstelle in einer der Userland-Komponenten, also etwa einer App, und mindestens einer weiteren, die sich zur Rechteerweiterung nutzen lässt. Mittels der ersten wird zunächst Code im Kontext der Userland- Komponente ausgeführt, beispielsweise im Webbrowser. Von dort ausgehend werden weitere Schwachstellen ausgenutzt, um die Rechte zu erweitern und um Sicherheitsmechanismen zu deaktivieren.\grqq{}} \cite{JB[2]} 
 \end{quote}

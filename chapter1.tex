@@ -18,7 +18,6 @@
 \label{sec:Einführung}
 
 Das Smartphone ist ein ständiger Begleiter des Menschen geworden. Es nimmt von Tag zu Tag mehr Einfluss auf unser Leben. Neben dem privaten Gebrauch ist es auch im beruflichen Alltag nicht mehr wegzudenken. Sensible Informationen und Daten werden auf dem Smartphone verarbeitet und/oder gespeichert. Daraus ergibt sich, dass die Sicherheit, Vertrauenswürdigkeit und Stabilität der Smartphones zunehmend an Bedeutung gewinnen müssen.\par Am 29 Juni 2007 wurde das erste iPhone mit der iOS Version 1.0 von Apple zum Verkauf angeboten. Elf Tage nach Verkaufsstart war der erste Jailbreak (JB) für diese iOS Version verfügbar. Das Ziel eines Jailbreak ist es, \textit{\glqq root-Zugriffsrechte\grqq{}} für das Betriebssystem zu erhalten. Der \textit{\glqq root-User\grqq{}} hat vollen Zugriff auf das Betriebssystem und kann mit diesen Rechten unter anderem unautorisierte Software auf dem iOS Device installieren.\par 
-
 Es gibt für \textit{\glqq gejailbreakte\grqq{}} iOS Devices, neben dem offiziellen App Store (Apple), zwei weitere App Stores
 \begin{itemize}
     \item Cydia
@@ -31,9 +30,7 @@ Diese beiden App Stores unterliegen nicht der Sicherheitsüberprüfung von Apple
     \item und Shells (sh, bash)
 \end{itemize}
 weitere Angriffsvektoren für \textit{\glqq Hacker\grqq{}}.
-
 Ein Jailbreak nutzt \textit{\glqq Bugs\grqq{}} im iOS aus und umgeht so die Sicherheitsmaßnahmen von Apple. Für Apple bedeutet jeder Jailbreak ein Aufzeigen von Sicherheitsschwächen des Apple Betriebssystems. Durch den öffentlichen Druck und die Möglichkeit, dass diese Sicherheitsmängel für Angriffe ausgenutzt werden könnten, wird Apple immer wieder gezwungen, Zeit und Geld in die Verbesserung der iOS Sicherheit zu investieren. 
-
 Am 21 September 2015 wurde von der Firma \textit{\glqq Zerodium\grqq{}} ein Preisgeld von einer Million US Dollar für einen \textit{\glqq zero day bug\grqq{}} für die iOS Version 9.x ausgeschrieben. Das Ziel dieser Ausschreibung war es, einen System Remote-Zugriff zu erhalten. 
 \begin{description}
     \item[\parbox{\textwidth} {Folgende iOS Sicherheitsmechanismen mussten durch diesen Jailbreak umgangen werden}]~\par
@@ -45,15 +42,13 @@ Am 21 September 2015 wurde von der Firma \textit{\glqq Zerodium\grqq{}} ein Prei
         \item und der Secure Boot Chain.
     \end{enumerate}
 \end{description} 
-
 Dieser unerlaubte Zugriff auf das Smartphone musste vor dem User verborgen bleiben. Diese Ausschreibung zeigt, dass nur mehr sehr wenige Menschen die Fähigkeiten besitzen, Sicherheitslücken des mobilen Betriebssystems von Apple auszunützen. Am ersten November 2015 endete die Ausschreibung, und es wurde bekanntgegeben, dass das Preisgeld einmal ausbezahlt wurde. 
-
 Am 29.September 2015 nahm Apple Stellung  zu den \textit{\glqq backdoor\grqq{}} Gerüchten in der Presse. Laut Aussage von Apple gibt es ab der iOS Version 8 keine Möglichkeit mehr, an die \textit{\glqq Cleartext Userdaten\grqq{}} eines Devices zu gelangen. Apple begründet dies in ihrer Aussendung so:
 \begin{enumerate}
     \item \textbf{Es gibt für Apple keine Möglichkeit, den Passcode des iOS Devices zu umgehen.}
     \item \textbf{Die Verschlüsselungskeys werden von Apple nicht mehr gespeichert.}
 \end{enumerate}
-Diese Aussagen werden durch einen weiteren Fall untermauert. Das FBI forderte im Dezember 2015 Apple auf, dem FBI zu helfen und eine iOS Device zu entsperren. Das FBI benötigte einen Zugang zu den Userdaten des Gerätes. Selbst die in diesem Fall vertrauten Gerichte konnten Apple nicht verpflichten, das iPhone zu entsperren. Zurzeit arbeitet der US Kongress an einem neuen Gesetz, in dem festgelegt werden soll, wie mit solchen Fällen umgegangen werden soll. Ein Teil dieser Arbeit wird es sein, festzulegen, ob Firmen wie Apple gezwungen werden können, \textit{\glqq Backdoors\grqq{}} in ihrer Software zu implementieren. Dies würde es staatlichen Organisationen erleichtern, Zugriff auf die Daten von Usern zu erhalten. Dies hat aber den Beigeschmack, dass dieses Backdoor auch von jedem anderen benutzt werden kann, sobald dieser das Backdoor entdeckten würde. 
+Diese Aussagen werden durch einen weiteren Fall untermauert. Das FBI forderte im Dezember 2015 Apple auf, dem FBI zu helfen und eine iOS Device zu entsperren. Das FBI benötigte einen Zugang zu den Userdaten des Gerätes. Selbst die in diesem Fall vertrauten Gerichte konnten Apple nicht verpflichten, das iPhone zu entsperren. Zurzeit arbeitet der US Kongress an einem neuen Gesetz, in dem festgelegt werden soll, wie mit solchen Fällen umgegangen werden soll. Ein Teil dieser Arbeit wird es sein, festzulegen, ob Firmen wie Apple gezwungen werden können, \textit{\glqq Backdoors\grqq{}} in ihrer Software zu implementieren. Dies würde es staatlichen Organisationen erleichtern, Zugriff auf die Daten von Usern zu erhalten. Dies hat aber den Beigeschmack, dass dieses Backdoor auch von jedem anderen benutzt werden kann, sobald dieser das Backdoor entdeckten würde. 
 
 \section{Motivation }
 \label{sec:IntroMotivation}
@@ -79,7 +74,7 @@ In dieser Sektion wird der Aufbau der Arbeit beschrieben. \textbf{Das Kapitel \r
 
 \paragraph{Im Kapitel \ref{ch:Ergebnisse}} werden die Daten anhand der im Kapitel \ref{ch:intro} definierten Fragestellungen aufbereitet. Die Zielfragestellungen die im Kapitel \ref{ch:intro} angeführt wurden, werden mit den erstellten Metriken zu den Fragestellungen beantwortet.
 
-\paragraph{Im Kapitel \ref{ch:Conclusion}} werden die Ergebnisse zusammengefasst und die daraus resultierenden Schlüsse dokumentiert.
+\paragraph{Im Kapitel \ref{ch:Conclusion}} werden die Ergebnisse zusammengefasst, und die daraus resultierenden Schlüsse dokumentiert.
 
 \section{Methodik dieser Arbeit}
 \label{sec:MethArbeit}
@@ -95,7 +90,7 @@ Basili begründet die Verwendung der GQM Methode für den Softwareentwicklungspr
     \textit{\glqq Any engineering process requires feedback and evaluation. Software development is an engineering discipline and measurement is an ideal mechanism for feedback and evaluation. The measurement and information fed back to all parties, e.g., developers, managers, customers and the corporation, help in the understanding and control of the software process and products, and the relationships between them. It helps in making intelligent decisions and improving over time. But measurement must be focused, based upon goals and models. We need to establish goals for the various software process and products and models. We need to establish the goals for the various software process and products and these goals should be measurable, driven by the appropriate models.\grqq{}} \cite{GQM[4]} 
 \end{quote}
  
-Dadurch soll die Nachvollziehbar und die Beweisbarkeit dieser Arbeit gewährleistet werden (vgl. \cite{GQM[3], GQM[4]}).
+Dadurch soll die Nachvollziehbar- und Beweisbarkeit dieser Arbeit gewährleistet werden (vgl. \cite{GQM[3], GQM[4]}).
 \begin{description}
     \item[\parbox{\textwidth} {Die GQM-Methode ist in drei Schritte unterteilt und dient zur Bewertung der erhobenen Daten}]~\par
     \begin{enumerate}
