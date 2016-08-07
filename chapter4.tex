@@ -20,7 +20,7 @@ Das mobile Apple Betriebssystem iOS basiert auf dem Desktop Betriebssystem des M
 \begin{figure}[hp!]
         \centering
                 \includegraphics[height=5cm]{Bilder/Chapter3_SystemArchitektur}
-        \caption{iOS Software Layer (Quelle \cite{Apple[5]} S. 9)}
+        \caption{iOS Software Layer (Quelle \cite{iOSSec[6]} S. 1)}
         	\label{fig:iOS Software Layer}
 \end{figure}
 Die abgebildeten Schichten zeigen das abstrahierte iOS Betriebssystem. Der größte Unterschied zwischen Mac OS X und iOS liegt im Cocoa Touch Layer.
@@ -40,7 +40,7 @@ Die abgebildeten Schichten zeigen das abstrahierte iOS Betriebssystem. Der grö�
 %---------------------------------- Core OS
 \subsection{Core OS Layer}
 \label{sec:CoreLayer}
-Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq Low Level Features\grqq}. Auf diesem Layer bauen alle anderen \textit{\glqq Frameworks\grqq{}} auf. Der iOS Applikationsentwickler kommt mit diesem Layer nur dann in Berührung, wenn dieser sich mit der Sicherheit und Hardware-Kommunikation beschäftigt. 
+Der \textbf{Core OS Layer} beinhaltet alle \textit{\glqq Low Level Features\grqq}. Auf diesem Layer bauen alle anderen \textit{\glqq Frameworks\grqq{}} auf. Der iOS Applikationsentwickler kommt mit diesem Layer nur dann in Berührung, wenn dieser sich mit der Sicherheit und Hardware-Kommunikation beschäftigt (vgl. \cite{Apple[6]} S.49-52) . 
 \begin{description}
 	\item[\parbox{\textwidth} {Das Core OS Layer Framework beinhaltet folgende Frameworks}]~\par
 	\begin{itemize}
@@ -157,13 +157,15 @@ Der \textbf{Media Layer} beinhaltet alle Technologien zur Darstellung von Grafik
 \subsection{Cocoa Touch Layer}
 \label{sec:CocoaTouchLayer}
 Enthält die wichtigsten Frameworks, um iOS Applikationen zu entwickeln. Dieser
-Layer stellt die Basis Applikation Infrastruktur und folgende Key Technologien zur Verfügung
+Layer stellt die Basis Applikations-Infrastruktur und folgende Kern-Technologien zur Verfügung
+\begin{multicols}{2}
 	\begin{itemize}
 		\item \textbf{Multitasking}
 		\item \textbf{Touch-based Input}
 		\item \textbf{Push Notification}
 		\item \textbf{High-level System Service}	
 	\end{itemize}
+	\end{multicols}
 \begin{description}
 \item[Folgende Features sind in Cocoa Touch Layer enthalten]~\par
 	\begin{multicols}{2}
@@ -238,7 +240,7 @@ Die in diesem Kapitel beschriebenen Sicherheitsmechanismen beziehen sich auf all
       					\end{enumerate}
 			\end{enumerate}
    		\end{description}
-Die iOS Sicherheit basiert auf einer Kombination aus Software, Hardware und Services, welche ein Maximum an Sicherheit garantieren soll (vgl. \cite{Apple[4]} S.4).
+Die iOS Sicherheit basiert auf einer Kombination aus Software, Hardware und Service, welche ein Maximum an Sicherheit garantieren soll (vgl. \cite{Apple[4]} S.4).
 	\end{minipage}
 	\hfil
 	\begin{minipage}{0.4\textwidth}
@@ -319,7 +321,7 @@ Weiters werden die neuersten Standards für WLAN, Bluetooth und Mobilfunk-Verbin
 %------------------------------ Apple Pay ----------------------------------
 \subsection{Apple Pay}
 \label{sec:ApplePay}
-\textbf{Apple Pay} ist das interne Apple Zahlungssystem für mobile Geräte. Die Kommunikation findet über NFC statt. Neben NFC ist die App \textit{\glqq Wallet\grqq{}} Teil des Apple Pay Produkts.
+Als \textbf{Apple Pay} wird das interne Apple Zahlungssystem für mobile Geräte bezeichnet. Die Kommunikation findet über NFC statt. Neben NFC ist die App \textit{\glqq Wallet\grqq{}} Teil des Apple Pay Produkts.
 \newpage
 \begin{description}
 \item[\parbox{\textwidth} {Folgende Komponenten gehören zu dem Apple Pay Produkt}]~\par
@@ -362,7 +364,7 @@ Apple hat sich die Prämisse gestellt, stabile Applikationen mit guter Benutzbar
         \end{itemize}
 \end{description} 
 
-Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste dieselben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den sicheren Umgang mit den persönlichen Daten der Benutzer sowie den Schutz vor nicht autorisiertem Zugriff auf die persönlichen Daten des Benutzers und anderer Dienstleistungen. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen (vgl. \cite{Apple[4]} S.38-49).
+Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung, die auch für interne Apple Apps verwendet werden. Natürlich gelten für Internet Dienste dieselben Sicherheitsziele, wie für die internen Apple Produkte. Diese Ziele beinhalten den sicheren Umgang mit den persönlichen Daten der Benutzer. Das inkludiert den Schutz vor nicht autorisiertem Zugriff auf die persönlichen Daten des Benutzers und anderer Dienstleistungen. Jeder Dienst verwendet eine eigene leistungsstarke Sicherheitsarchitektur ohne die Benutzerfreundlichkeit des gesamten iOS Devices zu beeinträchtigen (vgl. \cite{Apple[4]} S.38-49).
 
 \begin{description}
     \item[\parbox{\textwidth} {Dies sind die Mainfeatures des Apple Internet Service}]~
@@ -404,7 +406,7 @@ Apple stellt den Entwicklern von Internet Diensten die Frameworks zur Verfügung
 Der \textbf{Device Control} Mechanismus von Apple hat die Aufgabe, flexible Sicherheitsrichtlinien und Konfigurationen umzusetzen. Eine weitere Rahmenbedingung ist, dass die Konfiguration der Geräte leicht umsetzbar und verwaltbar ist.\par 
  Für Unternehmen bringt dies den Vorteil mit sich, dass Sicherheitsrichtlinien und Konfigurationen auf mehrere iOS Geräte verteilt werden können. Dadurch können Firmen sicherstellen, dass alle Geräte identische Einstellungen besitzen. Weiters ermöglicht es Mitarbeitern ihre eigenen Geräte im Unternehmen zu verwenden (BYOD). 
 \begin{description}
-    \item[\parbox{\textwidth} {Dies sind die Mainfeature des Apple Device Control Service} ]~\par
+    \item[\parbox{\textwidth} {Dies sind die Hauptfunktionalitäten des Apple Geräte-Kontrollservice} ]~\par
     \begin{multicols}{2}
     \begin{itemize}
         \item Passcode Sicherheit

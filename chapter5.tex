@@ -93,7 +93,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & fixe Speicheradresse\\ \hline
             Ja & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
         \end{tabular}
-        \caption{PIE executable segment (vgl. \cite{iOSSec[5]}) }
+        \caption{PIE Code-Segment (vgl. \cite{iOSSec[5]}) }
        \label{tab:PIE executable segment}
     \end{center}
 \end{table}
@@ -105,7 +105,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & fixe Speicheradresse\\ \hline
             Ja & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
         \end{tabular}
-        \caption{PIE data segment (vgl. \cite{iOSSec[5]})}
+        \caption{PIE Data-Segment (vgl. \cite{iOSSec[5]})}
        \label{tab:PIE data segment}
     \end{center}
 \end{table}
@@ -117,7 +117,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & fixe Speicheradresse\\ \hline
              Ja & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
         \end{tabular}
-         \caption{PIE stack segment (vgl. \cite{iOSSec[5]})}
+         \caption{PIE Stack-Segment (vgl. \cite{iOSSec[5]})}
        \label{tab:PIE stack segment}
     \end{center}
 \end{table}    
@@ -129,7 +129,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
             Ja & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
         \end{tabular}
-        \caption{PIE heap segment (vgl. \cite{iOSSec[5]}) }
+        \caption{PIE Heap-Segmen (vgl. \cite{iOSSec[5]}) }
        \label{tab:PIE heap segment}
     \end{center}
 \end{table}
@@ -141,7 +141,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & randomisierte Speicheradresse per Device boot\\ \hline
             Ja & randomisierte Speicheradresse per Device boot \\ \hline
         \end{tabular}
-        \caption{PIE libraries (vgl. \cite{iOSSec[5]})}
+        \caption{PIE Libraries (vgl. \cite{iOSSec[5]})}
        \label{tab:PIE libraries}
     \end{center}
 \end{table}
@@ -153,7 +153,7 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
             Nein & fixe Speicheradresse \\ \hline
             Ja & randomisierte Speicheradresse per Ausführung (execution)\\ \hline
         \end{tabular}
-        \caption{PIE linker (vgl. \cite{iOSSec[5]})}
+        \caption{PIE Linker (vgl. \cite{iOSSec[5]})}
        \label{tab:PIE linker }
     \end{center}
 \end{table}
@@ -163,10 +163,10 @@ Die nachfolgenden Tabellen \ref{tab:PIE executable segment}, \ref{tab:PIE data s
 \subsection{Mandatory Access Control}
 \label{sec:MAC}
 
- \textbf{Mandatory Access Control (MAC)} ist ein Konzept zur Kontrolle und Steuerung von Zugriffsrechten. MAC überprüft jeden ausführbaren Code und jede Library, die in den virtuellen Memory geladen werden sollen. Im Gegensatz dazu prüft \textbf{  (DEP)} nur Binaries. iOS erfährt somit einen deutlichen Sicherheitsgewinn gegenüber anderen mobilen Betriebssystemen. \par 
+ \textbf{Mandatory Access Control (MAC)} ist ein Sicherheitsmechanismus zur Kontrolle und Steuerung von Zugriffsrechten. MAC überprüft jeden ausführbaren Code und jede Library, die in den virtuellen Memory geladen werden sollen. Im Gegensatz dazu prüft \textbf{  (DEP)} nur Binaries. iOS erfährt somit einen deutlichen Sicherheitsgewinn gegenüber anderen mobilen Betriebssystemen. \par 
  MAC wurde mit der iOS Version 2.0 eingeführt. Bis zum heutigen Zeitpunkt gibt es keinen Weg, um diese Zugriffskontrolle zu umgehen. Von jedem ausführbaren Code und jeder Library wird die Signatur geprüft, bevor die Daten in den virtuellen Memory geladen werden (vgl. \cite{iOSSec[5], Hacking[1]}).
 Der MAC Mechanismus hat zwei Vorteile gegenüber anderen Memory Protection Systemen. \par 
-Erstens, Malware kann auf einem iOS Gerät nur ausgeführt werden, wenn diese auch zuvor von einem gültigen Zertifikat signiert worden ist. Es gibt Beispiele, in denen es Hackern gelungen ist, die Malware in einer App so zu verstecken, dass die App offiziell von Apple signiert worden ist. Dies konnte erreicht werden, indem die Malware Programmabschnitten versteckt wurde, die im normalen Codefluss der App nie durchlaufen werden (vgl. \cite{iOSSec[5], Hacking[1]}). \par 
+Erstens, Malware kann auf einem iOS Gerät nur ausgeführt werden, wenn diese auch zuvor von einem gültigen Zertifikat signiert worden ist. Es gibt Beispiele, in denen es Hackern gelungen ist, die Malware in einer App so zu verstecken, dass die App offiziell von Apple signiert worden ist. Dies konnte erreicht werden, indem die Malware in einem Programmabschnitt versteckt wurde. Die Schadsoftware wird im normalen Codefluss der App nie ausgeführt und blieb deshalb bei der Codeanalyse von Apple unentdeckt (vgl. \cite{iOSSec[5], Hacking[1]}). \par 
 
  Der zweite Vorteil ist, dass die Exploits nur unter Anwendung von \textit{ \glqq Return Oriented Programming(ROP)\grqq{} } durchgeführt werden können. ROP ist weitaus komplexer als normale Shell Code Exploits (vgl. \cite{Architecture[1], Architecture[2], Architecture[3], ROP[1], ROP[2], iOSSec[5], Hacking[1]}).
 
@@ -210,10 +210,10 @@ Alle definierten \textit{\glqq csflags\grqq{}} werden in der Tabelle: \ref{tab:C
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{|l|c|p{8cm}|} \hline
-  Flag Name & Value & Beschreibung\\ \hline
+  Flag-Name & Werte & Beschreibung\\ \hline
 CS\_VALID & 0x00001 & Der Prozess ist dynamisch \textit{\glqq valid\grqq{}} \\ \hlineCS\_HARD & 0x00100 & Der Prozess darf keine \textit{\glqq invalid Page\grqq{}} laden.\\ \hlineCS\_KILL & 0x00200 & Der Prozess sollte \textit{\glqq beendet\grqq{}} werden, wenn der Prozess dynamisch \textit{\glqq invalid\grqq{}} werden würde.\\ \hlineCS\_EXEC\_ SET\_HARD & 0x01000 & Der Prozess setzt das CS\_HARD Flag für jeden ausgeführten Childprozess.\\ \hlineCS\_EXEC\_ SET\_KILL & 0x02000 & Der Prozess setzt das CS\_KILL Flag für jeden ausgeführten Childprozess. \\ \hlineCS\_KILLED & 0x10000 & Der Process wurde vom Kernel \textit{\glqq beendet\grqq{}} bevor dieser dynamisch \textit{\glqq invalid\grqq{}} ist.\\ \hline
 \end{tabular} 
-\caption{Value \textit{\glqq csflags\grqq{}} (vgl. \cite{iOSSec[5]} S.11)}
+\caption{\textit{\glqq csflags\grqq{} Werte} (vgl. \cite{iOSSec[5]} S.11)}
 \label{tab:CSFLAGS}
 \end{center}
 \end{table}
@@ -280,7 +280,7 @@ Es werden für eine JIT Request immer 16MB an Speicher reserviert. Der Kernel se
 % -------------------------
 \newpage
 
-\section{App Signatur-Prozess}
+\section{App Signatur}
 \label{sec:SigningProcess}
 
 Apple führte mit der iOS Version 2.0 \textit{\glqq das verpflichtende Signieren von Apps\grqq{}} ein, um ausführbare Codes und Libraries zur Laufzeit prüfen zu können. 
@@ -530,7 +530,7 @@ Dieses Item definiert die Version des Provisioning Profile. Zum heutigen Zeitpun
 
 % -------------------------
 % -------------------------
-\subsection{Beschreibung einer signierten App}
+\subsection{Beschreibung der Signierung-Informationen einer App}
 \label{sec:SignediOSApp}
 Mit dem Befehl \glqq codesign\grqq{} (siehe Listing \ref{list:codeSignApp}) können die Elemente signierter Apps angezeigt werden, inklusive \textit{\glqq CDHash\grqq{}} und \textit{\glqq CodeDirectory\grqq}.
 \newline
@@ -568,7 +568,7 @@ Es besteht immer die Möglichkeit, dass eine App von Apple bzw. einem anderen En
         \label{fig:Apple signed CDHash}
 \end{figure}
 
-Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App, bei der die Metadaten keine Zertifikatsinformationen enthalten. Es ist nur der CDHash verfügbar und das Entitlement adhoc ist gesetzt. Dies bedeutet, dass dieser CDHash im \textit{\glqq static trusted cache\grqq{}} enthalten ist (vgl. \cite{Sign[1], Sign[2], Sign[3], Sign[4], Sign[5]}).
+Die Abbildung \ref{fig:Ad-Hoc CDHash} zeigt eine App, bei der in den Metadaten  keine Zertifikatsinformationen angeführt werden. Es ist nur der CDHash verfügbar und das Entitlement adhoc ist gesetzt. Dies bedeutet, dass dieser CDHash im \textit{\glqq static trusted cache\grqq{}} enthalten ist (vgl. \cite{Sign[1], Sign[2], Sign[3], Sign[4], Sign[5]}).
 
 \begin{figure}[!ht]
         \centering
@@ -600,7 +600,7 @@ Der \textbf{Secure Enclave} ist ein \textbf{Coprozessor} des \textit{\glqq Apple
     \begin{enumerate}
         \item Die Zurverfügungstellung der kryptographischen Verfahren für die Schlüsselverwaltung (File Key siehe Kap. \ref{sec:DataProtection}).
        \item Die Verwaltung der Fingerabdruckdaten (Touch-ID siehe Kap. \ref{sec:Passcode}).
-       \item Die Daten, die von der Secure Enclave im Dateisystem gespeichert werden, werden mit einem Schlüssel verschlüsselt, der mit der UID und einem \textit{\glqq Anti-Replay-Zähler\grqq{}} verknüpft ist.
+       \item \textit{\glqq Die Daten, die von der Secure Enclave im Dateisystem gespeichert werden, werden mit einem Schlüssel verschlüsselt, der mit der UID und einem Anti-Replay-Zähler verknüpft ist.\grqq{}} \cite{Apple[8]}
        \item Die Verifikation des AES 256 verschlüsselten User Passcode
     \end{enumerate}   
 \end{description} 

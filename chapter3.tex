@@ -23,8 +23,8 @@ Mit Hilfe eines \textbf{Jailbreaks} kann der User Apps installieren, die nicht m
 \begin{description}
 \item[Alle von Apple nicht autorisierten App Stores]~
 	\begin{enumerate}
-	   	\item \textbf{Cydia} \cite{Cydia[1]}
-		\item \textbf{TaiG}
+	   	\item \textbf{Cydia} \footnote{\url{https://cydia.saurik.com/}}
+		\item \textbf{TaiG} \footnote{\url{http://www.taig.com/en}}
 	\end{enumerate}
 \end{description}
 
@@ -38,15 +38,15 @@ Abhängig davon, wie sich ein iOS Device nach dem Reboot des Devices verhält, u
 \label{sec:JBTethered}
 Nach der Installation eines \textbf{Tethered-Jailbreaks} ist es nicht möglich, das Device ohne weitere Tools neu zu starten. Nach einem Neustart des iOS startet das Betriebssystem im sogenannten \textit{\glqq DFU Mode\grqq{}}. \par
 Mit dem zuvor am PC installierten Jailbreak Tool kann das Device wieder gestartet werden. Es wird in den selben Zustand versetzt, wie vor dem Reboot. Nur mit Hilfe von iTunes kann auf dem Device wieder die originale iOS Software installiert werden. 
-\newpage
+
 \begin{description}
      \item[\parbox{\textwidth} {Nachfolgend werden zwei häufig verwendete Tethered-Jailbreak Tools angeführt}]~\par
 	\begin{itemize}
-            \item \textbf{redsn0w}
-            \item \textbf{Blackra1n}
+            \item \textbf{redsn0w} \footnote{\url{http://www.redsn0w.us/}} 
+            \item \textbf{Blackra1n} \footnote{\url{http://blackra1n.com/}}
     \end{itemize}
 \end{description} 
-
+% \footnote{\url{}}
 % ------------- Semi Tethered Jailbreak--------------------
 \subsection{Semi Tethered Jailbreak}
 \label{sec:JBSemiTethered}
@@ -66,33 +66,32 @@ Nach der Installation eines \textbf{Semi-Tethered Jailbreak} kann das iOS Device
 Wurde auf dem iOS Device ein \textbf{Untethered Jailbreak} installiert, ist das iOS Device nach dem Neustart des Systems wieder voll funktionsfähig.
 \begin{description}
 \item[\parbox{\textwidth} {Einige Beispiele für Untethered Jailbreaks sind}]~\par
-	\begin{multicols}{2}
+	%\begin{multicols}{2}
 	\begin{itemize}
-        \item \textbf{Absinthe}
-        \item \textbf{evasi0n7}
-        \item \textbf{Pangu}
-        \item \textbf{Pangu8}
+        \item \textbf{Absinthe} 
+        \item \textbf{evasi0n7} \footnote{\url{http://evasi0n.com/}}
+        \item \textbf{Pangu} \footnote{\url{http://en.pangu.io/}}
+        \item \textbf{Pangu8}         
         \item \textbf{Pangu9}
-        \item \textbf{TaiG}
+        \item \textbf{TaiG} \footnote{\url{http://www.taig.com/en}}
     \end{itemize}
-    \end{multicols}
+    %\end{multicols}
 \end{description} 
 
 % ------------- Semi Untethered Jailbreak--------------------
 % \subsection{Semi Untethered Jailbreak}
 % \label{sec:JBSemiUntethered}
-
+\newpage
 % ------------- Jailbreak History --------------------
 \section{Jailbreak History}
 \label{sec:JBHistory}
 Apple veröffentlicht im Durchschnitt sieben iOS Updates pro Jahr.
-
 \begin{description}
 \item[\parbox{\textwidth} {Die Software-Updates dienen dazu}]~\par
 	\begin{enumerate}
-	    \item Die Sicherheitslücken des Betriebssystems zu schließen
-	    \item Neue Sicherheitsmechanismen für das Betriebssystem und Apps einzuführen
-	    \item Neue Sicherheitsarchitekturen für Apps bereitzustellen
+	    \item die Sicherheitslücken des Betriebssystems zu schließen,
+	    \item neue Sicherheitsmechanismen für das Betriebssystem und Apps einzuführen,
+	    \item und neue Sicherheitsarchitekturen für Apps bereitzustellen.
 	\end{enumerate}
 \end{description}
  
@@ -102,16 +101,20 @@ Apple veröffentlicht im Durchschnitt sieben iOS Updates pro Jahr.
         \caption{iOS Updates (vgl. \cite{Apple[7]}) \protect\footnotemark}
         	\label{fig:iOS Software Updates}
 \end{figure}
-\footnotetext{Eigenwerk}
+\footnotetext{Quelle Eigenwerk}
+
 Seit der Veröffentlichung der ersten iOS Version im Jahr 2007 wurden insgesamt 79 Softwareupdates von Apple bereitgestellt. Darunter befinden sich neun Major-Updates und 70  Minor-Updates (siehe Abb. \ref{fig:iOS Software Updates}).\par 
-\begin{figure}[hb!]
+\begin{figure}[htbp!]
         \centering
-                \includegraphics[scale=0.95]{Bilder/AnzahlJB}
+                \includegraphics[scale=0.85]{Bilder/AnzahlJB}
         \caption{Anzahl iOS Jailbreaks 2007 - 2015 \protect\footnotemark}
         	\label{fig:iOS Jailbreak}
 \end{figure}
-\footnotetext{Eigenwerk}
+
+
 Die Jailbreak-Community benötigt im Durchschnitt 36 Tage, um die Sicherheitsmechanismen von Apple zu umgehen. Die iOS Bugs, die für ein Jailbreak verwendet werden, sind meistens in mehreren iOS Versionen vorhanden. Nicht alle Software Fehler werden von Apple geschlossen, es gibt Jailbreaks, die mehrere Jahre funktionieren. Dies gilt vor allem für ältere iOS Versionen und iOS Devices. Im Durchschnitt werden pro Jahr zwei Jailbreaks veröffentlicht (siehe Abb. \ref{fig:iOS Jailbreak}).
+\newpage
+
 % ------------- Aufbau Jailbreak 9.x --------------------
 \section{Aufbau Jailbreak iOS 9.x}
 \label{sec:JBAufbau}
@@ -132,6 +135,7 @@ Um ein Jailbreak auf einem iOS Device erfolgreich durchführen zu können, muss 
   \item \textbf{Einen oder mehrere Softwarefehler, die das Patchen des Kernels ermöglichen. Das Patchen des Kernels ist nur notwendig, wenn ein untethered Jailbreak durchgeführt werden soll}
 \end{enumerate}\end{description} 
 (Vgl. \cite{TaiG[1], TaiG[2], TaiG[3]})
+\footnotetext{Quelle Eigenwerk}
 
 Andreas Kurtz beschreibt in seinem Fachartikel die benötigten iOS Sicherheitslücken für ein JB, wie folgt: 
 \begin{quote}
